@@ -1,0 +1,52 @@
+package com.bioirc.breastmammogramroiextraction;
+
+import com.maxeler.maxcompiler.v2.build.EngineParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.managers.engine_interfaces.CPUTypes;
+import com.maxeler.maxcompiler.v2.managers.engine_interfaces.EngineInterface;
+import com.maxeler.maxcompiler.v2.managers.engine_interfaces.InterfaceParam;
+import com.maxeler.maxcompiler.v2.managers.standard.Manager;
+import com.maxeler.maxcompiler.v2.managers.standard.Manager.IOType;
+
+public class BreastMammogramROIExtractionManager {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		Manager manager = new Manager(new EngineParameters(args));
+		Kernel kernel = new BreastMammogramROIExtractionKernel(manager.makeKernelParameters());
+		manager.setKernel(kernel);
+		manager.setIO(IOType.ALL_CPU);
+		manager.createSLiCinterface(interfaceDefault());
+		manager.build();
+	}
+
+	private static EngineInterface interfaceDefault() {
+		EngineInterface ei = new EngineInterface();
+
+		InterfaceParam length = ei.addParam("length", CPUTypes.UINT32);
+		InterfaceParam lengthInBytes = length * CPUTypes.UINT32.sizeInBytes();
+		InterfaceParam loopLength = ei.getAutoLoopOffset("BreastMammogramROIExtractionKernel", "loopLength");
+
+		InterfaceParam width = ei.addParam("width", CPUTypes.UINT32);
+		InterfaceParam height = ei.addParam("height", CPUTypes.UINT32);
+		InterfaceParam black = ei.addParam("black", CPUTypes.UINT32);
+		InterfaceParam threshold = ei.addParam("threshold", CPUTypes.UINT32);
+
+		ei.ignoreAutoLoopOffset("BreastMammogramROIExtractionKernel", "loopLength");
+
+		ei.setTicks("BreastMammogramROIExtractionKernel", length * loopLength);
+
+		ei.setScalar("BreastMammogramROIExtractionKernel", "width", width);
+		ei.setScalar("BreastMammogramROIExtractionKernel", "height", height);
+		ei.setScalar("BreastMammogramROIExtractionKernel", "black", black);
+		ei.setScalar("BreastMammogramROIExtractionKernel", "threshold", threshold);
+
+		ei.setStream("image_pixel", CPUTypes.UINT32, lengthInBytes);
+		ei.setStream("output", CPUTypes.UINT32, lengthInBytes);
+		return ei;
+	}
+
+}

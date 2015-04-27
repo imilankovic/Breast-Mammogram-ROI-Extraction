@@ -1,0 +1,1116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Graph version="2014.2" pxg_version="1" maxfile_name="BreastMammogramROIExtraction" design_name="BreastMammogramROIExtractionKernel" compilation_phase="final-hardware" has_longest_path="false">
+	<Node group="[]" id="139" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.simpleCounter(Count.java:570)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:16)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Value>1</Value>
+		<HexValue>0x1</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="2" dst_node_input="enable" src_node_id="139" src_node_output="value" />
+	<Node group="[]" id="120" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000003; 3.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream$OffsetExpr.getDFEVar(Stream.java:186)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:14)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Value>00000000000000000000000000000011</Value>
+		<HexValue>0x00000003</HexValue>
+		<NumericValue>3.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="4" dst_node_input="a" src_node_id="120" src_node_output="value" />
+	<Edge dst_node_id="17" dst_node_input="b" src_node_id="120" src_node_output="value" />
+	<Edge dst_node_id="71" dst_node_input="a" src_node_id="120" src_node_output="value" />
+	<Edge dst_node_id="98" dst_node_input="input" src_node_id="120" src_node_output="value" />
+	<Node group="[]" id="98" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="2" dst_node_input="max" src_node_id="98" src_node_output="output" />
+	<Edge dst_node_id="117" dst_node_input="input" src_node_id="98" src_node_output="output" />
+	<Node group="[]" id="2" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCounterV1">
+		<Input name="enable" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="max" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="count" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="wrap" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.simpleCounter(Count.java:570)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:16)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Increment>1</Increment>
+		<WrapValue>0</WrapValue>
+		<InitValue>0</InitValue>
+		<CountMode>NUMERIC_INCREMENTING</CountMode>
+		<WrapMode>COUNT_LT_MAX_THEN_WRAP</WrapMode>
+	</Node>
+	<Edge dst_node_id="5" dst_node_input="a" src_node_id="2" src_node_output="count" />
+	<Edge dst_node_id="72" dst_node_input="a" src_node_id="2" src_node_output="count" />
+	<Node group="[]" id="138" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000001; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.sub(DFEVar.java:929)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:53)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Value>00000000000000000000000000000001</Value>
+		<HexValue>0x00000001</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="71" dst_node_input="b" src_node_id="138" src_node_output="value" />
+	<Node group="[]" id="71" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeSub">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>-</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.sub(DFEVar.java:929)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:53)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="72" dst_node_input="b" src_node_id="71" src_node_output="result" />
+	<Node group="[]" id="72" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:577)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:53)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="75" dst_node_input="a" src_node_id="72" src_node_output="result" />
+	<Node group="[]" id="73" isControl="true" isVisible="false" pipelineFactor="1.0" type="NodeInputMappedReg">
+		<Output latency="0" name="io_output_force_disabled" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Scalar input (io_output_force_disabled)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:685)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:53)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Name>io_output_force_disabled</Name>
+	</Node>
+	<Edge dst_node_id="74" dst_node_input="a" src_node_id="73" src_node_output="io_output_force_disabled" />
+	<Node group="[]" id="74" isControl="true" isVisible="false" pipelineFactor="0.0" type="NodeNot">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>~</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:685)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:53)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="75" dst_node_input="b" src_node_id="74" src_node_output="result" />
+	<Node group="[]" id="75" isControl="false" isVisible="false" pipelineFactor="0.0" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:685)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:53)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="116" dst_node_input="input" src_node_id="75" src_node_output="result" />
+	<Node group="[]" id="116" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="17" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(17)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="76" dst_node_input="output_control" src_node_id="116" src_node_output="output" />
+	<Node group="[]" id="15" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.makeCounterChain(Count.java:498)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:29)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Value>1</Value>
+		<HexValue>0x1</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="18" dst_node_input="enable" src_node_id="15" src_node_output="value" />
+	<Node group="[]" id="10" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeInputMappedReg">
+		<Output latency="0" name="width" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>Scalar input (width)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1106)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:20)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Name>width</Name>
+	</Node>
+	<Edge dst_node_id="17" dst_node_input="a" src_node_id="10" src_node_output="width" />
+	<Node group="[]" id="17" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMul">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="6" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>*</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:960)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:31)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="18" dst_node_input="max" src_node_id="17" src_node_output="result" />
+	<Node group="[]" id="18" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCounterV1">
+		<Input name="enable" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="max" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="count" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="wrap" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain.addCounter(CounterChain.java:526)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:31)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Increment>1</Increment>
+		<WrapValue>0</WrapValue>
+		<InitValue>0</InitValue>
+		<CountMode>NUMERIC_INCREMENTING</CountMode>
+		<WrapMode>COUNT_LT_MAX_THEN_WRAP</WrapMode>
+	</Node>
+	<Edge dst_node_id="19" dst_node_input="a" src_node_id="18" src_node_output="count" />
+	<Edge dst_node_id="59" dst_node_input="a" src_node_id="18" src_node_output="count" />
+	<Edge dst_node_id="61" dst_node_input="a" src_node_id="18" src_node_output="count" />
+	<Edge dst_node_id="99" dst_node_input="input" src_node_id="18" src_node_output="wrap" />
+	<Node group="[]" id="99" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="7" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(7)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="16" dst_node_input="enable" src_node_id="99" src_node_output="output" />
+	<Node group="[]" id="11" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeInputMappedReg">
+		<Output latency="0" name="height" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>Scalar input (height)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1106)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:21)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Name>height</Name>
+	</Node>
+	<Edge dst_node_id="16" dst_node_input="max" src_node_id="11" src_node_output="height" />
+	<Edge dst_node_id="39" dst_node_input="a" src_node_id="11" src_node_output="height" />
+	<Edge dst_node_id="46" dst_node_input="a" src_node_id="11" src_node_output="height" />
+	<Node group="[]" id="16" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCounterV1">
+		<Input name="enable" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="max" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="count" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="wrap" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain.addCounter(CounterChain.java:526)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:30)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Increment>1</Increment>
+		<WrapValue>0</WrapValue>
+		<InitValue>0</InitValue>
+		<CountMode>NUMERIC_INCREMENTING</CountMode>
+		<WrapMode>COUNT_LT_MAX_THEN_WRAP</WrapMode>
+	</Node>
+	<Edge dst_node_id="23" dst_node_input="a" src_node_id="16" src_node_output="count" />
+	<Edge dst_node_id="30" dst_node_input="a" src_node_id="16" src_node_output="count" />
+	<Edge dst_node_id="40" dst_node_input="a" src_node_id="16" src_node_output="count" />
+	<Edge dst_node_id="47" dst_node_input="a" src_node_id="16" src_node_output="count" />
+	<Node group="[]" id="137" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x0000000a; 10.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1021)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:47)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Value>00000000000000000000000000001010</Value>
+		<HexValue>0x0000000a</HexValue>
+		<NumericValue>10.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="46" dst_node_input="b" src_node_id="137" src_node_output="value" />
+	<Node group="[]" id="46" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeDiv">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="35" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>/</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1021)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:47)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="47" dst_node_input="b" src_node_id="46" src_node_output="result" />
+	<Node group="[]" id="47" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeGt">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gt(DFEVar.java:776)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:47)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="49" dst_node_input="a" src_node_id="47" src_node_output="result" />
+	<Node group="[]" id="136" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000001; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.sub(DFEVar.java:929)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:18)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Value>00000000000000000000000000000001</Value>
+		<HexValue>0x00000001</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="4" dst_node_input="b" src_node_id="136" src_node_output="value" />
+	<Node group="[]" id="4" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeSub">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>-</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.sub(DFEVar.java:929)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:18)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="5" dst_node_input="b" src_node_id="4" src_node_output="result" />
+	<Node group="[]" id="5" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:577)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:18)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="8" dst_node_input="a" src_node_id="5" src_node_output="result" />
+	<Node group="[]" id="6" isControl="true" isVisible="false" pipelineFactor="1.0" type="NodeInputMappedReg">
+		<Output latency="0" name="io_image_pixel_force_disabled" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Scalar input (io_image_pixel_force_disabled)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:522)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:18)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Name>io_image_pixel_force_disabled</Name>
+	</Node>
+	<Edge dst_node_id="7" dst_node_input="a" src_node_id="6" src_node_output="io_image_pixel_force_disabled" />
+	<Node group="[]" id="7" isControl="true" isVisible="false" pipelineFactor="0.0" type="NodeNot">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>~</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:522)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:18)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="8" dst_node_input="b" src_node_id="7" src_node_output="result" />
+	<Node group="[]" id="8" isControl="false" isVisible="false" pipelineFactor="0.0" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:522)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:18)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="9" dst_node_input="enable" src_node_id="8" src_node_output="result" />
+	<Node group="[]" id="9" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeInput">
+		<Input name="enable" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="5" name="data" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>Input(image_pixel)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:522)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:18)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Name>image_pixel</Name>
+	</Node>
+	<Edge dst_node_id="56" dst_node_input="a" src_node_id="9" src_node_output="data" />
+	<Edge dst_node_id="62" dst_node_input="a" src_node_id="9" src_node_output="data" />
+	<Edge dst_node_id="104" dst_node_input="input" src_node_id="9" src_node_output="data" />
+	<Node group="[]" id="104" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="3" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>FIFO(3)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="95" dst_node_input="input" src_node_id="104" src_node_output="output" />
+	<Edge dst_node_id="118" dst_node_input="input" src_node_id="104" src_node_output="output" />
+	<Node group="[]" id="118" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="3" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>FIFO(3)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="48" dst_node_input="a" src_node_id="118" src_node_output="output" />
+	<Edge dst_node_id="41" dst_node_input="a" src_node_id="118" src_node_output="output" />
+	<Edge dst_node_id="119" dst_node_input="input" src_node_id="118" src_node_output="output" />
+	<Node group="[]" id="13" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeInputMappedReg">
+		<Output latency="0" name="threshold" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>Scalar input (threshold)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1106)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:23)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Name>threshold</Name>
+	</Node>
+	<Edge dst_node_id="41" dst_node_input="b" src_node_id="13" src_node_output="threshold" />
+	<Edge dst_node_id="48" dst_node_input="b" src_node_id="13" src_node_output="threshold" />
+	<Node group="[]" id="48" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeGte">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&gt;=</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gte(DFEVar.java:730)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:47)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="49" dst_node_input="b" src_node_id="48" src_node_output="result" />
+	<Node group="[]" id="49" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:47)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="52" dst_node_input="a" src_node_id="49" src_node_output="result" />
+	<Node group="[]" id="94" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="-3072" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>stream offset: -3072</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:269)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:49)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="34" dst_node_input="a" src_node_id="94" src_node_output="output" />
+	<Edge dst_node_id="51" dst_node_input="a" src_node_id="94" src_node_output="output" />
+	<Node group="[]" id="135" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:589)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:47)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Value>00000000000000000000000000000000</Value>
+		<HexValue>0x00000000</HexValue>
+		<NumericValue>0.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="51" dst_node_input="b" src_node_id="135" src_node_output="value" />
+	<Node group="[]" id="51" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:589)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:47)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="121" dst_node_input="in0" src_node_id="51" src_node_output="result" />
+	<Node group="[]" id="12" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeInputMappedReg">
+		<Output latency="0" name="black" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>Scalar input (black)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1106)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:22)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Name>black</Name>
+	</Node>
+	<Edge dst_node_id="34" dst_node_input="b" src_node_id="12" src_node_output="black" />
+	<Edge dst_node_id="56" dst_node_input="b" src_node_id="12" src_node_output="black" />
+	<Edge dst_node_id="57" dst_node_input="b" src_node_id="12" src_node_output="black" />
+	<Edge dst_node_id="62" dst_node_input="b" src_node_id="12" src_node_output="black" />
+	<Node group="[]" id="34" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeLt">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&lt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.lt(DFEVar.java:822)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:43)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="121" dst_node_input="in1" src_node_id="34" src_node_output="result" />
+	<Node group="[]" id="121" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCat">
+		<Input name="in0" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="in1" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeBits(2)" />
+		<Text>@</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="122" dst_node_input="input" src_node_id="121" src_node_output="result" />
+	<Node group="[]" id="122" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeBits(2)" />
+		<Output latency="3067" name="output" type="dfeBits(2)" />
+		<Text>FIFO(3067)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="123" dst_node_input="a" src_node_id="122" src_node_output="output" />
+	<Edge dst_node_id="125" dst_node_input="a" src_node_id="122" src_node_output="output" />
+	<Node group="[]" id="123" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeSlice">
+		<Input name="a" type="dfeBits(2)" />
+		<Output latency="0" name="result" type="dfeBits(1)" />
+		<Text>[1:1]</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+		<Base>1</Base>
+		<Width>1</Width>
+	</Node>
+	<Edge dst_node_id="124" dst_node_input="input" src_node_id="123" src_node_output="result" />
+	<Node group="[]" id="124" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(1)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:1, 0, UNSIGNED}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="52" dst_node_input="b" src_node_id="124" src_node_output="output" />
+	<Node group="[]" id="52" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:47)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="115" dst_node_input="input" src_node_id="52" src_node_output="result" />
+	<Node group="[]" id="115" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="2" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(2)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="54" dst_node_input="sel" src_node_id="115" src_node_output="output" />
+	<Node group="[]" id="134" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x0000000a; 10.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1021)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:45)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Value>00000000000000000000000000001010</Value>
+		<HexValue>0x0000000a</HexValue>
+		<NumericValue>10.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="39" dst_node_input="b" src_node_id="134" src_node_output="value" />
+	<Node group="[]" id="39" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeDiv">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="35" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>/</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1021)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:45)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="40" dst_node_input="b" src_node_id="39" src_node_output="result" />
+	<Node group="[]" id="40" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeLte">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&lt;=</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.lte(DFEVar.java:684)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:45)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="42" dst_node_input="a" src_node_id="40" src_node_output="result" />
+	<Node group="[]" id="41" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeGte">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&gt;=</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gte(DFEVar.java:730)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:45)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="42" dst_node_input="b" src_node_id="41" src_node_output="result" />
+	<Node group="[]" id="42" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:45)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="114" dst_node_input="input" src_node_id="42" src_node_output="result" />
+	<Node group="[]" id="114" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="2" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(2)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="44" dst_node_input="sel" src_node_id="114" src_node_output="output" />
+	<Node group="[]" id="133" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gt(DFEVar.java:791)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:43)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Value>00000000000000000000000000000000</Value>
+		<HexValue>0x00000000</HexValue>
+		<NumericValue>0.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="30" dst_node_input="b" src_node_id="133" src_node_output="value" />
+	<Node group="[]" id="30" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeGt">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gt(DFEVar.java:791)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:43)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="33" dst_node_input="a" src_node_id="30" src_node_output="result" />
+	<Node group="[]" id="117" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="5" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>FIFO(5)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="19" dst_node_input="b" src_node_id="117" src_node_output="output" />
+	<Edge dst_node_id="59" dst_node_input="b" src_node_id="117" src_node_output="output" />
+	<Edge dst_node_id="61" dst_node_input="b" src_node_id="117" src_node_output="output" />
+	<Node group="[]" id="19" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeLt">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&lt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.lt(DFEVar.java:822)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:35)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="111" dst_node_input="input" src_node_id="19" src_node_output="result" />
+	<Node group="[]" id="111" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="5" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(5)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="21" dst_node_input="sel" src_node_id="111" src_node_output="output" />
+	<Node group="[]" id="56" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeGte">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&gt;=</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gte(DFEVar.java:730)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:51)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="58" dst_node_input="a" src_node_id="56" src_node_output="result" />
+	<Node group="[]" id="95" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="-3" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>stream offset: -3</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:269)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:27)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="57" dst_node_input="a" src_node_id="95" src_node_output="output" />
+	<Node group="[]" id="57" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeLt">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&lt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.lt(DFEVar.java:822)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:51)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="58" dst_node_input="b" src_node_id="57" src_node_output="result" />
+	<Node group="[]" id="58" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:51)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="60" dst_node_input="a" src_node_id="58" src_node_output="result" />
+	<Node group="[]" id="59" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeGte">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&gt;=</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gte(DFEVar.java:730)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:51)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="106" dst_node_input="input" src_node_id="59" src_node_output="result" />
+	<Node group="[]" id="106" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="2" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(2)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="60" dst_node_input="b" src_node_id="106" src_node_output="output" />
+	<Node group="[]" id="60" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:51)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="64" dst_node_input="a" src_node_id="60" src_node_output="result" />
+	<Node group="[]" id="61" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeLt">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&lt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.lt(DFEVar.java:822)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:51)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="108" dst_node_input="input" src_node_id="61" src_node_output="result" />
+	<Node group="[]" id="108" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="63" dst_node_input="a" src_node_id="108" src_node_output="output" />
+	<Node group="[]" id="62" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeGte">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&gt;=</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gte(DFEVar.java:730)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:51)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="63" dst_node_input="b" src_node_id="62" src_node_output="result" />
+	<Node group="[]" id="63" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:51)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="109" dst_node_input="input" src_node_id="63" src_node_output="result" />
+	<Node group="[]" id="109" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="64" dst_node_input="b" src_node_id="109" src_node_output="output" />
+	<Node group="[]" id="64" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeOr">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>|</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:410)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:51)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="69" dst_node_input="sel" src_node_id="64" src_node_output="result" />
+	<Node group="[]" id="96" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="-3" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>stream offset: -3</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:269)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:51)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="110" dst_node_input="input" src_node_id="96" src_node_output="output" />
+	<Node group="[]" id="110" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="69" dst_node_input="option0" src_node_id="110" src_node_output="output" />
+	<Node group="[]" id="132" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000001; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:883)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:51)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Value>00000000000000000000000000000001</Value>
+		<HexValue>0x00000001</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="66" dst_node_input="b" src_node_id="132" src_node_output="value" />
+	<Node group="[]" id="66" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAdd">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>+</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:883)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:51)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="97" dst_node_input="input" src_node_id="66" src_node_output="result" />
+	<Node group="[]" id="97" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="-3" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>stream offset: -3</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:269)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:51)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="69" dst_node_input="option1" src_node_id="97" src_node_output="output" />
+	<Node group="[]" id="69" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1152)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:51)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="21" dst_node_input="option0" src_node_id="69" src_node_output="result" />
+	<Node group="[]" id="20" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1181)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:35)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Value>00000000000000000000000000000000</Value>
+		<HexValue>0x00000000</HexValue>
+		<NumericValue>0.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="21" dst_node_input="option1" src_node_id="20" src_node_output="value" />
+	<Node group="[]" id="21" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1181)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:35)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="25" dst_node_input="a" src_node_id="21" src_node_output="result" />
+	<Edge dst_node_id="32" dst_node_input="a" src_node_id="21" src_node_output="result" />
+	<Edge dst_node_id="66" dst_node_input="a" src_node_id="21" src_node_output="result" />
+	<Edge dst_node_id="96" dst_node_input="input" src_node_id="21" src_node_output="result" />
+	<Node group="[]" id="131" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000001; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gt(DFEVar.java:791)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:43)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Value>00000000000000000000000000000001</Value>
+		<HexValue>0x00000001</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="32" dst_node_input="b" src_node_id="131" src_node_output="value" />
+	<Node group="[]" id="32" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeGt">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gt(DFEVar.java:791)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:43)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="33" dst_node_input="b" src_node_id="32" src_node_output="result" />
+	<Node group="[]" id="33" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:43)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="35" dst_node_input="a" src_node_id="33" src_node_output="result" />
+	<Node group="[]" id="125" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeSlice">
+		<Input name="a" type="dfeBits(2)" />
+		<Output latency="0" name="result" type="dfeBits(1)" />
+		<Text>[0:0]</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+		<Base>0</Base>
+		<Width>1</Width>
+	</Node>
+	<Edge dst_node_id="126" dst_node_input="input" src_node_id="125" src_node_output="result" />
+	<Node group="[]" id="126" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(1)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:1, 0, UNSIGNED}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="35" dst_node_input="b" src_node_id="126" src_node_output="output" />
+	<Node group="[]" id="35" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:43)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="37" dst_node_input="sel" src_node_id="35" src_node_output="result" />
+	<Node group="[]" id="130" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:589)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:41)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Value>00000000000000000000000000000000</Value>
+		<HexValue>0x00000000</HexValue>
+		<NumericValue>0.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="23" dst_node_input="b" src_node_id="130" src_node_output="value" />
+	<Node group="[]" id="23" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:589)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:41)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="26" dst_node_input="a" src_node_id="23" src_node_output="result" />
+	<Node group="[]" id="129" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000001; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gt(DFEVar.java:791)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:41)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Value>00000000000000000000000000000001</Value>
+		<HexValue>0x00000001</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="25" dst_node_input="b" src_node_id="129" src_node_output="value" />
+	<Node group="[]" id="25" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeGt">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gt(DFEVar.java:791)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:41)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="26" dst_node_input="b" src_node_id="25" src_node_output="result" />
+	<Node group="[]" id="26" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:41)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="28" dst_node_input="sel" src_node_id="26" src_node_output="result" />
+	<Node group="[]" id="119" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="2" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>FIFO(2)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="28" dst_node_input="option0" src_node_id="119" src_node_output="output" />
+	<Node group="[]" id="27" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1181)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:41)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Value>00000000000000000000000000000000</Value>
+		<HexValue>0x00000000</HexValue>
+		<NumericValue>0.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="28" dst_node_input="option1" src_node_id="27" src_node_output="value" />
+	<Node group="[]" id="28" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1181)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:41)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="37" dst_node_input="option0" src_node_id="28" src_node_output="result" />
+	<Node group="[]" id="36" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1181)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:43)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Value>00000000000000000000000000000000</Value>
+		<HexValue>0x00000000</HexValue>
+		<NumericValue>0.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="37" dst_node_input="option1" src_node_id="36" src_node_output="value" />
+	<Node group="[]" id="37" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1181)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:43)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="44" dst_node_input="option0" src_node_id="37" src_node_output="result" />
+	<Node group="[]" id="43" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1181)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:45)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Value>00000000000000000000000000000000</Value>
+		<HexValue>0x00000000</HexValue>
+		<NumericValue>0.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="44" dst_node_input="option1" src_node_id="43" src_node_output="value" />
+	<Node group="[]" id="44" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1181)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:45)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="54" dst_node_input="option0" src_node_id="44" src_node_output="result" />
+	<Node group="[]" id="53" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1181)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:47)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Value>00000000000000000000000000000000</Value>
+		<HexValue>0x00000000</HexValue>
+		<NumericValue>0.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="54" dst_node_input="option1" src_node_id="53" src_node_output="value" />
+	<Node group="[]" id="54" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1181)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:47)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="94" dst_node_input="input" src_node_id="54" src_node_output="result" />
+	<Edge dst_node_id="76" dst_node_input="data" src_node_id="54" src_node_output="result" />
+	<Node group="[]" id="76" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeOutput">
+		<Input name="output_control" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="data" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>Output(output)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:685)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.&lt;init&gt;(BreastMammogramROIExtractionKernel.maxj:53)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)</OriginStackTrace>
+		<Name>output</Name>
+	</Node>
+	<Node group="[]" id="81" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+		<Value>1</Value>
+		<HexValue>0x1</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="82" dst_node_input="load" src_node_id="81" src_node_output="value" />
+	<Node group="[]" id="128" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+		<Value>1</Value>
+		<HexValue>0x1</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="79" dst_node_input="enable" src_node_id="128" src_node_output="value" />
+	<Node group="[]" id="78" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(49, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+		<Value>1000000000000000000000000000000000000000000000000</Value>
+		<HexValue>0x1000000000000</HexValue>
+		<NumericValue>2.81474976710656E14</NumericValue>
+	</Node>
+	<Edge dst_node_id="79" dst_node_input="max" src_node_id="78" src_node_output="value" />
+	<Node group="[]" id="79" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeCounterV1">
+		<Input name="enable" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="max" type="dfeOffsetFix(49, 0, UNSIGNED)" />
+		<Output latency="0" name="count" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Output latency="0" name="wrap" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+		<Increment>1</Increment>
+		<WrapValue>0</WrapValue>
+		<InitValue>0</InitValue>
+		<CountMode>NUMERIC_INCREMENTING</CountMode>
+		<WrapMode>COUNT_LT_MAX_THEN_WRAP</WrapMode>
+	</Node>
+	<Edge dst_node_id="80" dst_node_input="input" src_node_id="79" src_node_output="count" />
+	<Node group="[]" id="80" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Text>stream offset: 1</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="82" dst_node_input="data" src_node_id="80" src_node_output="output" />
+	<Node group="[]" id="82" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeOutputMappedReg">
+		<Input name="load" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="data" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Text>Scalar output (current_run_cycle_count)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+		<Name>current_run_cycle_count</Name>
+	</Node>
+	<Node group="[]" id="127" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+		<Value>1</Value>
+		<HexValue>0x1</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="85" dst_node_input="enable" src_node_id="127" src_node_output="value" />
+	<Node group="[]" id="84" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(49, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+		<Value>1000000000000000000000000000000000000000000000000</Value>
+		<HexValue>0x1000000000000</HexValue>
+		<NumericValue>2.81474976710656E14</NumericValue>
+	</Node>
+	<Edge dst_node_id="85" dst_node_input="max" src_node_id="84" src_node_output="value" />
+	<Node group="[]" id="85" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeCounterV1">
+		<Input name="enable" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="max" type="dfeOffsetFix(49, 0, UNSIGNED)" />
+		<Output latency="0" name="count" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Output latency="0" name="wrap" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+		<Increment>1</Increment>
+		<WrapValue>0</WrapValue>
+		<InitValue>0</InitValue>
+		<CountMode>NUMERIC_INCREMENTING</CountMode>
+		<WrapMode>COUNT_LT_MAX_THEN_WRAP</WrapMode>
+	</Node>
+	<Edge dst_node_id="88" dst_node_input="a" src_node_id="85" src_node_output="count" />
+	<Node group="[]" id="87" isControl="true" isVisible="false" pipelineFactor="1.0" type="NodeInputMappedReg">
+		<Output latency="0" name="run_cycle_count" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Text>Scalar input (run_cycle_count)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+		<Name>run_cycle_count</Name>
+	</Node>
+	<Edge dst_node_id="88" dst_node_input="b" src_node_id="87" src_node_output="run_cycle_count" />
+	<Node group="[]" id="88" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="86" dst_node_input="start" src_node_id="88" src_node_output="result" />
+	<Node group="[]" id="86" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeFlush">
+		<Input name="start" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>flush on trigger</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)
+com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)</OriginStackTrace>
+	</Node>
+</Graph>

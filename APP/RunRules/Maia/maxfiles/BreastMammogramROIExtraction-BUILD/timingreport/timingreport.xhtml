@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>MaxCompiler Timing Report</title>
+    <style type="text/css" title="currentStyle"> 
+         @import "page.css";
+    </style> 
+    <script type="text/javascript" language="javascript" src="jquery.js"></script> 
+    <script type="text/javascript" language="javascript" src="jquery.dataTables.js"></script>
+    <script type="text/javascript" language="javascript" src="toggle.js"></script>
+    <script type="text/javascript" language="javascript" src="sorttable.js"></script>
+  </head>
+  <body>
+    <h1 align="center">
+       MaxCompiler Timing Report 
+    </h1>
+    <table style="text-align: left; margin-left: auto; margin-right: auto;">
+      <tbody>
+        <tr>
+          <td style="text-align: left; font-weight: bold;">
+             Date 
+          </td>
+          <td style="text-align: left;">
+             23.04.2015 at 05:44:06 BST 
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left; font-weight: bold;">
+             Build Directory 
+          </td>
+          <td style="text-align: left;">
+             /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_MAIA_DFE 
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left; font-weight: bold;">
+             # Kernels in Design 
+          </td>
+          <td style="text-align: left;">
+             1 
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left; font-weight: bold;">
+             # Cost Tables 
+          </td>
+          <td style="text-align: left;">
+             1 
+          </td>
+        </tr>
+<!--
+        <tr>
+          <td style="vertical-align: top;">
+            <span style="font-style: italic;">Worst Timing Score (Xilinx)</span>
+            <br />
+          </td>
+          <td style="vertical-align: top;">
+             0 ps (ct: 1) 
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">
+            <span style="font-style: italic;">Best Timing Score (Xilinx)</span>
+            <br />
+          </td>
+          <td style="vertical-align: top;">
+             0 ps (ct: 1) 
+            <br />
+          </td>
+        </tr>
+-->
+      </tbody>
+    </table>
+    <br />
+
+    <!-- Give summary of all components -->
+    <h2 id="Overview"><a id="OverviewLink" href="javascript:toggle('OverviewContent', 'OverviewLink');"><img src="images/minus.png"></img></a>
+       Cost-Table Overview 
+    </h2>
+    <div  class="main" id="OverviewContent" style="margin-left: 10px;display: block;">
+    <table class="display" id="overviewtable">
+      <thead>
+        <tr>
+          <th rowspan="2" style="text-align: center;">Component</th>
+          <th rowspan="2" style="text-align: center;">Score</th>
+          <th rowspan="2" style="text-align: center;"></th>
+          <th colspan="2" style="text-align: center;"><a href="1.xhtml">ct1</a><br /><small>Score: 0</small></th>
+	</tr>
+	<tr>
+	<th><small>Score</small></th>
+<!--        <th><small>(S)</small></th> -->
+	<th><small>(H)</small></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left;">BreastMammogramROIExtractionKernel</td>
+          <td style="text-align: right;">0</td>
+          <td style="text-align: right;"><a href="#BreastMammogramROIExtractionKernel">Details</a></td>
+          <td></td>
+<!--          <td></td> -->
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+
+    <!-- Give summary of all the cost tables -->
+<!--
+    <h2 id="CostTableSummary">
+       Cost Table Summary 
+    </h2>
+    <div style="margin-left: 40px;">
+    <table border="1">
+      <tbody>
+        <tr>
+          <td>Cost Table</td>
+          <td>Score [ps]</td>
+          <td>Stream Clock [MHz]</td>
+          <td>Setup Score [ps]</td>
+          <td>Hold Score [ps]</td>
+          <td>Errors [#]</td>
+          <td>Max Freq. [MHz]</td>
+          <td>Time Stamp</td>
+        </tr>
+        <tr>
+          <td style="text-align: center;">1</td>
+          <td style="text-align: right;">0</td>
+          <td style="text-align: right;">?</td>
+          <td style="text-align: right;"></td>
+          <td style="text-align: right;"></td>
+          <td style="text-align: right;"></td>
+          <td style="text-align: right;"></td>
+          <td style="text-align: right;"><small>?</small></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+-->
+
+
+
+    <!-- Give summary of all kernels -->
+
+    <h2 id="BreastMammogramROIExtractionKernel">
+              <a id="BreastMammogramROIExtractionKernelKernelLink" href="javascript:toggle('BreastMammogramROIExtractionKernelKernelContent', 'BreastMammogramROIExtractionKernelKernelLink');"><img src="images/minus.png"></img></a> Kernel BreastMammogramROIExtractionKernel 
+    </h2>
+    <div id="BreastMammogramROIExtractionKernelKernelContent" style="display: block">
+<!--
+    <div style="margin-left: 40px;">
+    <table border="1">
+      <tbody>
+        <tr>
+          <td>Cost Table</td>
+          <td>Max Delay [ns]</td>
+          <td>Max. Poss. Frq [MHz]</td>
+          <td>Req. Frq [MHz]</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+-->
+<h3>Non-Localized Paths</h3>
+	<div class="main" style="margin-left: 40px;">
+All paths passed.
+	</div>
+
+<h3>Localized Paths</h3>
+	<div class="main" style="margin-left: 40px;">
+All paths passed.
+	</div>
+</div>
+
+
+    <!-- Summary of all timing constraints -->
+    <h2 id="TimingConstraintSummary">
+       <a id="TimingConstraintSummaryLink" href="javascript:toggle('TimingConstraintSummaryContent', 'TimingConstraintSummaryLink');"><img src="images/plus.png"></img></a> Constraints Summary
+    </h2>
+    <div class="main" id="TimingConstraintSummaryContent" style="margin-left: 10px;display: none;">
+    <table class="display" id="overviewperiodconstraints">
+      <thead>
+        <tr>
+          <th rowspan="2" style="text-align: center;">Timing Constraint</th>
+          <th colspan="5" style="text-align: center;">ct1</th>
+        </tr>
+        <tr>
+          <th>Setup Errs. [#]</th>
+          <th>Hold Errs. [#]</th>
+          <th>Delta [MHz]</th>
+          <th>Min. [ns]</th>
+          <th>Target [ns]</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+
+              <td style="text-align: left;">cclk</td>
+
+
+	              <td style="text-align: center;">0</td>
+
+	              <td style="text-align: center;">0</td>
+	
+        	      <td style="text-align: center;">-</td>
+
+        	      <td style="text-align: center;">17.247</td>
+
+        	      <td style="text-align: center;">20.000</td>
+
+        </tr>
+        <tr>
+
+              <td style="text-align: left;">maxring_refclk</td>
+
+
+	              <td style="text-align: center;">0</td>
+
+	              <td style="text-align: center;">0</td>
+	
+        	      <td style="text-align: center;">-</td>
+
+        	      <td style="text-align: center;">1.250</td>
+
+        	      <td style="text-align: center;">4.000</td>
+
+        </tr>
+        <tr>
+
+              <td style="text-align: left;">n/a</td>
+
+
+	              <td style="text-align: center;">0</td>
+
+	              <td style="text-align: center;">0</td>
+	
+        	      <td style="text-align: center;">-</td>
+
+        	      <td style="text-align: center;"></td>
+
+        	      <td style="text-align: center;">? (1)</td>
+
+        </tr>
+        <tr>
+
+              <td style="text-align: left;">pcie_coreclkout</td>
+
+
+	              <td style="text-align: center;">0</td>
+
+	              <td style="text-align: center;">0</td>
+	
+        	      <td style="text-align: center;">-</td>
+
+        	      <td style="text-align: center;">2.409</td>
+
+        	      <td style="text-align: center;">4.000</td>
+
+        </tr>
+        <tr>
+
+              <td style="text-align: left;">refclk_pci_express</td>
+
+
+	              <td style="text-align: center;">0</td>
+
+	              <td style="text-align: center;">0</td>
+	
+        	      <td style="text-align: center;">-</td>
+
+        	      <td style="text-align: center;">3.819</td>
+
+        	      <td style="text-align: center;">10.000</td>
+
+        </tr>
+        <tr>
+
+              <td style="text-align: left;">STREAM_clkout0</td>
+
+
+	              <td style="text-align: center;">0</td>
+
+	              <td style="text-align: center;">0</td>
+	
+        	      <td style="text-align: center;">-</td>
+
+        	      <td style="text-align: center;">2.974</td>
+
+        	      <td style="text-align: center;">10.000</td>
+
+        </tr>
+<!--      </tbody>
+    </table>
+    <table class="display" id="overviewnonperiodconstraints">
+      <thead>
+        <tr>
+          <th rowspan="2" style="text-align: center;">Time Constraint</th>
+          <th colspan="2" style="text-align: center;">ct1</th>
+        </tr>
+        <tr>
+          <th>Setup Errors [#]</th>
+          <th>Hold Errors [#]</th>
+        </tr>
+      </thead>
+      <tbody>-->
+      </tbody>
+    </table>
+    </div>
+
+
+ 
+  </body>
+</html>

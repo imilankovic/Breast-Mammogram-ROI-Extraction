@@ -1,0 +1,438 @@
+Thu 16:41: PROGRESS: MaxCompiler version: 2014.2
+Thu 16:41: PROGRESS: Build "BreastMammogramROIExtraction" start time: Thu Apr 23 16:41:09 BST 2015
+Thu 16:41: PROGRESS: Main build process running as user imilankovic on host nxws26.office.maxeler.com
+Thu 16:41: INFO    : Loading build properties from bundled MaxCompiler_build.conf...
+Thu 16:41: INFO    : Loading default build properties from /network-raid/MaxCompiler_build.conf
+Thu 16:41: INFO    : Loading user build properties from: /home/imilankovic/.MaxCompiler_build_user.conf
+Thu 16:41: INFO    : No user-specified external build property file has been specified.
+Thu 16:41: INFO    : (Set environment variable MAXCOMPILER_BUILD_CONF_FILE to assign one)
+Thu 16:41: INFO    : Loading additional parameters from MAXCOMPILER_BUILD_CONF environment variable
+Thu 16:41: PROGRESS: Build location: /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_VECTIS_DFE_SIM
+Thu 16:41: PROGRESS: Detailed build log available in "_build.log"
+Thu 16:41: INFO    : Created build manager BreastMammogramROIExtraction (BreastMammogramROIExtraction_VECTIS_DFE_SIM Thu Apr 23 16:41:09 BST 2015). (16:41:09 23/04/15)
+Thu 16:41: INFO    : Working in dir: /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_VECTIS_DFE_SIM
+Thu 16:41: INFO    : Java class path (2 paths):
+Thu 16:41: INFO    : 	/home/imilankovic/workspace/BreastMammogramROIExtraction/EngineCode/bin
+Thu 16:41: INFO    : 	/network-raid/opt/maxcompiler-2014.2/lib/MaxCompiler.jar
+Thu 16:41: INFO    : Java process started by 'main' method in class 'com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager'.
+Thu 16:41: INFO    : Using /network-infrastructure/maxcompiler_core_cache/ for core-cache.
+Thu 16:41: INFO    : Using core-cache arbiter bluejet.office.maxeler.com:6189
+Thu 16:41: INFO    : Checking license files in directory: /network-raid/maxeler_licensing/licenses
+Thu 16:41: INFO    : All license signatures valid.
+Thu 16:41: INFO    : Backing-up source-files (old source files in build directory will be removed first)...
+Thu 16:41: INFO    : Source directories: /home/imilankovic/workspace/BreastMammogramROIExtraction/EngineCode/src:
+Thu 16:41: INFO    : Deleting directory: src
+Thu 16:41: INFO    : Copying source-files took 27.6401 ms
+Thu 16:41: PROGRESS: Instantiating manager
+Thu 16:41: INFO    : Deleting /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_VECTIS_DFE_SIM/scratch/BreastMammogramROIExtractionKernel.graphs
+Thu 16:41: PROGRESS: Instantiating kernel "BreastMammogramROIExtractionKernel"
+Thu 16:41: PROGRESS: Compiling manager (CPU I/O Only)
+Thu 16:41: INFO    : Manager Configuration:
+Thu 16:41: INFO    : 	ManagerConfiguration.allowNonMultipleTransitions = false                                                         [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.board = MAX3424A                                                                            [Init: null, init: MAX3424A]
+Thu 16:41: INFO    : 	ManagerConfiguration.build.buildEffort = MEDIUM                                                                  [Init: MEDIUM]
+Thu 16:41: INFO    : 	ManagerConfiguration.build.enableChipScopeInserter = false                                                       [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.build.enableTimingAnalysis = true                                                           [Init: true]
+Thu 16:41: INFO    : 	ManagerConfiguration.build.level = FULL_BUILD                                                                    [Init: FULL_BUILD]
+Thu 16:41: INFO    : 	ManagerConfiguration.build.mpprContinueAfterMeetingTiming = false                                                [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.build.mpprCtMax = 1                                                                         [Init: 1]
+Thu 16:41: INFO    : 	ManagerConfiguration.build.mpprCtMin = 1                                                                         [Init: 1]
+Thu 16:41: INFO    : 	ManagerConfiguration.build.mpprParallelism = 1                                                                   [Init: 1]
+Thu 16:41: INFO    : 	ManagerConfiguration.build.mpprRetryMissesThrshld = 0                                                            [Init: 0]
+Thu 16:41: INFO    : 	ManagerConfiguration.build.optGoal = BALANCED                                                                    [Init: BALANCED]
+Thu 16:41: INFO    : 	ManagerConfiguration.build.physSynthAsyncPipelining = AUTO                                                       [Init: AUTO]
+Thu 16:41: INFO    : 	ManagerConfiguration.build.physSynthCombLogic = AUTO                                                             [Init: AUTO]
+Thu 16:41: INFO    : 	ManagerConfiguration.build.physSynthCombLogicForArea = AUTO                                                      [Init: AUTO]
+Thu 16:41: INFO    : 	ManagerConfiguration.build.physSynthEffort = AUTO                                                                [Init: AUTO]
+Thu 16:41: INFO    : 	ManagerConfiguration.build.physSynthRegDuplication = AUTO                                                        [Init: AUTO]
+Thu 16:41: INFO    : 	ManagerConfiguration.build.physSynthRetiming = AUTO                                                              [Init: AUTO]
+Thu 16:41: INFO    : 	ManagerConfiguration.build.physicalSynthesis = false                                                             [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.buildTarget = DFE_SIM                                                                       [Init: null, init: DFE_SIM]
+Thu 16:41: INFO    : 	ManagerConfiguration.debug.chipscopeCaptureDepth = 4096                                                          [Init: 4096]
+Thu 16:41: INFO    : 	ManagerConfiguration.debug.fifoUnderOverFlowRegs = false                                                         [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.debug.memCtlDebugRegs = true                                                                [Init: true]
+Thu 16:41: INFO    : 	ManagerConfiguration.debug.memCtlExtraDebugRegs = false                                                          [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.debug.memMarginingSupport = false                                                           [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.debug.memPhyDebugRegister = NONE                                                            [Init: NONE]
+Thu 16:41: INFO    : 	ManagerConfiguration.debug.memPllLockDebugRegs = true                                                            [Init: true]
+Thu 16:41: INFO    : 	ManagerConfiguration.debug.streamStatus = false                                                                  [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.debug.streamStatusChecksums = false                                                         [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.addressGeneratorsInSlowClock = false                                                   [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.arbitrationMode = ROUND_ROBIN                                                          [Init: ROUND_ROBIN]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.burstSize = 8                                                                          [Init: 8]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.cmdFifoInReg = false                                                                   [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.cmdFifoLutRam = false                                                                  [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.cmdFifoRegInRam = true                                                                 [Init: true]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.cmdFifoSize = 31                                                                       [Init: 31]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.commandEchoModeEnabled = false                                                         [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.commandEchoModeFifoDepth = 512                                                         [Init: 512]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.commandEchoModeStreamAlmostEmptyLatency = 792                                          [Init: 792]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.commandEchoModeStreamAlmostEmptyLatency = 8                                            [Init: 8]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.commandEchoModeStreamStallLatency = 8                                                  [Init: 8]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.dataFifoDepth = 512                                                                    [Init: 512]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.dataFifoLutRam = false                                                                 [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.dataFifoWidth = 792                                                                    [Init: 792]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.eccMode = false                                                                        [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.fabricDataFifoReg = true                                                               [Init: true]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.fabricRdDataFifoReg = false                                                            [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.flagSupport = false                                                                    [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.highPrioStream = false                                                                 [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.max2CompatMode = false                                                                 [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.max4m_GALAVA_MCP_UseRefClk = false                                                     [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.max4m_MAIA_MCP_UseRefClk = false                                                       [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.max4qrateMode = false                                                                  [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.memCmdIncSize = 8                                                                      [Init: 8]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.memCmdStartAddrSize = 32                                                               [Init: 32]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.onCardMemFreq = 303.0                                                                  [Init: 0.0, change: 303.0]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.parEccDebugStream = false                                                              [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.parityEccWidth = 0                                                                     [Init: 0]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.parityMode = false                                                                     [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.perdqsPhaseDetect = false                                                              [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.dram.performanceMode = true                                                                 [Init: true]
+Thu 16:41: INFO    : 	ManagerConfiguration.enableMPCX = false                                                                          [Init: false, init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.maxring.maxringConnections = []                                                             [Init: []]
+Thu 16:41: INFO    : 	ManagerConfiguration.maxring.maxringNumLanes = {MAXRING_LITE_A=1, MAXRING_B=2, MAXRING_LITE_B=1, MAXRING_A=2}    [Init: {}]
+Thu 16:41: INFO    : 	ManagerConfiguration.multiCycleMappedMemoryBus = false                                                           [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.network.qsfpBotMode = QSFP_OFF                                                              [Init: QSFP_OFF]
+Thu 16:41: INFO    : 	ManagerConfiguration.network.qsfpMidMode = QSFP_OFF                                                              [Init: QSFP_OFF]
+Thu 16:41: INFO    : 	ManagerConfiguration.network.qsfpTopMode = QSFP_OFF                                                              [Init: QSFP_OFF]
+Thu 16:41: INFO    : 	ManagerConfiguration.pcie.numPCIeLanes = 0                                                                       [Init: 0]
+Thu 16:41: INFO    : 	ManagerConfiguration.pcie.pcieFastClock = false                                                                  [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.pcie.streamFromHostMaxNum = 8                                                               [Init: 0, change: 8]
+Thu 16:41: INFO    : 	ManagerConfiguration.pcie.streamToHostMaxNum = 8                                                                 [Init: 0, change: 8]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.boardModel = MAX3424A                                                               [Init: null, change: MAX3424A]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.ddr3Enable = false                                                                  [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.ddr3Frq = 303.0                                                                     [Init: 400.0, change: 303.0]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.ddr3Qmode = false                                                                   [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.disableMultiplePersona = true                                                       [Init: true]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.dynamic_scaling = false                                                             [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.maxRingLocal = false                                                                [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.maxRingOptical = false                                                              [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.maxringDataRate = 2500.0                                                            [Init: 2500.0]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.maxringOpticalDataRate = 10000.0                                                    [Init: 10000.0]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.mode = InitMode                                                                     [Init: InitMode]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.networkPTP = OFF                                                                    [Init: OFF]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.networkQSFP_BOT = QSFP_OFF                                                          [Init: QSFP_OFF]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.networkQSFP_MID = QSFP_OFF                                                          [Init: QSFP_OFF]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.networkQSFP_TOP = QSFP_OFF                                                          [Init: QSFP_OFF]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.panMaxRingA = false                                                                 [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.panMaxRingB = false                                                                 [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.personaInterfaceVersion = 1                                                         [Init: 1]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.qdr2Enable = false                                                                  [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.qdr2Frq = 550.0                                                                     [Init: 550.0]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.streamClks = 1                                                                      [Init: 1]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.streamFrq = [100.0]                                                                 [Init: [150.0], change: [100.0]]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.streamPs = [0]                                                                      [Init: [0]]
+Thu 16:41: INFO    : 	ManagerConfiguration.persona.usePCIeGen1 = false                                                                 [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.simulation.nativeFloatingPoint = false                                                      [Init: false]
+Thu 16:41: INFO    : 	ManagerConfiguration.streamClockFrq = 100                                                                        [Init: 100]
+Thu 16:41: INFO    : 	ManagerConfiguration.useLegacyStreamFIFOs = false                                                                [Init: false]
+Thu 16:41: INFO    : 
+Thu 16:41: INFO    :  -- 
+Thu 16:41: PROGRESS: 
+Thu 16:41: PROGRESS: Compiling kernel "BreastMammogramROIExtractionKernel"
+Thu 16:41: INFO    : Configuration:
+Thu 16:41: INFO    : 	KernelConfiguration.additionalInputPipelining = 64                                          [Init: 64]
+Thu 16:41: INFO    : 	KernelConfiguration.allowDSPCascading = true                                                [Init: true]
+Thu 16:41: INFO    : 	KernelConfiguration.allowInputsOutputsBeforeFlushNode = false                               [Init: false]
+Thu 16:41: INFO    : 	KernelConfiguration.allowZeroLatencyNodeHold = false                                        [Init: false]
+Thu 16:41: INFO    : 	KernelConfiguration.board = MAX3424A                                                        [Init: MAX2116B, change: MAX3424A]
+Thu 16:41: INFO    : 	KernelConfiguration.bramBitsThreshold = 2080                                                [Init: 2080]
+Thu 16:41: INFO    : 	KernelConfiguration.buildTarget = MAXCOMPILERSIM_HOST_DRIVEN                                [Init: NONE, change: MAXCOMPILERSIM_HOST_DRIVEN]
+Thu 16:41: INFO    : 	KernelConfiguration.cePipelining = 2                                                        [Init: 2]
+Thu 16:41: INFO    : 	KernelConfiguration.clockPhaseBalanceThreshold = 0.1                                        [Init: 0.1]
+Thu 16:41: INFO    : 	KernelConfiguration.clockPhasingRetries = 50                                                [Init: 50]
+Thu 16:41: INFO    : 	KernelConfiguration.dumpNeighboursString =                                                  [Init: ]
+Thu 16:41: INFO    : 	KernelConfiguration.enableCeReplication = true                                              [Init: true]
+Thu 16:41: INFO    : 	KernelConfiguration.enableClockPhasePartitioning = false                                    [Init: false]
+Thu 16:41: INFO    : 	KernelConfiguration.enableDebugIOControlRegs = true                                         [Init: true]
+Thu 16:41: INFO    : 	KernelConfiguration.enableDummyBuild = false                                                [Init: false]
+Thu 16:41: INFO    : 	KernelConfiguration.enableKernelProfiler = false                                            [Init: false]
+Thu 16:41: INFO    : 	KernelConfiguration.enablePipelinedComputeController = false                                [Init: false]
+Thu 16:41: INFO    : 	KernelConfiguration.enableShadowRegister = false                                            [Init: false]
+Thu 16:41: INFO    : 	KernelConfiguration.enableSmartKernelControl = false                                        [Init: false]
+Thu 16:41: INFO    : 	KernelConfiguration.fifoSrlRegisterStages = 1                                               [Init: 1]
+Thu 16:41: INFO    : 	KernelConfiguration.flushOnInputDataCongtiguous = false                                     [Init: false]
+Thu 16:41: INFO    : 	KernelConfiguration.hardwareDebugDepth = 512                                                [Init: 512]
+Thu 16:41: INFO    : 	KernelConfiguration.hwHierarchyMode = UNSET                                                 [Init: UNSET]
+Thu 16:41: INFO    : 	KernelConfiguration.latencyAnnotation = false                                               [Init: false]
+Thu 16:41: INFO    : 	KernelConfiguration.latencyAnnotationIOs =                                                  [Init: null]
+Thu 16:41: INFO    : 	KernelConfiguration.maxCoalescedFifoWidth = 2147483647                                      [Init: 2147483647]
+Thu 16:41: INFO    : 	KernelConfiguration.maxPreAdderFanOut = 1                                                   [Init: 1]
+Thu 16:41: INFO    : 	KernelConfiguration.netlistMode = false                                                     [Init: false]
+Thu 16:41: INFO    : 	KernelConfiguration.numPhotonStateMachines = 1                                              [Init: 1]
+Thu 16:41: INFO    : 	KernelConfiguration.optimizations.ceCounterRegisterDuplication = 1                          [Init: 1]
+Thu 16:41: INFO    : 	KernelConfiguration.optimizations.conditionalArithmetic = false                             [Init: true, Init after BuildTarget change: false]
+Thu 16:41: INFO    : 	KernelConfiguration.optimizations.counterChainWrapPipelining = 0                            [Init: 0]
+Thu 16:41: INFO    : 	KernelConfiguration.optimizations.dspAddChain = OPTIMISE_IGNORE_PREADDER                    [Init: null, Init after BuildTarget change: OPTIMISE_IGNORE_PREADDER]
+Thu 16:41: INFO    : 	KernelConfiguration.optimizations.enableActiveFanoutReduction = false                       [Init: false]
+Thu 16:41: INFO    : 	KernelConfiguration.optimizations.enableBUFGCE = false                                      [Init: false]
+Thu 16:41: INFO    : 	KernelConfiguration.optimizations.enableBetterInputRegistering = false                      [Init: false]
+Thu 16:41: INFO    : 	KernelConfiguration.optimizations.enableBetterRegistering = false                           [Init: false]
+Thu 16:41: INFO    : 	KernelConfiguration.optimizations.enableFIFOCoalescingAcrossPlacementConstraints = false    [Init: false]
+Thu 16:41: INFO    : 	KernelConfiguration.optimizations.enableFifoCoalescing = true                               [Init: true]
+Thu 16:41: INFO    : 	KernelConfiguration.optimizations.enableFullPrecisionBinaryOpConstants = false              [Init: false]
+Thu 16:41: INFO    : 	KernelConfiguration.optimizations.enableIntegratedRounding = false                          [Init: false]
+Thu 16:41: INFO    : 	KernelConfiguration.optimizations.enableMappedMemoryHostReadBack = true                     [Init: true]
+Thu 16:41: INFO    : 	KernelConfiguration.optimizations.enableMultiCycleReset = false                             [Init: false]
+Thu 16:41: INFO    : 	KernelConfiguration.optimizations.enablePowerTwoFloatMult = true                            [Init: true]
+Thu 16:41: INFO    : 	KernelConfiguration.optimizations.enableRedundantNodeDeletion = true                        [Init: true]
+Thu 16:41: INFO    : 	KernelConfiguration.optimizations.enableStateMachineRegisterMerging = true                  [Init: true]
+Thu 16:41: INFO    : 	KernelConfiguration.optimizations.inputFlushDistanceFactor = 0                              [Init: 0]
+Thu 16:41: INFO    : 	KernelConfiguration.optimizations.minimumStaticFIFOSplitDepth = 1                           [Init: 1]
+Thu 16:41: INFO    : 	KernelConfiguration.optimizations.optimizationTechnique = DEFAULT                           [Init: DEFAULT]
+Thu 16:41: INFO    : 	KernelConfiguration.optimizations.triAdd = false                                            [Init: true, Init after BuildTarget change: false]
+Thu 16:41: INFO    : 	KernelConfiguration.partialReconfBlockName =                                                [Init: ]
+Thu 16:41: INFO    : 	KernelConfiguration.partialReconfMode = false                                               [Init: false]
+Thu 16:41: INFO    : 	KernelConfiguration.partialReconfTemplate = false                                           [Init: false]
+Thu 16:41: INFO    : 	KernelConfiguration.replicateNodeCeLog2NumPartitions = 0                                    [Init: 0]
+Thu 16:41: INFO    : 	KernelConfiguration.romBRAMBitsThreshold = 2080                                             [Init: 2080]
+Thu 16:41: INFO    : 	KernelConfiguration.simulation.ramAddressCollisionBehaviour = EXCEPTION                     [Init: EXCEPTION]
+Thu 16:41: INFO    : 	KernelConfiguration.simulation.ramOutOfBoundsAccessBehaviour = EXCEPTION                    [Init: EXCEPTION]
+Thu 16:41: INFO    : 	KernelConfiguration.simulation.simProgressMessageFrequency = 0                              [Init: 0]
+Thu 16:41: INFO    : 
+Thu 16:41: INFO    :  -- 
+Thu 16:41: INFO    : Writing current graph to: BreastMammogramROIExtraction-BreastMammogramROIExtractionKernel-original.pxg
+Thu 16:41: INFO    : Running kernel graph-pass 'GeneratePXG'.
+Thu 16:41: INFO    : Graph-pass 'GeneratePXG' took 230.362 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Thu 16:41: INFO    : Graph-pass 'MarkConstantPass' took 2.37383 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'ReachabilityPass'.
+Thu 16:41: INFO    : Graph-pass 'ReachabilityPass' took 5.98952 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'FindInputsLeadingToFlush'.
+Thu 16:41: INFO    : Graph-pass 'FindInputsLeadingToFlush' took 157.425 탎 (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'CheckForStatefulToFlushViolations'.
+Thu 16:41: INFO    : Graph-pass 'CheckForStatefulToFlushViolations' took 358.585 탎 (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'CheckForInputToFlushViolations'.
+Thu 16:41: INFO    : Graph-pass 'CheckForInputToFlushViolations' took 1.14188 ms (1 iterations)
+Thu 16:41: INFO    : Deleting directory: neighbours
+Thu 16:41: INFO    : Running Photon pre-schedule graph optimisations
+Thu 16:41: INFO    : Running kernel graph-pass 'AlignOrEradicatePrintfs'.
+Thu 16:41: INFO    : Graph-pass 'AlignOrEradicatePrintfs' took 250.023 탎 (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'FoldConstantsPass'.
+Thu 16:41: INFO    : Graph-pass 'FoldConstantsPass' took 1.06035 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'OptimiseNodesPass'.
+Thu 16:41: INFO    : Graph-pass 'OptimiseNodesPass' took 1.24163 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'DeleteRedundantNodes'.
+Thu 16:41: INFO    : Graph-pass 'DeleteRedundantNodes' took 543.600 탎 (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'DSPMultiplyAddExtractionPass'.
+Thu 16:41: INFO    : Optimized 0 sub-graphs into DSP multiply/add chains (Virtex5 mode).
+Thu 16:41: INFO    : Graph-pass 'DSPMultiplyAddExtractionPass' took 80.1060 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'PO2FPMultOptimiser'.
+Thu 16:41: INFO    : Graph-pass 'PO2FPMultOptimiser' took 728.980 탎 (1 iterations)
+Thu 16:41: INFO    : Running Photon simulation preparation
+Thu 16:41: INFO    : Running kernel graph-pass 'PrepareSimulationPass'.
+Thu 16:41: INFO    : Graph-pass 'PrepareSimulationPass' took 640.941 탎 (1 iterations)
+Thu 16:41: INFO    : Logging Photon stats to: BreastMammogramROIExtractionKernel_photon_stats.csv
+Thu 16:41: INFO    : Deleting /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_VECTIS_DFE_SIM/scratch/BreastMammogramROIExtractionKernel_photon_stats.csv
+Thu 16:41: INFO    : Running kernel graph-pass 'StatsPass'.
+Thu 16:41: INFO    : Graph-pass 'StatsPass' took 7.47939 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'CollectNumericExceptions'.
+Thu 16:41: INFO    : Graph-pass 'CollectNumericExceptions' took 626.074 탎 (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'StreamOffsetDivExpand'.
+Thu 16:41: INFO    : Graph-pass 'StreamOffsetDivExpand' took 454.955 탎 (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'FindIllegalLoops'.
+Thu 16:41: INFO    : Graph-pass 'FindIllegalLoops' took 5.97980 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Thu 16:41: INFO    : Graph-pass 'MarkConstantPass' took 1.18511 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'ScheduleVariables'.
+Thu 16:41: INFO    : Graph-pass 'ScheduleVariables' took 8.85116 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'SubstituteEqPlaceholders'.
+Thu 16:41: INFO    : Graph-pass 'SubstituteEqPlaceholders' took 62.9928 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'ScheduleApplier'.
+Thu 16:41: INFO    : Graph-pass 'ScheduleApplier' took 8.93120 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Thu 16:41: INFO    : Graph-pass 'MarkConstantPass' took 1.10596 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'ScheduleDumper'.
+Thu 16:41: INFO    : Graph-pass 'ScheduleDumper' took 8.65657 ms (1 iterations)
+Thu 16:41: INFO    : Running Photon post-schedule graph optimisations (pass 1)
+Thu 16:41: INFO    : Running kernel graph-pass 'TapFIFOsPass'.
+Thu 16:41: INFO    : Graph-pass 'TapFIFOsPass' took 3.94704 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'FoldFIFOsPass'.
+Thu 16:41: INFO    : Graph-pass 'FoldFIFOsPass' took 1.43617 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Thu 16:41: INFO    : Graph-pass 'MarkConstantPass' took 1.17562 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'ValidateFIFOs'.
+Thu 16:41: INFO    : Graph-pass 'ValidateFIFOs' took 533.641 탎 (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Thu 16:41: INFO    : Graph-pass 'MarkConstantPass' took 1.22217 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'ScheduleDumper'.
+Thu 16:41: INFO    : Graph-pass 'ScheduleDumper' took 6.86569 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Thu 16:41: INFO    : Graph-pass 'MarkConstantPass' took 1.15736 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'ScheduleConstants'.
+Thu 16:41: INFO    : Running command: cbc "BreastMammogramROIExtractionKernel_schedule_C.mps.gz" -threads 4 -solve  -printi csv -solu "BreastMammogramROIExtractionKernel_schedule_C.csv" > "BreastMammogramROIExtractionKernel_schedule_C.stdout.log"
+Thu 16:41: INFO    : Checking for file hash changes...
+Thu 16:41: INFO    : No changes.
+Thu 16:41: INFO    : Optimum found: 6654
+Thu 16:41: INFO    : Graph-pass 'ScheduleConstants' took 231.608 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Thu 16:41: INFO    : Graph-pass 'MarkConstantPass' took 1.13745 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'ScheduleDumper'.
+Thu 16:41: INFO    : Graph-pass 'ScheduleDumper' took 7.40843 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'SubstituteEqPlaceholders'.
+Thu 16:41: INFO    : OffsetAutoLoop sizes:
+Thu 16:41: INFO    :   loopLength = 3
+Thu 16:41: INFO    : Graph-pass 'SubstituteEqPlaceholders' took 45.9679 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'RemoveDistMeasurementNodes'.
+Thu 16:41: INFO    : Graph-pass 'RemoveDistMeasurementNodes' took 45.3550 탎 (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'ScheduleApplier'.
+Thu 16:41: INFO    : Graph-pass 'ScheduleApplier' took 73.0935 ms (1 iterations)
+Thu 16:41: INFO    : Maximum stream latency for kernel 'BreastMammogramROIExtractionKernel': 3072
+Thu 16:41: INFO    : Using user logic for flush.
+Thu 16:41: INFO    : Running Photon post-schedule graph optimisations (pass 2)
+Thu 16:41: INFO    : Running kernel graph-pass 'TapFIFOsPass'.
+Thu 16:41: INFO    : Graph-pass 'TapFIFOsPass' took 53.6222 ms (2 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'FoldFIFOsPass'.
+Thu 16:41: INFO    : Graph-pass 'FoldFIFOsPass' took 2.76445 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Thu 16:41: INFO    : Graph-pass 'MarkConstantPass' took 1.57605 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'ScheduleAsserter'.
+Thu 16:41: INFO    : Graph-pass 'ScheduleAsserter' took 4.93718 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'ReplaceEvalStreamOffsetNodes'.
+Thu 16:41: INFO    : Graph-pass 'ReplaceEvalStreamOffsetNodes' took 36.6161 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'FIFOReport'.
+Thu 16:41: INFO    : Graph-pass 'FIFOReport' took 9.98567 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'StatsPass'.
+Thu 16:41: INFO    : Graph-pass 'StatsPass' took 6.77486 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'RemoveUntypedConstants'.
+Thu 16:41: INFO    : Graph-pass 'RemoveUntypedConstants' took 55.9542 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'VariableSizeMappedRegInserter'.
+Thu 16:41: INFO    : Graph-pass 'VariableSizeMappedRegInserter' took 594.397 탎 (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Thu 16:41: INFO    : Graph-pass 'MarkConstantPass' took 1.23718 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'MakeMaxFileNodeData'.
+Thu 16:41: INFO    : Graph-pass 'MakeMaxFileNodeData' took 15.4770 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'MoveFanoutRegsForwards'.
+Thu 16:41: INFO    : Graph-pass 'MoveFanoutRegsForwards' took 572.189 탎 (1 iterations)
+Thu 16:41: INFO    : Optimization report for Kernel 'BreastMammogramROIExtractionKernel'.
+Thu 16:41: INFO    : Enabled optimizations:
+Thu 16:41: INFO    : 	DSP-Multiplication
+Thu 16:41: INFO    : 	Power-of-2 Floating Point
+Thu 16:41: INFO    : Creating a preliminary MaxCompilerDesignData.dat. (@ CoreCompile BreastMammogramROIExtractionKernel)
+Thu 16:41: INFO    : Deleting /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_VECTIS_DFE_SIM/scratch/MaxCompilerDesignData.dat
+Thu 16:41: INFO    : Total compilation of 'BreastMammogramROIExtractionKernel' took 1.42365 s.
+Thu 16:41: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Thu 16:41: INFO    : Graph-pass 'MarkConstantPass' took 1.10778 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'MaxConstantLatency'.
+Thu 16:41: INFO    : Graph-pass 'MaxConstantLatency' took 2.73141 ms (1 iterations)
+Thu 16:41: INFO    : Running kernel graph-pass 'SimCodeGraphPass'.
+Thu 16:41: INFO    : Graph-pass 'SimCodeGraphPass' took 45.5572 ms (1 iterations)
+Thu 16:41: INFO    : Writing current graph to: BreastMammogramROIExtraction-BreastMammogramROIExtractionKernel-final-simulation.pxg
+Thu 16:41: INFO    : Running kernel graph-pass 'GeneratePXG'.
+Thu 16:41: INFO    : Graph-pass 'GeneratePXG' took 119.325 ms (1 iterations)
+Thu 16:41: INFO    : Deleting /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_VECTIS_DFE_SIM/scratch/Manager_BreastMammogramROIExtraction.graphs
+Thu 16:41: INFO    : Running manager compiler graph-pass: GenerateMXGInfo
+Thu 16:41: INFO    : Running manager compiler graph-pass: ScheduleStallLatency
+Thu 16:41: INFO    : Running manager compiler graph-pass: ClockWidthAssignment
+Thu 16:41: INFO    : Running manager compiler graph-pass: InsertDualAspectLogic
+Thu 16:41: INFO    : Running manager compiler graph-pass: ClockWidthAssignment
+Thu 16:41: INFO    : Running manager compiler graph-pass: InsertPullPushAdapter
+Thu 16:41: INFO    : Running manager compiler graph-pass: ClockWidthAssignment
+Thu 16:41: INFO    : Running manager compiler graph-pass: InsertStreamFifos
+Thu 16:41: INFO    : Running manager compiler graph-pass: ClockWidthAssignment
+Thu 16:41: INFO    : Running manager compiler graph-pass: InsertStreamStatus
+Thu 16:41: INFO    : Running manager compiler graph-pass: InsertChipscope
+Thu 16:41: INFO    : Inserted 0 chipscope manager nodes.
+Thu 16:41: INFO    : Running manager compiler graph-pass: ClockWidthAssignment
+Thu 16:41: INFO    : Running manager compiler graph-pass: ReportClockAssignments
+Thu 16:41: INFO    : Running manager compiler graph-pass: BuildSoftwareSim
+Thu 16:41: INFO    : Mapped register report:
+Thu 16:41: INFO    : 	0	io_image_pixel_force_disabled	1bytes
+Thu 16:41: INFO    : 	1	width	4bytes
+Thu 16:41: INFO    : 	5	height	4bytes
+Thu 16:41: INFO    : 	9	black	4bytes
+Thu 16:41: INFO    : 	d	threshold	4bytes
+Thu 16:41: INFO    : 	11	io_output_force_disabled	1bytes
+Thu 16:41: INFO    : 	12	run_cycle_count	6bytes
+Thu 16:41: INFO    : 	18	current_run_cycle_count	6bytes
+Thu 16:41: INFO    : 	1e	dbg_ctld_almost_empty	1bytes
+Thu 16:41: INFO    : 	1f	dbg_ctld_done	1bytes
+Thu 16:41: INFO    : 	20	dbg_ctld_empty	1bytes
+Thu 16:41: INFO    : 	21	dbg_ctld_read	1bytes
+Thu 16:41: INFO    : 	22	dbg_ctld_read_pipe_dbg	1bytes
+Thu 16:41: INFO    : 	23	dbg_ctld_request	1bytes
+Thu 16:41: INFO    : 	24	dbg_done_out	1bytes
+Thu 16:41: INFO    : 	25	dbg_fill_level	2bytes
+Thu 16:41: INFO    : 	27	dbg_flush_level	2bytes
+Thu 16:41: INFO    : 	29	dbg_flush_start	1bytes
+Thu 16:41: INFO    : 	2a	dbg_flush_start_level	2bytes
+Thu 16:41: INFO    : 	2c	dbg_flushing	1bytes
+Thu 16:41: INFO    : 	2d	dbg_full_level	2bytes
+Thu 16:41: INFO    : 	2f	dbg_out_stall	1bytes
+Thu 16:41: INFO    : 	30	dbg_out_valid	1bytes
+Thu 16:41: INFO    : 	31	dbg_stall_vector	1bytes
+Thu 16:41: INFO    : 	32	ifpga_ctrl	1bytes
+Thu 16:41: INFO    : 	33	SFA_FORWARD_EN	4bytes
+Thu 16:41: INFO    : Mapped register chain length = 55
+Thu 16:41: INFO    : Mapped register efficiency = 0.75 (328 / 440 bits)
+Thu 16:41: INFO    : Mapped memory report:
+Thu 16:41: INFO    : 	No mapped memories in this design.
+Thu 16:41: INFO    : Running manager compiler graph-pass: GenerateMXGInfo
+Thu 16:41: INFO    : Running manager compiler graph-pass: GenerateSlicHostCode
+Thu 16:41: INFO    : Generating SLIC interface information
+Thu 16:41: INFO    : Generating SLIC code for interface 'default'
+Thu 16:41: INFO    : Skipping blacklisted scalar parameter 'BreastMammogramROIExtractionKernel.current_run_cycle_count'
+Thu 16:41: INFO    : Interface 'default' depends on parameter 'black'
+Thu 16:41: INFO    : Interface 'default' depends on parameter 'height'
+Thu 16:41: INFO    : Interface 'default' depends on parameter 'length'
+Thu 16:41: INFO    : Interface 'default' depends on parameter 'threshold'
+Thu 16:41: INFO    : Interface 'default' depends on parameter 'width'
+Thu 16:41: INFO    : Interface 'default' depends on parameter 'BreastMammogramROIExtractionKernel_loopLength'
+Thu 16:41: INFO    : Generating XML description for Maxfile
+Thu 16:41: INFO    : Generating XML description for mode 'default'
+Thu 16:41: INFO    : Skipping blacklisted scalar parameter 'BreastMammogramROIExtractionKernel.current_run_cycle_count'
+Thu 16:41: INFO    : Interface 'default' depends on parameter 'black'
+Thu 16:41: INFO    : Interface 'default' depends on parameter 'height'
+Thu 16:41: INFO    : Interface 'default' depends on parameter 'length'
+Thu 16:41: INFO    : Interface 'default' depends on parameter 'threshold'
+Thu 16:41: INFO    : Interface 'default' depends on parameter 'width'
+Thu 16:41: INFO    : Interface 'default' depends on parameter 'BreastMammogramROIExtractionKernel_loopLength'
+Thu 16:41: INFO    : Adding SLIC sections to the maxfile
+Thu 16:41: INFO    : Adding user files to the maxfile
+Thu 16:41: INFO    : Generating SLIC include file
+Thu 16:41: INFO    : Done generating SLIC interface information
+Thu 16:41: PROGRESS: Running back-end simulation build (3 phases)
+Thu 16:41: PROGRESS: (1/3) - Prepare MaxFile Data (GenerateMaxFileDataFile)
+Thu 16:41: INFO    : Build pass 'GenerateMaxFileDataFile' took 37.7784 ms.
+Thu 16:41: PROGRESS: (2/3) - Compile Simulation Modules (SimCompilePass)
+Thu 16:41: INFO    : Running command: make -j2
+Thu 16:41: INFO    : Checking for file hash changes...
+Thu 16:41: INFO    : Hash changed for file: '../../MaxCompilerDesignData.dat'
+Thu 16:41: INFO    : /network-raid/opt/maxcompiler-2014.2/lib/gcc/bin/g++ -c -I/usr/include/x86_64-linux-gnu -fPIC -D__USE_XOPEN2K8 -O3  -I. -I/network-raid/opt/maxcompiler-2014.2/lib/boost/include -I/network-raid/opt/maxcompiler-2014.2/lib/maxeleros-sim/include -I/network-raid/opt/maxcompiler-2014.2/lib/lwip_sim -I/network-raid/opt/maxcompiler-2014.2/lib/lwip_sim/include -I/network-raid/opt/maxcompiler-2014.2/lib/lwip_sim/include/arch -I/network-raid/opt/maxcompiler-2014.2/lib/lwip_sim/include/ipv4  -DHAVE_KERNELS -DMAXFILE_INC="../../MaxCompilerDesignData.dat" -g0  -DSLIC_NO_DECLARATIONS   -O0 -DOPTIMIZATION_LEVEL=0 -x c++-header \
+Thu 16:41: INFO    : 		-o stdsimheader.h.gch/O0_stdsimheader.h.gch stdsimheader.h
+Thu 16:41: INFO    : /network-raid/opt/maxcompiler-2014.2/lib/gcc/bin/g++ -c -I/usr/include/x86_64-linux-gnu -fPIC -D__USE_XOPEN2K8 -O3  -I. -I/network-raid/opt/maxcompiler-2014.2/lib/boost/include -I/network-raid/opt/maxcompiler-2014.2/lib/maxeleros-sim/include -I/network-raid/opt/maxcompiler-2014.2/lib/lwip_sim -I/network-raid/opt/maxcompiler-2014.2/lib/lwip_sim/include -I/network-raid/opt/maxcompiler-2014.2/lib/lwip_sim/include/arch -I/network-raid/opt/maxcompiler-2014.2/lib/lwip_sim/include/ipv4  -DHAVE_KERNELS -DMAXFILE_INC="../../MaxCompilerDesignData.dat" -g0  -DSLIC_NO_DECLARATIONS   -fno-implicit-templates -O2 -DOPTIMIZATION_LEVEL=2 -x c++-header \
+Thu 16:41: INFO    : 		-o stdsimheader.h.gch/NoTplInst_O2_stdsimheader.h.gch stdsimheader.h
+Thu 16:41: INFO    : make BreastMammogramROIExtraction.so
+Thu 16:41: INFO    : make[1]: Entering directory `/home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_VECTIS_DFE_SIM/scratch/software-sim/build'
+Thu 16:41: INFO    : /network-raid/opt/maxcompiler-2014.2/lib/gcc/bin/g++ -c -I/usr/include/x86_64-linux-gnu -fPIC -D__USE_XOPEN2K8 -O3  -I. -I/network-raid/opt/maxcompiler-2014.2/lib/boost/include -I/network-raid/opt/maxcompiler-2014.2/lib/maxeleros-sim/include -I/network-raid/opt/maxcompiler-2014.2/lib/lwip_sim -I/network-raid/opt/maxcompiler-2014.2/lib/lwip_sim/include -I/network-raid/opt/maxcompiler-2014.2/lib/lwip_sim/include/arch -I/network-raid/opt/maxcompiler-2014.2/lib/lwip_sim/include/ipv4  -DHAVE_KERNELS -DMAXFILE_INC="../../MaxCompilerDesignData.dat" -g0  -DSLIC_NO_DECLARATIONS   -O0 -DOPTIMIZATION_LEVEL=0 -o objdir/max_msi.O0.o max_msi.cpp
+Thu 16:41: INFO    : /network-raid/opt/maxcompiler-2014.2/lib/gcc/bin/g++ -I/usr/include/x86_64-linux-gnu -fPIC -D__USE_XOPEN2K8 -O3  -I. -I/network-raid/opt/maxcompiler-2014.2/lib/boost/include -I/network-raid/opt/maxcompiler-2014.2/lib/maxeleros-sim/include -I/network-raid/opt/maxcompiler-2014.2/lib/lwip_sim -I/network-raid/opt/maxcompiler-2014.2/lib/lwip_sim/include -I/network-raid/opt/maxcompiler-2014.2/lib/lwip_sim/include/arch -I/network-raid/opt/maxcompiler-2014.2/lib/lwip_sim/include/ipv4  -DHAVE_KERNELS -DMAXFILE_INC="../../MaxCompilerDesignData.dat" -g0  -DSLIC_NO_DECLARATIONS   -MM -MP -MT objdir/max_msi.O0.o \
+Thu 16:41: INFO    : 		max_msi.cpp > objdir/max_msi.O0.d
+Thu 16:41: INFO    : /network-raid/opt/maxcompiler-2014.2/lib/gcc/bin/g++ -fPIC -shared -B/usr/lib/x86_64-linux-gnu -L/network-raid/opt/maxcompiler-2014.2/lib/boost/lib -lboost_thread -lboost_system -lboost_filesystem -lrt -pthread -O2 -s  -o BreastMammogramROIExtraction.so objdir/BreastMammogramROIExtractionKernel_exec0.NoTplInst.O2.o objdir/BreastMammogramROIExtractionKernel.O0.o objdir/BreastMammogramROIExtractionKernel_Templates.O2.o objdir/max_msi.O0.o StructToGroupDummy.o Mux.o DualAspectMux.o Demux.o Fanout.o CapRegs.o IFPGARegs.o ChecksumMem.o PCIe.o KernelManagerBlockSync.o DualAspectReg.o PullPushAdapter.o FilePullSource.o max_shared_fifo.o SharedFIFO.o Fifos.o FilePushSink.o SimTerminator.o Watch.o StreamStatus.o RunLengthExpander.o ManagerBlock.o MappedElements.o ManagerSync.o PullSync.o PushSync.o DynamicVarUInt.o SimException.o DebugStreams.o AddressGenerator.o MemoryControllerPro.o MemoryControllerRAM.o MemoryControllerCommand.o MemoryControllerStreams.o MemoryControllerConfig.o TCP.o Ethernet.o Timestamp.o /network-raid/opt/maxcompiler-2014.2/lib/lwip_sim/lib/liblwip.a
+Thu 16:41: INFO    : make[1]: Leaving directory `/home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_VECTIS_DFE_SIM/scratch/software-sim/build'
+Thu 16:41: INFO    : Build pass 'SimCompilePass' took 14.3737 s.
+Thu 16:41: PROGRESS: (3/3) - Generate MaxFile (AddSimObjectToMaxFilePass)
+Thu 16:41: INFO    : Build pass 'AddSimObjectToMaxFilePass' took 489.570 ms.
+Thu 16:41: INFO    : Final result files after build: 
+Thu 16:41: INFO    : Running command: ln -sf "../scratch/BreastMammogramROIExtraction-BreastMammogramROIExtractionKernel-original.pxg"
+Thu 16:41: INFO    : BreastMammogramROIExtraction-BreastMammogramROIExtractionKernel-original.pxg (BuildFilePXG)
+Thu 16:41: INFO    : Running command: ln -sf "../scratch/BreastMammogramROIExtractionKernel_Configuration.txt"
+Thu 16:41: INFO    : BreastMammogramROIExtractionKernel_Configuration.txt (BuildFile)
+Thu 16:41: INFO    : Running command: ln -sf "../scratch/BreastMammogramROIExtractionKernel_NodeDiary.txt"
+Thu 16:41: INFO    : BreastMammogramROIExtractionKernel_NodeDiary.txt (BuildFile)
+Thu 16:41: INFO    : Running command: ln -sf "../scratch/BreastMammogramROIExtraction-BreastMammogramROIExtractionKernel-final-simulation.pxg"
+Thu 16:41: INFO    : BreastMammogramROIExtraction-BreastMammogramROIExtractionKernel-final-simulation.pxg (BuildFilePXG)
+Thu 16:41: INFO    : Running command: ln -sf "../scratch/BreastMammogramROIExtraction.xml"
+Thu 16:41: INFO    : BreastMammogramROIExtraction.xml (BuildFile)
+Thu 16:41: INFO    : Running command: ln -sf "../scratch/BreastMammogramROIExtraction.h"
+Thu 16:41: INFO    : BreastMammogramROIExtraction.h (BuildFileSlicH)
+Thu 16:41: INFO    : Running command: ln -sf "../scratch/BreastMammogramROIExtraction.max"
+Thu 16:41: INFO    : BreastMammogramROIExtraction.max (BuildFileMaxFile)
+Thu 16:41: INFO    : Result files will be copied to '/home/imilankovic/workspace/BreastMammogramROIExtraction/RunRules/Simulation/maxfiles'
+Thu 16:41: INFO    : Result 'BreastMammogramROIExtraction-BreastMammogramROIExtractionKernel-original.pxg' is identical to '/home/imilankovic/workspace/BreastMammogramROIExtraction/RunRules/Simulation/maxfiles/BreastMammogramROIExtraction-BreastMammogramROIExtractionKernel-original.pxg': not overwriting.
+Thu 16:41: INFO    : Result 'BreastMammogramROIExtraction-BreastMammogramROIExtractionKernel-final-simulation.pxg' is identical to '/home/imilankovic/workspace/BreastMammogramROIExtraction/RunRules/Simulation/maxfiles/BreastMammogramROIExtraction-BreastMammogramROIExtractionKernel-final-simulation.pxg': not overwriting.
+Thu 16:41: INFO    : Result 'BreastMammogramROIExtraction.h' is identical to '/home/imilankovic/workspace/BreastMammogramROIExtraction/RunRules/Simulation/maxfiles/BreastMammogramROIExtraction.h': not overwriting.
+Thu 16:41: INFO    : Result 'BreastMammogramROIExtraction.max' is identical to '/home/imilankovic/workspace/BreastMammogramROIExtraction/RunRules/Simulation/maxfiles/BreastMammogramROIExtraction.max': not overwriting.
+Thu 16:41: PROGRESS: MaxFile: /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_VECTIS_DFE_SIM/results/BreastMammogramROIExtraction.max (MD5Sum: ae316e460eb1747e98616d6134f71ff3)
+Thu 16:41: INFO    : Waiting for any outstanding jobs to finish... 
+Thu 16:41: PROGRESS: Build completed: Thu Apr 23 16:41:28 BST 2015 (took 19 secs)

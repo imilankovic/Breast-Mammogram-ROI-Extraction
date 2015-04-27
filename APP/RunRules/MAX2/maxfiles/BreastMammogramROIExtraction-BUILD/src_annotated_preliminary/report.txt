@@ -1,0 +1,91 @@
+
+Total resource usage
+-----------------------------------------------------------------
+    LUTs     FFs   BRAMs    DSPs                            
+  207360  207360     324     192  total available resources for FPGA
+   13154   16873      26       4  total resources used      
+   6.34%   8.14%   7.87%   2.08%  % of available
+    4132    4025       1       4  used by kernels           
+   1.99%   1.94%   0.15%   2.08%  % of available
+    8353   11769      24       0  used by manager           
+   4.03%   5.68%   7.25%   0.00%  % of available
+       9      48       0       0  stray resources           
+   0.00%   0.02%   0.00%   0.00%  % of available
+
+High level manager breakdown aggregated by type
+-----------------------------------------------------------------
+    LUTs     FFs   BRAMs    DSPs  Type                      Occurrences
+      38      36       1       0  ChecksumMappedDRP         1
+      39      36       0       0  DualAspectMux             1
+       1      37       0       0  DualAspectReg             1
+     267     385       2       0  Fifo                      3
+    4132    4025       1       4  Kernel                    1
+     263     443       1       0  MAX2CPLDInterface         1
+     390      57       0       0  MappedElementSwitch       1
+     281     663       2       0  MappedMemoriesController  1
+     139     108       0       0  MappedRegistersControlle  1
+    3478    4503       7       0  PCIeBase                  1
+    2904    4853      12       0  PCIeStreaming             1
+     152     197       0       0  PerfMonitor               1
+       9      11       0       0  ResetControl              1
+     144     145       0       0  SanityBlock               1
+      98      84       0       0  SignalForwardingAdapter   1
+       1       1       0       0  StreamPullPushAdapter     1
+      22      19       0       0  SystemMonitor             1
+       1      87       0       0  Virtex5DDR2ClockingPLL    1
+     126     104       0       0  XilinxClockGenerator      1
+       0       0       0       0  Other InterFPGA           --
+     111     182       1       0  Other MappedElements      --
+     549     849       1       0  Other PCIe                --
+
+Kernel breakdown
+-----------------------------------------------------------------
+    LUTs     FFs   BRAMs    DSPs  category
+    4132    4025       1       4  total for all kernels
+   1.99%   1.94%   0.15%   2.08%  % of total available
+
+Totals for each kernel
+    LUTs     FFs   BRAMs    DSPs  Kernel name
+    4132    4025       1       4  BreastMammogramROIExtractionKernel (total)
+   1.99%   1.94%   0.15%   2.08%  % of total available
+    3616    3186       0       4  BreastMammogramROIExtractionKernel (user)
+   1.74%   1.54%   0.00%   2.08%  % of total available
+     159     180       1       0  BreastMammogramROIExtractionKernel (scheduling)
+   0.08%   0.09%   0.15%   0.00%  % of total available
+     357     659       0       0  BreastMammogramROIExtractionKernel (other Kernel resources)
+   0.17%   0.32%   0.00%   0.00%  % of total available
+
+
+Manager breakdown
+-----------------------------------------------------------------
+    LUTs     FFs   BRAMs    DSPs  Type                      Instance
+    4132    4025       1       4  Kernel                    BreastMammogramROIExtractionKernel
+      39      36       0       0  DualAspectMux             Stream_1
+     108     160       1       0  Fifo                      Stream_10
+      95     152       1       0  Fifo                      Stream_12
+       1       1       0       0  StreamPullPushAdapter     Stream_14
+       1      37       0       0  DualAspectReg             Stream_6
+      64      73       1       0  Fifo                      Stream_8
+    3478    4503       7       0  PCIeBase                  pcie_base
+       1      87       0       0  Virtex5DDR2ClockingPLL    ddr2_clocking
+     263     443       1       0  MAX2CPLDInterface         cpld_if
+     390      57       0       0  MappedElementSwitch       MappedElementSwitch_i
+     281     663       2       0  MappedMemoriesController  MappedMemoriesController_i
+     139     108       0       0  MappedRegistersControlle  MappedRegistersController_i
+     152     197       0       0  PerfMonitor               perfm
+     126     104       0       0  XilinxClockGenerator      stream_clock_gen
+     144     145       0       0  SanityBlock               SanityBlock_i
+      98      84       0       0  SignalForwardingAdapter   SignalForwardingAdapter_i
+      22      19       0       0  SystemMonitor             sysm
+      38      36       1       0  ChecksumMappedDRP         checksum_mem_drp
+    2904    4853      12       0  PCIeStreaming             dynpcie
+       9      11       0       0  ResetControl              reset_controller
+
+Source files annotation report
+-----------------------------------------------------------------
+
+% of total used for each file (note: multiple files may share the same resources)
+    LUTs     FFs   BRAMs    DSPs  filename
+  24.40%  16.85%   0.00% 100.00%  com/bioirc/breastmammogramroiextraction/BreastMammogramROIExtractionKernel.maxj
+  28.70%  19.95%   1.96% 100.00%  com/bioirc/breastmammogramroiextraction/BreastMammogramROIExtractionManager.maxj
+  28.70%  19.95%   1.96% 100.00%  [ missing source files ]

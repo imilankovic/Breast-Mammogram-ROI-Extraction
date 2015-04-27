@@ -1,0 +1,1676 @@
+#ifdef MAXCOMPILER_VERSION_INFO
+#define MAXCOMPILER_VERSION_INFO_PRESENT 1
+#define MAXFILE_MAXCOMPILER_VERSION_YEAR         2014
+#define MAXFILE_MAXCOMPILER_VERSION_NUM          2
+#define MAXFILE_MAXCOMPILER_VERSION_POINT        0
+#define MAXFILE_MAXCOMPILER_VERSION_PATCH        ""
+#define MAXFILE_MAXCOMPILER_VERSION_REV          44158
+#define MAXFILE_MAXCOMPILER_VERSION_RELEASE_DATE "2015-01-23"
+#define MAXFILE_MAXCOMPILER_VERSION_RELEASE_MODE false
+#endif
+
+#ifdef MAXFILE_BUILD_INFO
+#define MAXFILE_BUILD_INFO_PRESENT 1
+#define MAXFILE_BUILD_NAME "BreastMammogramROIExtraction"
+#define MAXFILE_BUILD_DIR  "/home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_VECTIS_DFE_SIM"
+#define MAXFILE_BUILD_DATE  20150423
+#define MAXFILE_BUILD_REV   1
+#endif
+
+#ifdef PARAM
+#define PARAM_PRESENT 1
+PARAM(APP_ID, 0)
+PARAM(REV_ID, 0)
+PARAM(CHAIN_LENGTH, 55)
+PARAM(IS_SIMULATION, 1)
+PARAM(MEC_SUPPORTED, 1)
+PARAM(PCIE_SLAVE_STREAMING, 0)
+PARAM(PCIE_ALIGNMENT, 16)
+PARAM(NUM_IFPGA_LINKS, 0)
+#endif
+
+#ifdef STRING_PARAM
+#define STRING_PARAM_PRESENT 1
+STRING_PARAM(BOARD_MODEL, "MAX3424A")
+#endif
+
+
+
+#ifdef INCLUDE_GENERATED_CPP_HEADERS
+#include "BreastMammogramROIExtractionKernel.h"
+#endif
+
+
+
+
+
+
+
+
+#ifdef STREAM_OFFSET_AUTO_LOOP_VAR
+#define STREAM_OFFSET_AUTO_LOOP_VAR_PRESENT 1
+STREAM_OFFSET_AUTO_LOOP_VAR(BreastMammogramROIExtractionKernel, loopLength, 3)
+#endif
+
+
+#ifdef MANAGER_NODE
+#define MANAGER_NODE_PRESENT 1
+MANAGER_NODE(BreastMammogramROIExtractionKernel, Kernel)
+MANAGER_NODE(image_pixel, PCIe_From_Host_fwd)
+MANAGER_NODE(output, PCIe_To_Host_fwd)
+MANAGER_NODE(Stream_1, DualAspectMux)
+MANAGER_NODE(Stream_6, DualAspectReg)
+MANAGER_NODE(Stream_14, StreamPullPushAdapter)
+MANAGER_NODE(Stream_10, Fifo)
+MANAGER_NODE(Stream_12, Fifo)
+#endif
+
+#ifdef MANAGER_NODE_IO
+#define MANAGER_NODE_IO_PRESENT 1
+MANAGER_NODE_IO(BreastMammogramROIExtractionKernel, image_pixel, IN, STREAM, 32, PULL)
+MANAGER_NODE_IO(BreastMammogramROIExtractionKernel, output, OUT, STREAM, 32, PUSH)
+MANAGER_NODE_IO(image_pixel, image_pixel, OUT, STREAM, 128, PULL)
+MANAGER_NODE_IO(output, output, IN, STREAM, 128, PUSH)
+MANAGER_NODE_IO(Stream_1, input, IN, STREAM, 128, PULL)
+MANAGER_NODE_IO(Stream_1, output, OUT, STREAM, 32, PUSH)
+MANAGER_NODE_IO(Stream_6, input, IN, STREAM, 32, PULL)
+MANAGER_NODE_IO(Stream_6, output, OUT, STREAM, 128, PULL)
+MANAGER_NODE_IO(Stream_14, input, IN, STREAM, 128, PULL)
+MANAGER_NODE_IO(Stream_14, output, OUT, STREAM, 128, PUSH)
+MANAGER_NODE_IO(Stream_10, input, IN, STREAM, 32, PUSH)
+MANAGER_NODE_IO(Stream_10, output, OUT, STREAM, 32, PULL)
+MANAGER_NODE_IO(Stream_12, input, IN, STREAM, 32, PUSH)
+MANAGER_NODE_IO(Stream_12, output, OUT, STREAM, 32, PULL)
+#endif
+
+#ifdef MANAGER_STREAM
+#define MANAGER_STREAM_PRESENT 1
+MANAGER_STREAM(image_pixel, image_pixel, Stream_1, input, 128)
+MANAGER_STREAM(BreastMammogramROIExtractionKernel, output, Stream_12, input, 32)
+MANAGER_STREAM(Stream_1, output, Stream_10, input, 32)
+MANAGER_STREAM(Stream_6, output, Stream_14, input, 128)
+MANAGER_STREAM(Stream_14, output, output, output, 128)
+MANAGER_STREAM(Stream_10, output, BreastMammogramROIExtractionKernel, image_pixel, 32)
+MANAGER_STREAM(Stream_12, output, Stream_6, input, 32)
+#endif
+
+#ifdef MANAGER_NODE_STACK_TRACE
+#define MANAGER_NODE_STACK_TRACE_PRESENT 1
+MANAGER_NODE_STACK_TRACE(BreastMammogramROIExtractionKernel, "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+MANAGER_NODE_STACK_TRACE(image_pixel, "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+MANAGER_NODE_STACK_TRACE(output, "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+MANAGER_NODE_STACK_TRACE(Stream_1, "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+MANAGER_NODE_STACK_TRACE(Stream_6, "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+MANAGER_NODE_STACK_TRACE(Stream_14, "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+MANAGER_NODE_STACK_TRACE(Stream_10, "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+MANAGER_NODE_STACK_TRACE(Stream_12, "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+#endif
+
+
+#ifdef MANAGER_NODE_PROPERTY
+#define MANAGER_NODE_PROPERTY_PRESENT 1
+MANAGER_NODE_PROPERTY(BreastMammogramROIExtractionKernel, control_pipelining_depth, 2)
+#endif
+
+
+#ifdef KERNEL_CORE
+#define KERNEL_CORE_PRESENT 1
+KERNEL_CORE(BreastMammogramROIExtractionKernel)
+#endif
+
+#ifdef KERNEL_HOST_CONTROLLED
+#define KERNEL_HOST_CONTROLLED_PRESENT 1
+KERNEL_HOST_CONTROLLED(BreastMammogramROIExtractionKernel, BreastMammogramROIExtractionKernel)
+#endif
+
+#ifdef DEBUG_INPUT_BITS
+#define DEBUG_INPUT_BITS_PRESENT 1
+DEBUG_INPUT_BITS(BreastMammogramROIExtractionKernel, image_pixel, 0)
+#endif
+
+#ifdef DEBUG_OUTPUT_BITS
+#define DEBUG_OUTPUT_BITS_PRESENT 1
+DEBUG_OUTPUT_BITS(BreastMammogramROIExtractionKernel, output, 0)
+#endif
+
+#ifdef MANAGER_NODE_CPP_SIM_MODEL_CTOR
+#define MANAGER_NODE_CPP_SIM_MODEL_CTOR_PRESENT 1
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(image_pixel, PCIePullSourceSyncMax3, "image_pixel")
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(Stream_1, DualAspectMuxSync, "Stream_1", 32, 4)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(Stream_10, FifoPushToPullSync, "Stream_10", false, 512, 32)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(BreastMammogramROIExtractionKernel, BreastMammogramROIExtractionKernel, "BreastMammogramROIExtractionKernel")
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(Stream_12, FifoPushToPullSync, "Stream_12", false, 512, 32)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(Stream_6, DualAspectRegSync, "Stream_6", 32, 4)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(Stream_14, PullToPushAdapterSync, "Stream_14")
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(output, PCIePushSinkSyncMax3, "output")
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(CapabilityReg, CapRegs, "CapabilityReg", 0, 1, 1, 0, 0, 0, 0, 0, 55)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(ifpga, IFPGARegs)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(sfa, SFARegs)
+MANAGER_NODE_CPP_SIM_MODEL_CTOR(ChecksumMemory, ChecksumMem, "ChecksumMemory", "3b636749813553cdc7d67a82a37d86283747ba72b2cb07f5f38cfe56f601377e")
+#endif
+
+#ifdef MANAGER_NODE_CPP_SIM_MODEL_SETUP
+#define MANAGER_NODE_CPP_SIM_MODEL_SETUP_PRESENT 1
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(BreastMammogramROIExtractionKernel, addDebugRegister, reg_dbg_ctld_almost_empty, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(BreastMammogramROIExtractionKernel, addDebugRegister, reg_dbg_ctld_done, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(BreastMammogramROIExtractionKernel, addDebugRegister, reg_dbg_ctld_empty, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(BreastMammogramROIExtractionKernel, addDebugRegister, reg_dbg_ctld_read, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(BreastMammogramROIExtractionKernel, addDebugRegister, reg_dbg_ctld_read_pipe_dbg, 3, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(BreastMammogramROIExtractionKernel, addDebugRegister, reg_dbg_ctld_request, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(BreastMammogramROIExtractionKernel, addDebugRegister, reg_dbg_done_out, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(BreastMammogramROIExtractionKernel, addDebugRegister, reg_dbg_fill_level, 12, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(BreastMammogramROIExtractionKernel, addDebugRegister, reg_dbg_flush_level, 12, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(BreastMammogramROIExtractionKernel, addDebugRegister, reg_dbg_flush_start, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(BreastMammogramROIExtractionKernel, addDebugRegister, reg_dbg_flush_start_level, 12, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(BreastMammogramROIExtractionKernel, addDebugRegister, reg_dbg_flushing, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(BreastMammogramROIExtractionKernel, addDebugRegister, reg_dbg_full_level, 12, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(BreastMammogramROIExtractionKernel, addDebugRegister, reg_dbg_out_stall, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(BreastMammogramROIExtractionKernel, addDebugRegister, reg_dbg_out_valid, 1, 0)
+MANAGER_NODE_CPP_SIM_MODEL_SETUP(BreastMammogramROIExtractionKernel, addDebugRegister, reg_dbg_stall_vector, 1, 0)
+#endif
+
+#ifdef PCIE_STREAM
+#define PCIE_STREAM_PRESENT 1
+PCIE_STREAM(image_pixel, STREAM_FROM_HOST, 0)
+PCIE_STREAM(output, STREAM_TO_HOST, 0)
+#endif
+
+#ifdef REG
+#define REG_PRESENT 1
+REG(BreastMammogramROIExtractionKernel.io_image_pixel_force_disabled, 0x0, 1, hwOffsetFix(1, 0, UNSIGNED))
+REG(BreastMammogramROIExtractionKernel.width, 0x1, 4, hwOffsetFix(32, 0, UNSIGNED))
+REG(BreastMammogramROIExtractionKernel.height, 0x5, 4, hwOffsetFix(32, 0, UNSIGNED))
+REG(BreastMammogramROIExtractionKernel.black, 0x9, 4, hwOffsetFix(32, 0, UNSIGNED))
+REG(BreastMammogramROIExtractionKernel.threshold, 0xd, 4, hwOffsetFix(32, 0, UNSIGNED))
+REG(BreastMammogramROIExtractionKernel.io_output_force_disabled, 0x11, 1, hwOffsetFix(1, 0, UNSIGNED))
+REG(BreastMammogramROIExtractionKernel.run_cycle_count, 0x12, 6, hwOffsetFix(48, 0, UNSIGNED))
+REG(BreastMammogramROIExtractionKernel.current_run_cycle_count, 0x18, 6, hwOffsetFix(48, 0, UNSIGNED))
+REG(BreastMammogramROIExtractionKernel.dbg_ctld_almost_empty, 0x1e, 1, hwBits(1))
+REG(BreastMammogramROIExtractionKernel.dbg_ctld_done, 0x1f, 1, hwBits(1))
+REG(BreastMammogramROIExtractionKernel.dbg_ctld_empty, 0x20, 1, hwBits(1))
+REG(BreastMammogramROIExtractionKernel.dbg_ctld_read, 0x21, 1, hwBits(1))
+REG(BreastMammogramROIExtractionKernel.dbg_ctld_read_pipe_dbg, 0x22, 1, hwBits(3))
+REG(BreastMammogramROIExtractionKernel.dbg_ctld_request, 0x23, 1, hwBits(1))
+REG(BreastMammogramROIExtractionKernel.dbg_done_out, 0x24, 1, hwBits(1))
+REG(BreastMammogramROIExtractionKernel.dbg_fill_level, 0x25, 2, hwBits(12))
+REG(BreastMammogramROIExtractionKernel.dbg_flush_level, 0x27, 2, hwBits(12))
+REG(BreastMammogramROIExtractionKernel.dbg_flush_start, 0x29, 1, hwBits(1))
+REG(BreastMammogramROIExtractionKernel.dbg_flush_start_level, 0x2a, 2, hwBits(12))
+REG(BreastMammogramROIExtractionKernel.dbg_flushing, 0x2c, 1, hwBits(1))
+REG(BreastMammogramROIExtractionKernel.dbg_full_level, 0x2d, 2, hwBits(12))
+REG(BreastMammogramROIExtractionKernel.dbg_out_stall, 0x2f, 1, hwBits(1))
+REG(BreastMammogramROIExtractionKernel.dbg_out_valid, 0x30, 1, hwBits(1))
+REG(BreastMammogramROIExtractionKernel.dbg_stall_vector, 0x31, 1, hwBits(1))
+REG(ifpga.ifpga_ctrl, 0x32, 1, hwBits(8))
+REG(SignalForwardingAdapter.SFA_FORWARD_EN, 0x33, 4, hwBits(32))
+#endif
+
+#ifdef REG_V2
+#define REG_V2_PRESENT 1
+REG_V2(BreastMammogramROIExtractionKernel.io_image_pixel_force_disabled, 0x0, 1, hwOffsetFix(1, 0, UNSIGNED), HOST_WRITE_ONLY, true)
+REG_V2(BreastMammogramROIExtractionKernel.width, 0x1, 4, hwOffsetFix(32, 0, UNSIGNED), HOST_WRITE_ONLY, false)
+REG_V2(BreastMammogramROIExtractionKernel.height, 0x5, 4, hwOffsetFix(32, 0, UNSIGNED), HOST_WRITE_ONLY, false)
+REG_V2(BreastMammogramROIExtractionKernel.black, 0x9, 4, hwOffsetFix(32, 0, UNSIGNED), HOST_WRITE_ONLY, false)
+REG_V2(BreastMammogramROIExtractionKernel.threshold, 0xd, 4, hwOffsetFix(32, 0, UNSIGNED), HOST_WRITE_ONLY, false)
+REG_V2(BreastMammogramROIExtractionKernel.io_output_force_disabled, 0x11, 1, hwOffsetFix(1, 0, UNSIGNED), HOST_WRITE_ONLY, true)
+REG_V2(BreastMammogramROIExtractionKernel.run_cycle_count, 0x12, 6, hwOffsetFix(48, 0, UNSIGNED), HOST_WRITE_ONLY, false)
+REG_V2(BreastMammogramROIExtractionKernel.current_run_cycle_count, 0x18, 6, hwOffsetFix(48, 0, UNSIGNED), HOST_READ_ONLY, false)
+REG_V2(BreastMammogramROIExtractionKernel.dbg_ctld_almost_empty, 0x1e, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(BreastMammogramROIExtractionKernel.dbg_ctld_done, 0x1f, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(BreastMammogramROIExtractionKernel.dbg_ctld_empty, 0x20, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(BreastMammogramROIExtractionKernel.dbg_ctld_read, 0x21, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(BreastMammogramROIExtractionKernel.dbg_ctld_read_pipe_dbg, 0x22, 1, hwBits(3), HOST_READ_ONLY, false)
+REG_V2(BreastMammogramROIExtractionKernel.dbg_ctld_request, 0x23, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(BreastMammogramROIExtractionKernel.dbg_done_out, 0x24, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(BreastMammogramROIExtractionKernel.dbg_fill_level, 0x25, 2, hwBits(12), HOST_READ_ONLY, false)
+REG_V2(BreastMammogramROIExtractionKernel.dbg_flush_level, 0x27, 2, hwBits(12), HOST_READ_ONLY, false)
+REG_V2(BreastMammogramROIExtractionKernel.dbg_flush_start, 0x29, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(BreastMammogramROIExtractionKernel.dbg_flush_start_level, 0x2a, 2, hwBits(12), HOST_READ_ONLY, false)
+REG_V2(BreastMammogramROIExtractionKernel.dbg_flushing, 0x2c, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(BreastMammogramROIExtractionKernel.dbg_full_level, 0x2d, 2, hwBits(12), HOST_READ_ONLY, false)
+REG_V2(BreastMammogramROIExtractionKernel.dbg_out_stall, 0x2f, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(BreastMammogramROIExtractionKernel.dbg_out_valid, 0x30, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(BreastMammogramROIExtractionKernel.dbg_stall_vector, 0x31, 1, hwBits(1), HOST_READ_ONLY, false)
+REG_V2(ifpga.ifpga_ctrl, 0x32, 1, hwBits(8), HOST_READ_WRITE, false)
+REG_V2(SignalForwardingAdapter.SFA_FORWARD_EN, 0x33, 4, hwBits(32), HOST_READ_WRITE, false)
+#endif
+
+
+
+
+#ifdef CHECKSUM
+#define CHECKSUM_PRESENT 1
+CHECKSUM("3b636749813553cdc7d67a82a37d86283747ba72b2cb07f5f38cfe56f601377e")
+#endif
+
+#ifdef CAPABILITY
+#define CAPABILITY_PRESENT 1
+CAPABILITY(MAX3REV, MAX3REVA)
+CAPABILITY(MAX3RAM, DDR3_24GB)
+CAPABILITY(MAX3FPGA, SXT475_2ES)
+#endif
+
+#ifdef DEFINE_DESIGN_NAME
+#define DESIGN_NAME BreastMammogramROIExtraction
+#endif /* DEFINE_DESIGN_NAME */
+
+#ifndef SLIC_NO_DECLARATIONS
+/**\file */
+#ifndef SLIC_DECLARATIONS_BreastMammogramROIExtraction_H
+#define SLIC_DECLARATIONS_BreastMammogramROIExtraction_H
+#include "MaxSLiCInterface.h"
+#ifdef __cplusplus
+extern "C" {
+#endif /* __cplusplus */
+
+#define BreastMammogramROIExtraction_PCIE_ALIGNMENT (16)
+
+
+/*----------------------------------------------------------------------------*/
+/*---------------------------- Interface default -----------------------------*/
+/*----------------------------------------------------------------------------*/
+
+
+
+/**
+ * \brief Auxiliary function to evaluate expression for "BreastMammogramROIExtractionKernel.loopLength".
+ */
+int BreastMammogramROIExtraction_get_BreastMammogramROIExtractionKernel_loopLength( void );
+
+
+/**
+ * \brief Basic static function for the interface 'default'.
+ * 
+ * \param [in] param_black Interface Parameter "black".
+ * \param [in] param_height Interface Parameter "height".
+ * \param [in] param_length Interface Parameter "length".
+ * \param [in] param_threshold Interface Parameter "threshold".
+ * \param [in] param_width Interface Parameter "width".
+ * \param [in] instream_image_pixel The stream should be of size (param_length * 4) bytes.
+ * \param [out] outstream_output The stream should be of size (param_length * 4) bytes.
+ */
+void BreastMammogramROIExtraction(
+	uint32_t param_black,
+	uint32_t param_height,
+	uint32_t param_length,
+	uint32_t param_threshold,
+	uint32_t param_width,
+	const uint32_t *instream_image_pixel,
+	uint32_t *outstream_output);
+
+/**
+ * \brief Basic static non-blocking function for the interface 'default'.
+ * 
+ * Schedule to run on an engine and return immediately.
+ * The status of the run can be checked either by ::max_wait or ::max_nowait;
+ * note that one of these *must* be called, so that associated memory can be released.
+ * 
+ * 
+ * \param [in] param_black Interface Parameter "black".
+ * \param [in] param_height Interface Parameter "height".
+ * \param [in] param_length Interface Parameter "length".
+ * \param [in] param_threshold Interface Parameter "threshold".
+ * \param [in] param_width Interface Parameter "width".
+ * \param [in] instream_image_pixel The stream should be of size (param_length * 4) bytes.
+ * \param [out] outstream_output The stream should be of size (param_length * 4) bytes.
+ * \return A handle on the execution status, or NULL in case of error.
+ */
+max_run_t *BreastMammogramROIExtraction_nonblock(
+	uint32_t param_black,
+	uint32_t param_height,
+	uint32_t param_length,
+	uint32_t param_threshold,
+	uint32_t param_width,
+	const uint32_t *instream_image_pixel,
+	uint32_t *outstream_output);
+
+/**
+ * \brief Advanced static interface, structure for the engine interface 'default'
+ * 
+ */
+typedef struct { 
+	uint32_t param_black; /**<  [in] Interface Parameter "black". */
+	uint32_t param_height; /**<  [in] Interface Parameter "height". */
+	uint32_t param_length; /**<  [in] Interface Parameter "length". */
+	uint32_t param_threshold; /**<  [in] Interface Parameter "threshold". */
+	uint32_t param_width; /**<  [in] Interface Parameter "width". */
+	const uint32_t *instream_image_pixel; /**<  [in] The stream should be of size (param_length * 4) bytes. */
+	uint32_t *outstream_output; /**<  [out] The stream should be of size (param_length * 4) bytes. */
+} BreastMammogramROIExtraction_actions_t;
+
+/**
+ * \brief Advanced static function for the interface 'default'.
+ * 
+ * \param [in] engine The engine on which the actions will be executed.
+ * \param [in,out] interface_actions Actions to be executed.
+ */
+void BreastMammogramROIExtraction_run(
+	max_engine_t *engine,
+	BreastMammogramROIExtraction_actions_t *interface_actions);
+
+/**
+ * \brief Advanced static non-blocking function for the interface 'default'.
+ *
+ * Schedule the actions to run on the engine and return immediately.
+ * The status of the run can be checked either by ::max_wait or ::max_nowait;
+ * note that one of these *must* be called, so that associated memory can be released.
+ *
+ * 
+ * \param [in] engine The engine on which the actions will be executed.
+ * \param [in] interface_actions Actions to be executed.
+ * \return A handle on the execution status of the actions, or NULL in case of error.
+ */
+max_run_t *BreastMammogramROIExtraction_run_nonblock(
+	max_engine_t *engine,
+	BreastMammogramROIExtraction_actions_t *interface_actions);
+
+/**
+ * \brief Group run advanced static function for the interface 'default'.
+ * 
+ * \param [in] group Group to use.
+ * \param [in,out] interface_actions Actions to run.
+ *
+ * Run the actions on the first device available in the group.
+ */
+void BreastMammogramROIExtraction_run_group(max_group_t *group, BreastMammogramROIExtraction_actions_t *interface_actions);
+
+/**
+ * \brief Group run advanced static non-blocking function for the interface 'default'.
+ * 
+ *
+ * Schedule the actions to run on the first device available in the group and return immediately.
+ * The status of the run must be checked with ::max_wait. 
+ * Note that use of ::max_nowait is prohibited with non-blocking running on groups:
+ * see the ::max_run_group_nonblock documentation for more explanation.
+ *
+ * \param [in] group Group to use.
+ * \param [in] interface_actions Actions to run.
+ * \return A handle on the execution status of the actions, or NULL in case of error.
+ */
+max_run_t *BreastMammogramROIExtraction_run_group_nonblock(max_group_t *group, BreastMammogramROIExtraction_actions_t *interface_actions);
+
+/**
+ * \brief Array run advanced static function for the interface 'default'.
+ * 
+ * \param [in] engarray The array of devices to use.
+ * \param [in,out] interface_actions The array of actions to run.
+ *
+ * Run the array of actions on the array of engines.  The length of interface_actions
+ * must match the size of engarray.
+ */
+void BreastMammogramROIExtraction_run_array(max_engarray_t *engarray, BreastMammogramROIExtraction_actions_t *interface_actions[]);
+
+/**
+ * \brief Array run advanced static non-blocking function for the interface 'default'.
+ * 
+ *
+ * Schedule to run the array of actions on the array of engines, and return immediately.
+ * The length of interface_actions must match the size of engarray.
+ * The status of the run can be checked either by ::max_wait or ::max_nowait;
+ * note that one of these *must* be called, so that associated memory can be released.
+ *
+ * \param [in] engarray The array of devices to use.
+ * \param [in] interface_actions The array of actions to run.
+ * \return A handle on the execution status of the actions, or NULL in case of error.
+ */
+max_run_t *BreastMammogramROIExtraction_run_array_nonblock(max_engarray_t *engarray, BreastMammogramROIExtraction_actions_t *interface_actions[]);
+
+/**
+ * \brief Converts a static-interface action struct into a dynamic-interface max_actions_t struct.
+ *
+ * Note that this is an internal utility function used by other functions in the static interface.
+ *
+ * \param [in] maxfile The maxfile to use.
+ * \param [in] interface_actions The interface-specific actions to run.
+ * \return The dynamic-interface actions to run, or NULL in case of error.
+ */
+max_actions_t* BreastMammogramROIExtraction_convert(max_file_t *maxfile, BreastMammogramROIExtraction_actions_t *interface_actions);
+
+/**
+ * \brief Initialise a maxfile.
+ */
+max_file_t* BreastMammogramROIExtraction_init(void);
+
+/* Error handling functions */
+int BreastMammogramROIExtraction_has_errors(void);
+const char* BreastMammogramROIExtraction_get_errors(void);
+void BreastMammogramROIExtraction_clear_errors(void);
+/* Free statically allocated maxfile data */
+void BreastMammogramROIExtraction_free(void);
+/* returns: -1 = error running command; 0 = no error reported */
+int BreastMammogramROIExtraction_simulator_start(void);
+/* returns: -1 = error running command; 0 = no error reported */
+int BreastMammogramROIExtraction_simulator_stop(void);
+
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */
+#endif /* SLIC_DECLARATIONS_BreastMammogramROIExtraction_H */
+
+#endif /* SLIC_NO_DECLARATIONS */
+
+#ifdef PHOTON_NODE_DATA
+#define PHOTON_NODE_DATA_PRESENT 1
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 133, NodeConstantRawBits, "{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.simpleCounter(Count.java:570)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:16)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 120, NodeConstantRawBits, "{HWOffsetFix:32, 0, UNSIGNED}\n0x00000003; 3.0", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream$OffsetExpr.getDFEVar(Stream.java:186)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:14)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 98, NodeFIFO, "FIFO(1)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 2, NodeCounterV1, "Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.simpleCounter(Count.java:570)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:16)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 132, NodeConstantRawBits, "{HWOffsetFix:32, 0, UNSIGNED}\n0x00000001; 1.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.sub(DFEVar.java:929)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:53)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 71, NodeSub, "-", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.sub(DFEVar.java:929)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:53)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 72, NodeEq, "==", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:577)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:53)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 73, NodeInputMappedReg, "Scalar input (io_output_force_disabled)", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:685)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:53)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 74, NodeNot, "~", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:685)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:53)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 75, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:685)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:53)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 116, NodeFIFO, "FIFO(17)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 15, NodeConstantRawBits, "{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.makeCounterChain(Count.java:498)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:29)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 10, NodeInputMappedReg, "Scalar input (width)", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1106)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:20)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 17, NodeMul, "*", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:960)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:31)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 18, NodeCounterV1, "Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain.addCounter(CounterChain.java:526)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:31)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 99, NodeFIFO, "FIFO(7)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 11, NodeInputMappedReg, "Scalar input (height)", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1106)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:21)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 16, NodeCounterV1, "Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain.addCounter(CounterChain.java:526)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:30)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 131, NodeConstantRawBits, "{HWOffsetFix:32, 0, UNSIGNED}\n0x0000000a; 10.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1021)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:47)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 46, NodeDiv, "/", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1021)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:47)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 47, NodeGt, ">", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gt(DFEVar.java:776)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:47)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 130, NodeConstantRawBits, "{HWOffsetFix:32, 0, UNSIGNED}\n0x00000001; 1.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.sub(DFEVar.java:929)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:18)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 4, NodeSub, "-", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.sub(DFEVar.java:929)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:18)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 5, NodeEq, "==", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:577)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:18)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 6, NodeInputMappedReg, "Scalar input (io_image_pixel_force_disabled)", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:522)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:18)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 7, NodeNot, "~", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:522)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:18)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 8, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:522)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:18)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 9, NodeInput, "Input(image_pixel)", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:522)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:18)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 104, NodeFIFO, "FIFO(3)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 118, NodeFIFO, "FIFO(3)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 13, NodeInputMappedReg, "Scalar input (threshold)", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1106)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:23)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 48, NodeGte, ">=", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gte(DFEVar.java:730)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:47)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 49, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:47)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 94, NodeStreamOffset, "stream offset: -3072", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:269)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:49)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 129, NodeConstantRawBits, "{HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:589)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:47)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 51, NodeEq, "==", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:589)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:47)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 101, NodeFIFO, "FIFO(3067)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 52, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:47)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 115, NodeFIFO, "FIFO(2)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 128, NodeConstantRawBits, "{HWOffsetFix:32, 0, UNSIGNED}\n0x0000000a; 10.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1021)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:45)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 39, NodeDiv, "/", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1021)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:45)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 40, NodeLte, "<=", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.lte(DFEVar.java:684)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:45)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 41, NodeGte, ">=", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gte(DFEVar.java:730)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:45)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 42, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:45)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 114, NodeFIFO, "FIFO(2)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 127, NodeConstantRawBits, "{HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gt(DFEVar.java:791)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:43)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 30, NodeGt, ">", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gt(DFEVar.java:791)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:43)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 117, NodeFIFO, "FIFO(5)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 19, NodeLt, "<", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.lt(DFEVar.java:822)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:35)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 111, NodeFIFO, "FIFO(5)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 12, NodeInputMappedReg, "Scalar input (black)", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1106)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:22)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 56, NodeGte, ">=", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gte(DFEVar.java:730)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:51)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 95, NodeStreamOffset, "stream offset: -3", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:269)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:27)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 57, NodeLt, "<", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.lt(DFEVar.java:822)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:51)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 58, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:51)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 59, NodeGte, ">=", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gte(DFEVar.java:730)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:51)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 106, NodeFIFO, "FIFO(2)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 60, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:51)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 61, NodeLt, "<", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.lt(DFEVar.java:822)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:51)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 108, NodeFIFO, "FIFO(1)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 62, NodeGte, ">=", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gte(DFEVar.java:730)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:51)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 63, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:51)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 109, NodeFIFO, "FIFO(1)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 64, NodeOr, "|", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:410)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:51)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 96, NodeStreamOffset, "stream offset: -3", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:269)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:51)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 110, NodeFIFO, "FIFO(1)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 126, NodeConstantRawBits, "{HWOffsetFix:32, 0, UNSIGNED}\n0x00000001; 1.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:883)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:51)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 66, NodeAdd, "+", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:883)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:51)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 97, NodeStreamOffset, "stream offset: -3", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:269)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:51)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 69, NodeMux, "MUX", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1152)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:51)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 20, NodeConstantRawBits, "{HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1181)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:35)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 21, NodeMux, "MUX", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1181)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:35)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 125, NodeConstantRawBits, "{HWOffsetFix:32, 0, UNSIGNED}\n0x00000001; 1.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gt(DFEVar.java:791)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:43)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 32, NodeGt, ">", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gt(DFEVar.java:791)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:43)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 33, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:43)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 34, NodeLt, "<", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.lt(DFEVar.java:822)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:43)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 112, NodeFIFO, "FIFO(3067)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 35, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:43)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 124, NodeConstantRawBits, "{HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:589)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:41)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 23, NodeEq, "==", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:589)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:41)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 123, NodeConstantRawBits, "{HWOffsetFix:32, 0, UNSIGNED}\n0x00000001; 1.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gt(DFEVar.java:791)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:41)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 25, NodeGt, ">", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gt(DFEVar.java:791)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:41)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 26, NodeAnd, "&", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:522)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:41)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 119, NodeFIFO, "FIFO(2)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 27, NodeConstantRawBits, "{HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1181)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:41)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 28, NodeMux, "MUX", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1181)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:41)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 36, NodeConstantRawBits, "{HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1181)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:43)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 37, NodeMux, "MUX", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1181)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:43)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 43, NodeConstantRawBits, "{HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1181)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:45)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 44, NodeMux, "MUX", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1181)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:45)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 53, NodeConstantRawBits, "{HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1181)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:47)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 54, NodeMux, "MUX", "com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1181)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:47)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 76, NodeOutput, "Output(output)", "com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:685)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionKernel.<init>(BreastMammogramROIExtractionKernel.maxj:53)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:19)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 81, NodeConstantRawBits, "{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 122, NodeConstantRawBits, "{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 78, NodeConstantRawBits, "{HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 79, NodeCounterV1, "Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 80, NodeStreamOffset, "stream offset: 1", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 82, NodeOutputMappedReg, "Scalar output (current_run_cycle_count)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 121, NodeConstantRawBits, "{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 84, NodeConstantRawBits, "{HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 85, NodeCounterV1, "Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 87, NodeInputMappedReg, "Scalar input (run_cycle_count)", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 88, NodeEq, "==", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+PHOTON_NODE_DATA(BreastMammogramROIExtractionKernel, 86, NodeFlush, "flush on trigger", "com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:361)\ncom.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager.main(BreastMammogramROIExtractionManager.maxj:23)\n")
+#endif
+
+#ifdef SLIC_USE_DEFINITIONS
+#include <stdio.h>
+#include <math.h>
+#include <pthread.h>
+#include <string.h>
+#include <unistd.h>
+#include <stdlib.h>
+static max_file_t *stored_maxfile = NULL;
+static max_engine_t *stored_engine = NULL;
+static char *stored_error = NULL;
+static int stored_has_error = 0;
+static pthread_once_t slic_bs_is_initialised = PTHREAD_ONCE_INIT;
+
+static void set_error(const char *error_str)
+{
+	stored_has_error = 1; 
+	if(stored_error == NULL) {
+		stored_error = strdup(error_str);
+	} else {
+		char *nerr = malloc(strlen(stored_error) + strlen(error_str) + 2);
+		sprintf(nerr, "%s\n%s", stored_error, error_str);
+		free(stored_error);
+		stored_error = nerr;
+	}
+}
+static void set_error_and_free(char *error_str){
+	set_error(error_str);
+	free(error_str);
+}
+int BreastMammogramROIExtraction_has_errors(void)
+{	return stored_has_error; }
+const char* BreastMammogramROIExtraction_get_errors(void)
+{	return stored_error; }
+void BreastMammogramROIExtraction_clear_errors(void)
+{
+	free(stored_error);
+	stored_error = NULL;
+	stored_has_error = 0;
+}
+
+static char BreastMammogramROIExtraction_use_simulation[16];
+static void BreastMammogramROIExtraction_def_use_simulation(void)
+{
+	long pid = ((long) getpid()) % 100000;
+	snprintf(BreastMammogramROIExtraction_use_simulation, 16, "BreastMa_%05ld_", pid);
+}
+static const char *BreastMammogramROIExtraction_check_use_simulation(void)
+{
+	BreastMammogramROIExtraction_def_use_simulation();
+	const char *use_sim = max_config_get_string(MAX_CONFIG_USE_SIMULATION);
+	if (use_sim == NULL) {
+		use_sim = BreastMammogramROIExtraction_use_simulation;
+		max_config_set_string(MAX_CONFIG_USE_SIMULATION, use_sim);
+	}
+	return use_sim;
+}
+
+static int BreastMammogramROIExtraction_simulation_launch = 0;
+int BreastMammogramROIExtraction_simulator_start(void)
+{
+	int retval = 0;
+	const char *use_sim = BreastMammogramROIExtraction_check_use_simulation();
+	char buff[1024];
+	snprintf(buff, 1024, "PATH=simutils:$PATH maxcompilersim -d 1 -n %s -c MAX3424A -S simutils restart", use_sim);
+	FILE *pipe_fp = popen(buff, "r");
+	if (pipe_fp == NULL) {
+		strncat(buff, " : failed to execute.", (1024 - strlen(buff)));
+		set_error(buff);
+		return -1;
+	}
+	while (fgets(buff, 1024, pipe_fp) != NULL) {
+		/* Uncomment this to get simulator command output */
+		/* fprintf(stderr, buff); */
+		if (strstr(buff, "Error")) {
+			set_error(buff);
+			retval = -1;
+		}
+	}
+	pclose(pipe_fp);
+	return retval;
+}
+
+int BreastMammogramROIExtraction_simulator_stop(void)
+{
+	const char *use_sim = BreastMammogramROIExtraction_check_use_simulation();
+	char buff[1024];
+	snprintf(buff, 1024, "PATH=simutils:$PATH maxcompilersim -d 1 -n %s -c MAX3424A -S simutils stop", use_sim);
+	FILE *pipe_fp = popen(buff, "r");
+	if (pipe_fp == NULL) {
+		strncat(buff, " : failed to execute.", (1024 - strlen(buff)));
+		set_error(buff);
+		return -1;
+	}
+	while (fgets(buff, 1024, pipe_fp) != NULL) {
+		/* Uncomment this to get simulator command output */
+		/* fprintf(stderr, buff); */
+		;
+	}
+	pclose(pipe_fp);
+	return 0;
+}
+
+static void BreastMammogramROIExtraction_static_init(void) 
+{
+	stored_maxfile = BreastMammogramROIExtraction_init();
+	if (stored_maxfile == NULL || !max_ok(stored_maxfile->errors)) {
+		stored_maxfile = NULL;
+		if(max_config_get_bool(MAX_CONFIG_STATIC_INTERFACE_ABORT_ON_ERROR)) abort();
+		else { set_error("Unable to load maxfile"); return; }
+	}
+	if(!max_ok(max_global_errors())) {
+		set_error_and_free(max_errors_trace(max_global_errors()));
+		return;
+	}
+	if(!max_config_get_bool(MAX_CONFIG_STATIC_INTERFACE_ABORT_ON_ERROR))
+		max_errors_mode(stored_maxfile->errors, 0);
+	time_t timeout_previous = max_load_timeout(stored_maxfile, 30);
+	const char *use_sim = BreastMammogramROIExtraction_check_use_simulation();
+	if (max_ping_daemon(stored_maxfile, use_sim) == 0) {
+		int sim_stat = BreastMammogramROIExtraction_simulator_start();
+		if ((sim_stat == 0) && (max_ping_daemon(stored_maxfile, use_sim) == 1)) {
+			BreastMammogramROIExtraction_simulation_launch = 1;
+		} else {
+			set_error("Error: An error occurred while trying to start the simulation infrastructure automatically.");
+			set_error("Error: Check that 'use_simulation=<simulator_name>' is set correctly in your SLiC configuration");
+			set_error("Error: and that the associated simulated system daemon is running.");
+			max_file_free(stored_maxfile);
+			stored_maxfile = NULL;
+			return;
+		}
+	}
+	stored_engine = max_load(stored_maxfile, "*");
+	if (!max_ok(stored_maxfile->errors)) {
+		if(max_config_get_bool(MAX_CONFIG_STATIC_INTERFACE_ABORT_ON_ERROR)) {
+			fprintf(stderr, "\nUnable to load engine: aborting now.\n\n");
+			fflush(stderr);
+			abort();
+		} else {
+			set_error_and_free(max_errors_trace(stored_maxfile->errors));
+			max_file_free(stored_maxfile);
+			stored_maxfile = NULL;
+			return;
+		} 
+	} 
+	max_load_timeout(stored_maxfile, timeout_previous);
+}
+void BreastMammogramROIExtraction_free(void)
+{
+	if (stored_engine != NULL) {
+		max_unload(stored_engine);
+		stored_engine = NULL;
+	}
+	if (stored_maxfile != NULL) {
+		max_file_free(stored_maxfile);
+		stored_maxfile = NULL;
+	}
+	if (stored_error != NULL) {
+		free(stored_error);
+		stored_error = NULL;
+	}
+	if (BreastMammogramROIExtraction_simulation_launch == 1) {
+		int sim_stat = BreastMammogramROIExtraction_simulator_stop();
+		if (sim_stat != 0 ) {
+			fprintf(stderr, "Error stopping simulator.");
+		}
+		BreastMammogramROIExtraction_simulation_launch = 0;
+	}
+}
+
+static int BreastMammogramROIExtraction_get_pcie_alignment(void)
+{
+#ifdef BreastMammogramROIExtraction_PCIE_ALIGNMENT
+	return ((BreastMammogramROIExtraction_PCIE_ALIGNMENT < 1) ? 16 : BreastMammogramROIExtraction_PCIE_ALIGNMENT);
+#else
+	return 16;
+#endif
+}
+
+static int BreastMammogramROIExtraction_check_aligned(const void *data)
+{
+	uintptr_t pointer = (uintptr_t) data;
+	int alignment = BreastMammogramROIExtraction_get_pcie_alignment();
+	return (pointer % alignment) ? 1 : 0;
+}
+
+static void *BreastMammogramROIExtraction_malloc_aligned(const size_t size)
+{
+	void *ptr;
+	int alignment = BreastMammogramROIExtraction_get_pcie_alignment();
+	posix_memalign(&ptr, alignment, size);
+	return ptr;
+}
+
+
+
+/*----------------------------------------------------------------------------*/
+/*---------------------------- Interface default -----------------------------*/
+/*----------------------------------------------------------------------------*/
+
+
+
+/**
+ * \brief Auxiliary function to evaluate expression for "BreastMammogramROIExtractionKernel.loopLength".
+ */
+int BreastMammogramROIExtraction_get_BreastMammogramROIExtractionKernel_loopLength( void )
+{
+	return 3;
+}
+
+#define CHECK_ERRORS_ST(ST, RET) if(!max_ok(ST->errors)) { if(max_config_get_bool(MAX_CONFIG_STATIC_INTERFACE_ABORT_ON_ERROR)) { fprintf(stderr, "%s\n", max_errors_trace(ST->errors)); abort(); } set_error_and_free(max_errors_trace(ST->errors)); return RET; } 
+#define CHECK_NULL(VALUE, MESSAGE, RET) if(VALUE == NULL) { if (max_config_get_bool(MAX_CONFIG_STATIC_INTERFACE_ABORT_ON_ERROR)) { fprintf(stderr, "%s\n%s\n", (stored_error == NULL) ? "" : stored_error, MESSAGE); abort(); } set_error(MESSAGE); return RET; }
+
+ 
+typedef struct BreastMammogramROIExtraction_callback_stream {
+	uint8_t *user_ptr;
+	uint8_t *aligned_ptr;
+	size_t   size;
+	int      is_output;
+} BreastMammogramROIExtraction_callback_stream_t;
+
+typedef struct BreastMammogramROIExtraction_callback_data {
+	BreastMammogramROIExtraction_callback_stream_t stream[2]; 
+	int count;
+	int max_count;
+} BreastMammogramROIExtraction_callback_data_t;
+
+static void BreastMammogramROIExtraction_callback_internal(void *cb_data)
+{
+	BreastMammogramROIExtraction_callback_data_t *data = (BreastMammogramROIExtraction_callback_data_t*) cb_data;
+	for (int i = 0 ; i < data->count ; i++ ) {
+		BreastMammogramROIExtraction_callback_stream_t *s = &data->stream[i];
+		if (s->is_output && (s->size > 0)) {
+			memcpy(s->user_ptr, s->aligned_ptr, s->size);
+		}
+		free(s->aligned_ptr);
+	}
+	free(data);
+}
+
+static max_actions_t* BreastMammogramROIExtraction_convert_internal(
+	max_file_t *maxfile,
+	BreastMammogramROIExtraction_actions_t *interface_actions,
+	int  is_internal_call,
+	void (**callback_func)(void*),
+	void **callback_data)
+{
+	max_actions_t *actions = max_actions_init(maxfile, NULL);
+	if(actions == NULL) return NULL;
+
+#define CHECK_ERRORS if(!max_ok(actions->errors)) { set_error_and_free(max_errors_trace(actions->errors)); return NULL; } 
+
+	BreastMammogramROIExtraction_callback_data_t *cb_data = NULL;
+	int use_callback = (callback_func != NULL) && (callback_data != NULL);
+	if (use_callback) {
+		cb_data = malloc(sizeof(BreastMammogramROIExtraction_callback_data_t));
+		if (cb_data == NULL) {
+			fprintf(stderr, "Unable to allocate memory for stream callback data in function BreastMammogramROIExtraction_convert_internal\n");
+			return NULL;
+		}
+		cb_data->max_count = 2;
+		cb_data->count     = 0;
+		*callback_data     = cb_data;
+		*callback_func     = &BreastMammogramROIExtraction_callback_internal;
+	}
+
+	uint32_t param_length = interface_actions->param_length;
+	
+	int32_t param_BreastMammogramROIExtractionKernel_loopLength = BreastMammogramROIExtraction_get_BreastMammogramROIExtractionKernel_loopLength(  );
+	
+	int32_t tmp_1 = (param_length * param_BreastMammogramROIExtractionKernel_loopLength);
+	
+	/* code for scalar BreastMammogramROIExtractionKernel.run_cycle_count */
+	uint64_t ticks_BreastMammogramROIExtractionKernel = tmp_1;
+	max_set_ticks(actions, "BreastMammogramROIExtractionKernel", tmp_1);
+	CHECK_ERRORS;
+	/* end of code for scalar BreastMammogramROIExtractionKernel.run_cycle_count*/
+	
+	uint32_t param_black = interface_actions->param_black;
+	
+	/* code for scalar BreastMammogramROIExtractionKernel.black */
+	uint64_t inscalar_BreastMammogramROIExtractionKernel_black = param_black;
+	max_set_uint64t(actions, "BreastMammogramROIExtractionKernel", "black", inscalar_BreastMammogramROIExtractionKernel_black);
+	CHECK_ERRORS;
+	/* end of code for scalar BreastMammogramROIExtractionKernel.black*/
+	
+	uint32_t param_height = interface_actions->param_height;
+	
+	/* code for scalar BreastMammogramROIExtractionKernel.height */
+	uint64_t inscalar_BreastMammogramROIExtractionKernel_height = param_height;
+	max_set_uint64t(actions, "BreastMammogramROIExtractionKernel", "height", inscalar_BreastMammogramROIExtractionKernel_height);
+	CHECK_ERRORS;
+	/* end of code for scalar BreastMammogramROIExtractionKernel.height*/
+	
+	uint32_t param_threshold = interface_actions->param_threshold;
+	
+	/* code for scalar BreastMammogramROIExtractionKernel.threshold */
+	uint64_t inscalar_BreastMammogramROIExtractionKernel_threshold = param_threshold;
+	max_set_uint64t(actions, "BreastMammogramROIExtractionKernel", "threshold", inscalar_BreastMammogramROIExtractionKernel_threshold);
+	CHECK_ERRORS;
+	/* end of code for scalar BreastMammogramROIExtractionKernel.threshold*/
+	
+	uint32_t param_width = interface_actions->param_width;
+	
+	/* code for scalar BreastMammogramROIExtractionKernel.width */
+	uint64_t inscalar_BreastMammogramROIExtractionKernel_width = param_width;
+	max_set_uint64t(actions, "BreastMammogramROIExtractionKernel", "width", inscalar_BreastMammogramROIExtractionKernel_width);
+	CHECK_ERRORS;
+	/* end of code for scalar BreastMammogramROIExtractionKernel.width*/
+	
+	int64_t tmp_0 = (param_length * 4);
+	
+	/* code for stream image_pixel */
+	size_t instream_size_image_pixel = tmp_0;
+	if (instream_size_image_pixel > 0) {
+		const uint32_t *stream_ptr = interface_actions->instream_image_pixel;
+		if (use_callback && (1 == BreastMammogramROIExtraction_check_aligned(interface_actions->instream_image_pixel))) {
+			uint32_t *aligned_instream_image_pixel = malloc(instream_size_image_pixel);
+			if (aligned_instream_image_pixel == NULL) {
+				max_report_error_slic(actions->errors, __FILE__, __LINE__, 526, "Failed to allocate aligned memory for stream 'image_pixel'");
+				CHECK_ERRORS;
+			}
+			(&cb_data->stream[cb_data->count])->user_ptr    = (uint8_t*) interface_actions->instream_image_pixel;
+			(&cb_data->stream[cb_data->count])->aligned_ptr = (uint8_t*) aligned_instream_image_pixel;
+			(&cb_data->stream[cb_data->count])->size        = instream_size_image_pixel;
+			(&cb_data->stream[cb_data->count])->is_output   = 0;
+			cb_data->count += 1;
+			memcpy(aligned_instream_image_pixel, interface_actions->instream_image_pixel, instream_size_image_pixel);
+			stream_ptr = aligned_instream_image_pixel;
+		}
+		max_queue_input(actions, "image_pixel", stream_ptr, instream_size_image_pixel);
+		CHECK_ERRORS;
+	}
+	/* end of code for stream image_pixel */
+	
+	/* code for stream output */
+	size_t outstream_size_output = tmp_0;
+	if (outstream_size_output > 0) {
+		uint32_t *stream_ptr = interface_actions->outstream_output;
+		if (use_callback && (1 == BreastMammogramROIExtraction_check_aligned(interface_actions->outstream_output))) {
+			uint32_t *aligned_outstream_output = malloc(outstream_size_output);
+			if (aligned_outstream_output == NULL) {
+				max_report_error_slic(actions->errors, __FILE__, __LINE__, 526, "Failed to allocate aligned memory for stream 'output'");
+				CHECK_ERRORS;
+			}
+			(&cb_data->stream[cb_data->count])->user_ptr    = (uint8_t*) interface_actions->outstream_output;
+			(&cb_data->stream[cb_data->count])->aligned_ptr = (uint8_t*) aligned_outstream_output;
+			(&cb_data->stream[cb_data->count])->size        = outstream_size_output;
+			(&cb_data->stream[cb_data->count])->is_output   = 1;
+			cb_data->count += 1;
+			stream_ptr = aligned_outstream_output;
+		}
+		max_queue_output(actions, "output", stream_ptr, outstream_size_output);
+		CHECK_ERRORS;
+	}
+	/* end of code for stream output */
+	
+	if (use_callback && cb_data->count == 0) {
+		*callback_data = NULL;
+		*callback_func = NULL;
+		free(cb_data);
+	}
+	return actions;
+#undef CHECK_ERRORS
+}
+
+void BreastMammogramROIExtraction(
+	uint32_t param_black,
+	uint32_t param_height,
+	uint32_t param_length,
+	uint32_t param_threshold,
+	uint32_t param_width,
+	const uint32_t *instream_image_pixel,
+	uint32_t *outstream_output)
+{
+	(void) pthread_once(&slic_bs_is_initialised, BreastMammogramROIExtraction_static_init);
+	CHECK_NULL(stored_maxfile, "Maxfile was not loaded", );
+	max_run_t *run = BreastMammogramROIExtraction_nonblock(param_black, param_height, param_length, param_threshold, param_width, instream_image_pixel, outstream_output);
+	CHECK_NULL(run, "Unable to run actions", );
+	max_wait(run);
+}
+
+max_run_t *BreastMammogramROIExtraction_nonblock(
+	uint32_t param_black,
+	uint32_t param_height,
+	uint32_t param_length,
+	uint32_t param_threshold,
+	uint32_t param_width,
+	const uint32_t *instream_image_pixel,
+	uint32_t *outstream_output)
+{
+	BreastMammogramROIExtraction_actions_t interface_actions;
+	interface_actions.param_black = param_black;
+	interface_actions.param_height = param_height;
+	interface_actions.param_length = param_length;
+	interface_actions.param_threshold = param_threshold;
+	interface_actions.param_width = param_width;
+	interface_actions.instream_image_pixel = instream_image_pixel;
+	interface_actions.outstream_output = outstream_output;
+	(void) pthread_once(&slic_bs_is_initialised, BreastMammogramROIExtraction_static_init);
+	CHECK_NULL(stored_maxfile, "Maxfile was not loaded", NULL);
+	void (*cb_func)(void*) = NULL;
+	void  *cb_data         = NULL;
+	max_actions_t *actions = BreastMammogramROIExtraction_convert_internal(stored_maxfile, &interface_actions, 1, &cb_func, &cb_data);
+	CHECK_NULL(actions, "Unable to build actions", NULL);
+	max_validate(actions);
+	CHECK_ERRORS_ST(actions, NULL);
+	CHECK_ERRORS_ST(stored_engine, NULL);
+	max_run_t *run;
+	if (cb_func == NULL) {
+		run = max_run_nonblock(stored_engine, actions);
+	} else {
+		run = max_run_nonblock_with_cb(stored_engine, actions, cb_func, cb_data);
+	}
+	CHECK_NULL(run, "Unable to run actions", NULL);
+	CHECK_ERRORS_ST(actions, NULL);
+	max_actions_free(actions);
+	return run;
+}
+
+void BreastMammogramROIExtraction_run(
+	max_engine_t *engine,
+	BreastMammogramROIExtraction_actions_t *interface_actions)
+{
+	max_run_t *run = BreastMammogramROIExtraction_run_nonblock(engine, interface_actions);
+	CHECK_NULL(run, "Unable to run actions", );
+	max_wait(run);
+}
+
+max_run_t *BreastMammogramROIExtraction_run_nonblock(
+	max_engine_t *engine,
+	BreastMammogramROIExtraction_actions_t *interface_actions)
+{
+	max_file_t *maxfile = max_engine_get_max_file(engine); 
+	void (*cb_func)(void*) = NULL;
+	void  *cb_data         = NULL;
+	max_actions_t *actions = BreastMammogramROIExtraction_convert_internal(maxfile, interface_actions, 1, &cb_func, &cb_data);
+	CHECK_ERRORS_ST(actions, NULL);
+	max_run_t *run;
+	if (cb_func == NULL) {
+		run = max_run_nonblock(engine, actions);
+	} else {
+		run = max_run_nonblock_with_cb(engine, actions, cb_func, cb_data);
+	}
+	CHECK_NULL(run, "Unable to run actions", NULL);
+	max_actions_free(actions);
+	return run;
+}
+
+
+/**
+ * \brief Group run advanced static function for the interface 'default'.
+ * 
+ * \param [in] group Group to use.
+ * \param [in,out] interface_actions Actions to run.
+ *
+ * Run the actions on the first device available in the group.
+ */
+void BreastMammogramROIExtraction_run_group(max_group_t *group, BreastMammogramROIExtraction_actions_t *interface_actions)
+{
+	max_run_t *run = BreastMammogramROIExtraction_run_group_nonblock(group, interface_actions);
+	CHECK_NULL(run, "Unable to run actions", );
+	max_wait(run);
+}
+
+
+/**
+ * \brief Group run advanced static non-blocking function for the interface 'default'.
+ * 
+ *
+ * Schedule the actions to run on the first device available in the group and return immediately.
+ * The status of the run must be checked with ::max_wait. 
+ * Note that use of ::max_nowait is prohibited with non-blocking running on groups:
+ * see the ::max_run_group_nonblock documentation for more explanation.
+ *
+ * \param [in] group Group to use.
+ * \param [in] interface_actions Actions to run.
+ * \return A handle on the execution status of the actions, or NULL in case of error.
+ */
+max_run_t *BreastMammogramROIExtraction_run_group_nonblock(max_group_t *group, BreastMammogramROIExtraction_actions_t *interface_actions)
+{
+	max_file_t *maxfile = max_group_get_max_file(group);
+	max_actions_t *actions = BreastMammogramROIExtraction_convert_internal(maxfile, interface_actions, 1, NULL, NULL);
+	if(actions == NULL) return NULL;
+	if(!max_ok(actions->errors)) return NULL;
+	max_validate(actions);
+	max_run_t *run = max_run_group_nonblock(group, actions);
+	max_actions_free(actions);
+	return run;
+}
+
+
+/**
+ * \brief Array run advanced static function for the interface 'default'.
+ * 
+ * \param [in] engarray The array of devices to use.
+ * \param [in,out] interface_actions The array of actions to run.
+ *
+ * Run the array of actions on the array of engines.  The length of interface_actions
+ * must match the size of engarray.
+ */
+void BreastMammogramROIExtraction_run_array(max_engarray_t *engarray, BreastMammogramROIExtraction_actions_t *interface_actions[])
+{
+	max_run_t *run = BreastMammogramROIExtraction_run_array_nonblock(engarray, interface_actions);
+	CHECK_NULL(run, "Unable to run actions", );
+	max_wait(run);
+}
+
+
+/**
+ * \brief Array run advanced static non-blocking function for the interface 'default'.
+ * 
+ *
+ * Schedule to run the array of actions on the array of engines, and return immediately.
+ * The length of interface_actions must match the size of engarray.
+ * The status of the run can be checked either by ::max_wait or ::max_nowait;
+ * note that one of these *must* be called, so that associated memory can be released.
+ *
+ * \param [in] engarray The array of devices to use.
+ * \param [in] interface_actions The array of actions to run.
+ * \return A handle on the execution status of the actions, or NULL in case of error.
+ */
+max_run_t *BreastMammogramROIExtraction_run_array_nonblock(max_engarray_t *engarray, BreastMammogramROIExtraction_actions_t *interface_actions[])
+{
+	max_file_t *maxfile = max_engarray_get_max_file(engarray, 0);
+	int i;
+	max_actarray_t *actarray = max_actarray_init(maxfile, engarray->size);
+	if (actarray == NULL) return NULL;
+	max_actions_t **arr_actions = malloc(engarray->size * sizeof(max_actions_t*));
+	for ( i = 0 ; i < actarray->size; i++ ) {
+		max_actions_t *actions = BreastMammogramROIExtraction_convert_internal(maxfile, interface_actions[i], 1, NULL, NULL);
+		if (actions == NULL) return NULL;
+		arr_actions[i] = actions;
+		max_set_action(actarray, i, actions);
+	}
+	max_run_t *run = max_run_array_nonblock(engarray, actarray);
+	for ( i = 0 ; i < actarray->size ; i++ ) { max_actions_free(arr_actions[i]); }
+	max_actarray_free(actarray);
+	free(arr_actions);
+	return run;
+}
+
+
+/**
+ * \brief Converts a static-interface action struct into a dynamic-interface max_actions_t struct.
+ *
+ * Note that this is an internal utility function used by other functions in the static interface.
+ *
+ * \param [in] maxfile The maxfile to use.
+ * \param [in] interface_actions The interface-specific actions to run.
+ * \return The dynamic-interface actions to run, or NULL in case of error.
+ */
+max_actions_t* BreastMammogramROIExtraction_convert(max_file_t *maxfile, BreastMammogramROIExtraction_actions_t *interface_actions)
+{
+	return BreastMammogramROIExtraction_convert_internal(maxfile, interface_actions, 0, NULL, NULL);
+}
+
+#undef CHECK_ERRORS_ST
+#undef CHECK_NULL
+
+
+
+#endif /* SLIC_USE_DEFINITIONS */
+
+#ifdef SLIC_DYNAMIC_CODE
+SLIC_MODE_START(default)	
+SLIC_PARAMETER_UINT64(uint32_t, length, param_length)	
+SLIC_AUTO_LOOP_OFFSET(int32_t, BreastMammogramROIExtractionKernel, loopLength, param_BreastMammogramROIExtractionKernel_loopLength)	
+SLIC_TEMP_VAR(int32_t tmp_1 = (param_length * param_BreastMammogramROIExtractionKernel_loopLength);)	
+SLIC_SET_TICKS(BreastMammogramROIExtractionKernel, tmp_1)	
+SLIC_PARAMETER_UINT64(uint32_t, black, param_black)	
+SLIC_SCALAR_UINT64(BreastMammogramROIExtractionKernel, black, param_black)	
+SLIC_PARAMETER_UINT64(uint32_t, height, param_height)	
+SLIC_SCALAR_UINT64(BreastMammogramROIExtractionKernel, height, param_height)	
+SLIC_PARAMETER_UINT64(uint32_t, threshold, param_threshold)	
+SLIC_SCALAR_UINT64(BreastMammogramROIExtractionKernel, threshold, param_threshold)	
+SLIC_PARAMETER_UINT64(uint32_t, width, param_width)	
+SLIC_SCALAR_UINT64(BreastMammogramROIExtractionKernel, width, param_width)	
+SLIC_TEMP_VAR(int64_t tmp_0 = (param_length * 4);)	
+SLIC_STREAM(image_pixel, tmp_0)	
+SLIC_STREAM(output, tmp_0)	
+SLIC_MODE_END(default)
+
+#endif /* SLIC_DYNAMIC_CODE */
+
+#ifdef SKIN_META_DATA
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PG1h
+eGZpbGUgZm9ybWF0LXZlcnNpb249IjIwMTIwMjAwIiBoZWFkZXI9IkJyZWFzdE1hbW1vZ3JhbVJP
+SUV4dHJhY3Rpb24uaCIgbmFtZT0iQnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbiI+PGNvbnN0
+YW50IG5hbWU9IlBDSUVfQUxJR05NRU5UIiB0eXBlPSJsb25nIiB2YWx1ZT0iMTYiLz48ZW5naW5l
+bW9kZSBuYW1lPSJkZWZhdWx0Ij48ZnVuY3Rpb24gbmFtZT0iQnJlYXN0TWFtbW9ncmFtUk9JRXh0
+cmFjdGlvbiIgcmV0dXJuLXZhbHVlPSJ2b2lkIj48c2NhbGFyIGRlc2M9IkludGVyZmFjZSBQYXJh
+bWV0ZXIgJnF1b3Q7YmxhY2smcXVvdDsuIiBkaXJlY3Rpb249IklucHV0IiBuYW1lPSJwYXJhbV9i
+bGFjayIgdHlwZT0idWludDMyX3QiLz48c2NhbGFyIGRlc2M9IkludGVyZmFjZSBQYXJhbWV0ZXIg
+JnF1b3Q7aGVpZ2h0JnF1b3Q7LiIgZGlyZWN0aW9uPSJJbnB1dCIgbmFtZT0icGFyYW1faGVpZ2h0
+IiB0eXBlPSJ1aW50MzJfdCIvPjxzY2FsYXIgZGVzYz0iSW50ZXJmYWNlIFBhcmFtZXRlciAmcXVv
+dDtsZW5ndGgmcXVvdDsuIiBkaXJlY3Rpb249IklucHV0IiBuYW1lPSJwYXJhbV9sZW5ndGgiIHR5
+cGU9InVpbnQzMl90Ii8+PHNjYWxhciBkZXNjPSJJbnRlcmZhY2UgUGFyYW1ldGVyICZxdW90O3Ro
+cmVzaG9sZCZxdW90Oy4iIGRpcmVjdGlvbj0iSW5wdXQiIG5hbWU9InBhcmFtX3RocmVzaG9sZCIg
+dHlwZT0idWludDMyX3QiLz48c2NhbGFyIGRlc2M9IkludGVyZmFjZSBQYXJhbWV0ZXIgJnF1b3Q7
+d2lkdGgmcXVvdDsuIiBkaXJlY3Rpb249IklucHV0IiBuYW1lPSJwYXJhbV93aWR0aCIgdHlwZT0i
+dWludDMyX3QiLz48YXJyYXkgZGVzYz0iVGhlIHN0cmVhbSBzaG91bGQgYmUgb2Ygc2l6ZSAocGFy
+YW1fbGVuZ3RoICogNCkgYnl0ZXMuIiBkaXJlY3Rpb249IklucHV0IiBuYW1lPSJpbnN0cmVhbV9p
+bWFnZV9waXhlbCIgc2l6ZT0iKHBhcmFtX2xlbmd0aCAqIDQpIiB0cmFuc3Bvc2U9InRydWUiIHR5
+cGU9InVpbnQzMl90Ij48ZGltZW5zaW9uIGluZGV4PSIwIj48bGVuZ3RoPjxmdW5jdGlvbkNhbGw+
+PG51bUJpbmFyeU9wZXJhdG9yIG9wZXJhdG9yPSIvIiB2YWx1ZT0iKChwYXJhbV9sZW5ndGggKiA0
+KSAvIDQpIj48ZnVuY3Rpb25DYWxsPjxudW1CaW5hcnlPcGVyYXRvciBvcGVyYXRvcj0iKiIgdmFs
+dWU9IihwYXJhbV9sZW5ndGggKiA0KSI+PHVzZXJQYXJhbSB2YWx1ZT0icGFyYW1fbGVuZ3RoIi8+
+PGNvbnN0YW50VmFsdWUgdmFsdWU9IjQiLz48L251bUJpbmFyeU9wZXJhdG9yPjwvZnVuY3Rpb25D
+YWxsPjxjb25zdGFudFZhbHVlIHZhbHVlPSI0Ii8+PC9udW1CaW5hcnlPcGVyYXRvcj48L2Z1bmN0
+aW9uQ2FsbD48L2xlbmd0aD48L2RpbWVuc2lvbj48L2FycmF5PjxhcnJheSBkZXNjPSJUaGUgc3Ry
+ZWFtIHNob3VsZCBiZSBvZiBzaXplIChwYXJhbV9sZW5ndGggKiA0KSBieXRlcy4iIGRpcmVjdGlv
+bj0iT3V0cHV0IiBuYW1lPSJvdXRzdHJlYW1fb3V0cHV0IiBzaXplPSIocGFyYW1fbGVuZ3RoICog
+NCkiIHRyYW5zcG9zZT0idHJ1ZSIgdHlwZT0idWludDMyX3QiPjxkaW1lbnNpb24gaW5kZXg9IjAi
+PjxsZW5ndGg+PGZ1bmN0aW9uQ2FsbD48bnVtQmluYXJ5T3BlcmF0b3Igb3BlcmF0b3I9Ii8iIHZh
+bHVlPSIoKHBhcmFtX2xlbmd0aCAqIDQpIC8gNCkiPjxmdW5jdGlvbkNhbGw+PG51bUJpbmFyeU9w
+ZXJhdG9yIG9wZXJhdG9yPSIqIiB2YWx1ZT0iKHBhcmFtX2xlbmd0aCAqIDQpIj48dXNlclBhcmFt
+IHZhbHVlPSJwYXJhbV9sZW5ndGgiLz48Y29uc3RhbnRWYWx1ZSB2YWx1ZT0iNCIvPjwvbnVtQmlu
+YXJ5T3BlcmF0b3I+PC9mdW5jdGlvbkNhbGw+PGNvbnN0YW50VmFsdWUgdmFsdWU9IjQiLz48L251
+bUJpbmFyeU9wZXJhdG9yPjwvZnVuY3Rpb25DYWxsPjwvbGVuZ3RoPjwvZGltZW5zaW9uPjwvYXJy
+YXk+PC9mdW5jdGlvbj48L2VuZ2luZW1vZGU+PC9tYXhmaWxlPg==
+#endif /* SKIN_META_DATA */
+
+#ifdef SLIC_B64_DEFINITIONS
+I2luY2x1ZGUgPHN0ZGlvLmg+CiNpbmNsdWRlIDxtYXRoLmg+CiNpbmNsdWRlIDxwdGhyZWFkLmg+
+CiNpbmNsdWRlIDxzdHJpbmcuaD4KI2luY2x1ZGUgPHVuaXN0ZC5oPgojaW5jbHVkZSA8c3RkbGli
+Lmg+CnN0YXRpYyBtYXhfZmlsZV90ICpzdG9yZWRfbWF4ZmlsZSA9IE5VTEw7CnN0YXRpYyBtYXhf
+ZW5naW5lX3QgKnN0b3JlZF9lbmdpbmUgPSBOVUxMOwpzdGF0aWMgY2hhciAqc3RvcmVkX2Vycm9y
+ID0gTlVMTDsKc3RhdGljIGludCBzdG9yZWRfaGFzX2Vycm9yID0gMDsKc3RhdGljIHB0aHJlYWRf
+b25jZV90IHNsaWNfYnNfaXNfaW5pdGlhbGlzZWQgPSBQVEhSRUFEX09OQ0VfSU5JVDsKCnN0YXRp
+YyB2b2lkIHNldF9lcnJvcihjb25zdCBjaGFyICplcnJvcl9zdHIpCnsKCXN0b3JlZF9oYXNfZXJy
+b3IgPSAxOyAKCWlmKHN0b3JlZF9lcnJvciA9PSBOVUxMKSB7CgkJc3RvcmVkX2Vycm9yID0gc3Ry
+ZHVwKGVycm9yX3N0cik7Cgl9IGVsc2UgewoJCWNoYXIgKm5lcnIgPSBtYWxsb2Moc3RybGVuKHN0
+b3JlZF9lcnJvcikgKyBzdHJsZW4oZXJyb3Jfc3RyKSArIDIpOwoJCXNwcmludGYobmVyciwgIiVz
+XG4lcyIsIHN0b3JlZF9lcnJvciwgZXJyb3Jfc3RyKTsKCQlmcmVlKHN0b3JlZF9lcnJvcik7CgkJ
+c3RvcmVkX2Vycm9yID0gbmVycjsKCX0KfQpzdGF0aWMgdm9pZCBzZXRfZXJyb3JfYW5kX2ZyZWUo
+Y2hhciAqZXJyb3Jfc3RyKXsKCXNldF9lcnJvcihlcnJvcl9zdHIpOwoJZnJlZShlcnJvcl9zdHIp
+Owp9CmludCBCcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9uX2hhc19lcnJvcnModm9pZCkKewly
+ZXR1cm4gc3RvcmVkX2hhc19lcnJvcjsgfQpjb25zdCBjaGFyKiBCcmVhc3RNYW1tb2dyYW1ST0lF
+eHRyYWN0aW9uX2dldF9lcnJvcnModm9pZCkKewlyZXR1cm4gc3RvcmVkX2Vycm9yOyB9CnZvaWQg
+QnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbl9jbGVhcl9lcnJvcnModm9pZCkKewoJZnJlZShz
+dG9yZWRfZXJyb3IpOwoJc3RvcmVkX2Vycm9yID0gTlVMTDsKCXN0b3JlZF9oYXNfZXJyb3IgPSAw
+Owp9CgpzdGF0aWMgY2hhciBCcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9uX3VzZV9zaW11bGF0
+aW9uWzE2XTsKc3RhdGljIHZvaWQgQnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbl9kZWZfdXNl
+X3NpbXVsYXRpb24odm9pZCkKewoJbG9uZyBwaWQgPSAoKGxvbmcpIGdldHBpZCgpKSAlIDEwMDAw
+MDsKCXNucHJpbnRmKEJyZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rpb25fdXNlX3NpbXVsYXRpb24s
+IDE2LCAiQnJlYXN0TWFfJTA1bGRfIiwgcGlkKTsKfQpzdGF0aWMgY29uc3QgY2hhciAqQnJlYXN0
+TWFtbW9ncmFtUk9JRXh0cmFjdGlvbl9jaGVja191c2Vfc2ltdWxhdGlvbih2b2lkKQp7CglCcmVh
+c3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9uX2RlZl91c2Vfc2ltdWxhdGlvbigpOwoJY29uc3QgY2hh
+ciAqdXNlX3NpbSA9IG1heF9jb25maWdfZ2V0X3N0cmluZyhNQVhfQ09ORklHX1VTRV9TSU1VTEFU
+SU9OKTsKCWlmICh1c2Vfc2ltID09IE5VTEwpIHsKCQl1c2Vfc2ltID0gQnJlYXN0TWFtbW9ncmFt
+Uk9JRXh0cmFjdGlvbl91c2Vfc2ltdWxhdGlvbjsKCQltYXhfY29uZmlnX3NldF9zdHJpbmcoTUFY
+X0NPTkZJR19VU0VfU0lNVUxBVElPTiwgdXNlX3NpbSk7Cgl9CglyZXR1cm4gdXNlX3NpbTsKfQoK
+c3RhdGljIGludCBCcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9uX3NpbXVsYXRpb25fbGF1bmNo
+ID0gMDsKaW50IEJyZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rpb25fc2ltdWxhdG9yX3N0YXJ0KHZv
+aWQpCnsKCWludCByZXR2YWwgPSAwOwoJY29uc3QgY2hhciAqdXNlX3NpbSA9IEJyZWFzdE1hbW1v
+Z3JhbVJPSUV4dHJhY3Rpb25fY2hlY2tfdXNlX3NpbXVsYXRpb24oKTsKCWNoYXIgYnVmZlsxMDI0
+XTsKCXNucHJpbnRmKGJ1ZmYsIDEwMjQsICJQQVRIPXNpbXV0aWxzOiRQQVRIIG1heGNvbXBpbGVy
+c2ltIC1kIDEgLW4gJXMgLWMgTUFYMzQyNEEgLVMgc2ltdXRpbHMgcmVzdGFydCIsIHVzZV9zaW0p
+OwoJRklMRSAqcGlwZV9mcCA9IHBvcGVuKGJ1ZmYsICJyIik7CglpZiAocGlwZV9mcCA9PSBOVUxM
+KSB7CgkJc3RybmNhdChidWZmLCAiIDogZmFpbGVkIHRvIGV4ZWN1dGUuIiwgKDEwMjQgLSBzdHJs
+ZW4oYnVmZikpKTsKCQlzZXRfZXJyb3IoYnVmZik7CgkJcmV0dXJuIC0xOwoJfQoJd2hpbGUgKGZn
+ZXRzKGJ1ZmYsIDEwMjQsIHBpcGVfZnApICE9IE5VTEwpIHsKCQkvKiBVbmNvbW1lbnQgdGhpcyB0
+byBnZXQgc2ltdWxhdG9yIGNvbW1hbmQgb3V0cHV0ICovCgkJLyogZnByaW50ZihzdGRlcnIsIGJ1
+ZmYpOyAqLwoJCWlmIChzdHJzdHIoYnVmZiwgIkVycm9yIikpIHsKCQkJc2V0X2Vycm9yKGJ1ZmYp
+OwoJCQlyZXR2YWwgPSAtMTsKCQl9Cgl9CglwY2xvc2UocGlwZV9mcCk7CglyZXR1cm4gcmV0dmFs
+Owp9CgppbnQgQnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbl9zaW11bGF0b3Jfc3RvcCh2b2lk
+KQp7Cgljb25zdCBjaGFyICp1c2Vfc2ltID0gQnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbl9j
+aGVja191c2Vfc2ltdWxhdGlvbigpOwoJY2hhciBidWZmWzEwMjRdOwoJc25wcmludGYoYnVmZiwg
+MTAyNCwgIlBBVEg9c2ltdXRpbHM6JFBBVEggbWF4Y29tcGlsZXJzaW0gLWQgMSAtbiAlcyAtYyBN
+QVgzNDI0QSAtUyBzaW11dGlscyBzdG9wIiwgdXNlX3NpbSk7CglGSUxFICpwaXBlX2ZwID0gcG9w
+ZW4oYnVmZiwgInIiKTsKCWlmIChwaXBlX2ZwID09IE5VTEwpIHsKCQlzdHJuY2F0KGJ1ZmYsICIg
+OiBmYWlsZWQgdG8gZXhlY3V0ZS4iLCAoMTAyNCAtIHN0cmxlbihidWZmKSkpOwoJCXNldF9lcnJv
+cihidWZmKTsKCQlyZXR1cm4gLTE7Cgl9Cgl3aGlsZSAoZmdldHMoYnVmZiwgMTAyNCwgcGlwZV9m
+cCkgIT0gTlVMTCkgewoJCS8qIFVuY29tbWVudCB0aGlzIHRvIGdldCBzaW11bGF0b3IgY29tbWFu
+ZCBvdXRwdXQgKi8KCQkvKiBmcHJpbnRmKHN0ZGVyciwgYnVmZik7ICovCgkJOwoJfQoJcGNsb3Nl
+KHBpcGVfZnApOwoJcmV0dXJuIDA7Cn0KCnN0YXRpYyB2b2lkIEJyZWFzdE1hbW1vZ3JhbVJPSUV4
+dHJhY3Rpb25fc3RhdGljX2luaXQodm9pZCkgCnsKCXN0b3JlZF9tYXhmaWxlID0gQnJlYXN0TWFt
+bW9ncmFtUk9JRXh0cmFjdGlvbl9pbml0KCk7CglpZiAoc3RvcmVkX21heGZpbGUgPT0gTlVMTCB8
+fCAhbWF4X29rKHN0b3JlZF9tYXhmaWxlLT5lcnJvcnMpKSB7CgkJc3RvcmVkX21heGZpbGUgPSBO
+VUxMOwoJCWlmKG1heF9jb25maWdfZ2V0X2Jvb2woTUFYX0NPTkZJR19TVEFUSUNfSU5URVJGQUNF
+X0FCT1JUX09OX0VSUk9SKSkgYWJvcnQoKTsKCQllbHNlIHsgc2V0X2Vycm9yKCJVbmFibGUgdG8g
+bG9hZCBtYXhmaWxlIik7IHJldHVybjsgfQoJfQoJaWYoIW1heF9vayhtYXhfZ2xvYmFsX2Vycm9y
+cygpKSkgewoJCXNldF9lcnJvcl9hbmRfZnJlZShtYXhfZXJyb3JzX3RyYWNlKG1heF9nbG9iYWxf
+ZXJyb3JzKCkpKTsKCQlyZXR1cm47Cgl9CglpZighbWF4X2NvbmZpZ19nZXRfYm9vbChNQVhfQ09O
+RklHX1NUQVRJQ19JTlRFUkZBQ0VfQUJPUlRfT05fRVJST1IpKQoJCW1heF9lcnJvcnNfbW9kZShz
+dG9yZWRfbWF4ZmlsZS0+ZXJyb3JzLCAwKTsKCXRpbWVfdCB0aW1lb3V0X3ByZXZpb3VzID0gbWF4
+X2xvYWRfdGltZW91dChzdG9yZWRfbWF4ZmlsZSwgMzApOwoJY29uc3QgY2hhciAqdXNlX3NpbSA9
+IEJyZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rpb25fY2hlY2tfdXNlX3NpbXVsYXRpb24oKTsKCWlm
+IChtYXhfcGluZ19kYWVtb24oc3RvcmVkX21heGZpbGUsIHVzZV9zaW0pID09IDApIHsKCQlpbnQg
+c2ltX3N0YXQgPSBCcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9uX3NpbXVsYXRvcl9zdGFydCgp
+OwoJCWlmICgoc2ltX3N0YXQgPT0gMCkgJiYgKG1heF9waW5nX2RhZW1vbihzdG9yZWRfbWF4Zmls
+ZSwgdXNlX3NpbSkgPT0gMSkpIHsKCQkJQnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbl9zaW11
+bGF0aW9uX2xhdW5jaCA9IDE7CgkJfSBlbHNlIHsKCQkJc2V0X2Vycm9yKCJFcnJvcjogQW4gZXJy
+b3Igb2NjdXJyZWQgd2hpbGUgdHJ5aW5nIHRvIHN0YXJ0IHRoZSBzaW11bGF0aW9uIGluZnJhc3Ry
+dWN0dXJlIGF1dG9tYXRpY2FsbHkuIik7CgkJCXNldF9lcnJvcigiRXJyb3I6IENoZWNrIHRoYXQg
+J3VzZV9zaW11bGF0aW9uPTxzaW11bGF0b3JfbmFtZT4nIGlzIHNldCBjb3JyZWN0bHkgaW4geW91
+ciBTTGlDIGNvbmZpZ3VyYXRpb24iKTsKCQkJc2V0X2Vycm9yKCJFcnJvcjogYW5kIHRoYXQgdGhl
+IGFzc29jaWF0ZWQgc2ltdWxhdGVkIHN5c3RlbSBkYWVtb24gaXMgcnVubmluZy4iKTsKCQkJbWF4
+X2ZpbGVfZnJlZShzdG9yZWRfbWF4ZmlsZSk7CgkJCXN0b3JlZF9tYXhmaWxlID0gTlVMTDsKCQkJ
+cmV0dXJuOwoJCX0KCX0KCXN0b3JlZF9lbmdpbmUgPSBtYXhfbG9hZChzdG9yZWRfbWF4ZmlsZSwg
+IioiKTsKCWlmICghbWF4X29rKHN0b3JlZF9tYXhmaWxlLT5lcnJvcnMpKSB7CgkJaWYobWF4X2Nv
+bmZpZ19nZXRfYm9vbChNQVhfQ09ORklHX1NUQVRJQ19JTlRFUkZBQ0VfQUJPUlRfT05fRVJST1Ip
+KSB7CgkJCWZwcmludGYoc3RkZXJyLCAiXG5VbmFibGUgdG8gbG9hZCBlbmdpbmU6IGFib3J0aW5n
+IG5vdy5cblxuIik7CgkJCWZmbHVzaChzdGRlcnIpOwoJCQlhYm9ydCgpOwoJCX0gZWxzZSB7CgkJ
+CXNldF9lcnJvcl9hbmRfZnJlZShtYXhfZXJyb3JzX3RyYWNlKHN0b3JlZF9tYXhmaWxlLT5lcnJv
+cnMpKTsKCQkJbWF4X2ZpbGVfZnJlZShzdG9yZWRfbWF4ZmlsZSk7CgkJCXN0b3JlZF9tYXhmaWxl
+ID0gTlVMTDsKCQkJcmV0dXJuOwoJCX0gCgl9IAoJbWF4X2xvYWRfdGltZW91dChzdG9yZWRfbWF4
+ZmlsZSwgdGltZW91dF9wcmV2aW91cyk7Cn0Kdm9pZCBCcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0
+aW9uX2ZyZWUodm9pZCkKewoJaWYgKHN0b3JlZF9lbmdpbmUgIT0gTlVMTCkgewoJCW1heF91bmxv
+YWQoc3RvcmVkX2VuZ2luZSk7CgkJc3RvcmVkX2VuZ2luZSA9IE5VTEw7Cgl9CglpZiAoc3RvcmVk
+X21heGZpbGUgIT0gTlVMTCkgewoJCW1heF9maWxlX2ZyZWUoc3RvcmVkX21heGZpbGUpOwoJCXN0
+b3JlZF9tYXhmaWxlID0gTlVMTDsKCX0KCWlmIChzdG9yZWRfZXJyb3IgIT0gTlVMTCkgewoJCWZy
+ZWUoc3RvcmVkX2Vycm9yKTsKCQlzdG9yZWRfZXJyb3IgPSBOVUxMOwoJfQoJaWYgKEJyZWFzdE1h
+bW1vZ3JhbVJPSUV4dHJhY3Rpb25fc2ltdWxhdGlvbl9sYXVuY2ggPT0gMSkgewoJCWludCBzaW1f
+c3RhdCA9IEJyZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rpb25fc2ltdWxhdG9yX3N0b3AoKTsKCQlp
+ZiAoc2ltX3N0YXQgIT0gMCApIHsKCQkJZnByaW50ZihzdGRlcnIsICJFcnJvciBzdG9wcGluZyBz
+aW11bGF0b3IuIik7CgkJfQoJCUJyZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rpb25fc2ltdWxhdGlv
+bl9sYXVuY2ggPSAwOwoJfQp9CgpzdGF0aWMgaW50IEJyZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rp
+b25fZ2V0X3BjaWVfYWxpZ25tZW50KHZvaWQpCnsKI2lmZGVmIEJyZWFzdE1hbW1vZ3JhbVJPSUV4
+dHJhY3Rpb25fUENJRV9BTElHTk1FTlQKCXJldHVybiAoKEJyZWFzdE1hbW1vZ3JhbVJPSUV4dHJh
+Y3Rpb25fUENJRV9BTElHTk1FTlQgPCAxKSA/IDE2IDogQnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFj
+dGlvbl9QQ0lFX0FMSUdOTUVOVCk7CiNlbHNlCglyZXR1cm4gMTY7CiNlbmRpZgp9CgpzdGF0aWMg
+aW50IEJyZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rpb25fY2hlY2tfYWxpZ25lZChjb25zdCB2b2lk
+ICpkYXRhKQp7Cgl1aW50cHRyX3QgcG9pbnRlciA9ICh1aW50cHRyX3QpIGRhdGE7CglpbnQgYWxp
+Z25tZW50ID0gQnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbl9nZXRfcGNpZV9hbGlnbm1lbnQo
+KTsKCXJldHVybiAocG9pbnRlciAlIGFsaWdubWVudCkgPyAxIDogMDsKfQoKc3RhdGljIHZvaWQg
+KkJyZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rpb25fbWFsbG9jX2FsaWduZWQoY29uc3Qgc2l6ZV90
+IHNpemUpCnsKCXZvaWQgKnB0cjsKCWludCBhbGlnbm1lbnQgPSBCcmVhc3RNYW1tb2dyYW1ST0lF
+eHRyYWN0aW9uX2dldF9wY2llX2FsaWdubWVudCgpOwoJcG9zaXhfbWVtYWxpZ24oJnB0ciwgYWxp
+Z25tZW50LCBzaXplKTsKCXJldHVybiBwdHI7Cn0KCgoKLyotLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKi8K
+LyotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIEludGVyZmFjZSBkZWZhdWx0IC0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tKi8KLyotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKi8KCgoKLyoqCiAq
+IFxicmllZiBBdXhpbGlhcnkgZnVuY3Rpb24gdG8gZXZhbHVhdGUgZXhwcmVzc2lvbiBmb3IgIkJy
+ZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rpb25LZXJuZWwubG9vcExlbmd0aCIuCiAqLwppbnQgQnJl
+YXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbl9nZXRfQnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlv
+bktlcm5lbF9sb29wTGVuZ3RoKCB2b2lkICkKewoJcmV0dXJuIDM7Cn0KCiNkZWZpbmUgQ0hFQ0tf
+RVJST1JTX1NUKFNULCBSRVQpIGlmKCFtYXhfb2soU1QtPmVycm9ycykpIHsgaWYobWF4X2NvbmZp
+Z19nZXRfYm9vbChNQVhfQ09ORklHX1NUQVRJQ19JTlRFUkZBQ0VfQUJPUlRfT05fRVJST1IpKSB7
+IGZwcmludGYoc3RkZXJyLCAiJXNcbiIsIG1heF9lcnJvcnNfdHJhY2UoU1QtPmVycm9ycykpOyBh
+Ym9ydCgpOyB9IHNldF9lcnJvcl9hbmRfZnJlZShtYXhfZXJyb3JzX3RyYWNlKFNULT5lcnJvcnMp
+KTsgcmV0dXJuIFJFVDsgfSAKI2RlZmluZSBDSEVDS19OVUxMKFZBTFVFLCBNRVNTQUdFLCBSRVQp
+IGlmKFZBTFVFID09IE5VTEwpIHsgaWYgKG1heF9jb25maWdfZ2V0X2Jvb2woTUFYX0NPTkZJR19T
+VEFUSUNfSU5URVJGQUNFX0FCT1JUX09OX0VSUk9SKSkgeyBmcHJpbnRmKHN0ZGVyciwgIiVzXG4l
+c1xuIiwgKHN0b3JlZF9lcnJvciA9PSBOVUxMKSA/ICIiIDogc3RvcmVkX2Vycm9yLCBNRVNTQUdF
+KTsgYWJvcnQoKTsgfSBzZXRfZXJyb3IoTUVTU0FHRSk7IHJldHVybiBSRVQ7IH0KCiAKdHlwZWRl
+ZiBzdHJ1Y3QgQnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbl9jYWxsYmFja19zdHJlYW0gewoJ
+dWludDhfdCAqdXNlcl9wdHI7Cgl1aW50OF90ICphbGlnbmVkX3B0cjsKCXNpemVfdCAgIHNpemU7
+CglpbnQgICAgICBpc19vdXRwdXQ7Cn0gQnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbl9jYWxs
+YmFja19zdHJlYW1fdDsKCnR5cGVkZWYgc3RydWN0IEJyZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rp
+b25fY2FsbGJhY2tfZGF0YSB7CglCcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9uX2NhbGxiYWNr
+X3N0cmVhbV90IHN0cmVhbVsyXTsgCglpbnQgY291bnQ7CglpbnQgbWF4X2NvdW50Owp9IEJyZWFz
+dE1hbW1vZ3JhbVJPSUV4dHJhY3Rpb25fY2FsbGJhY2tfZGF0YV90OwoKc3RhdGljIHZvaWQgQnJl
+YXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbl9jYWxsYmFja19pbnRlcm5hbCh2b2lkICpjYl9kYXRh
+KQp7CglCcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9uX2NhbGxiYWNrX2RhdGFfdCAqZGF0YSA9
+IChCcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9uX2NhbGxiYWNrX2RhdGFfdCopIGNiX2RhdGE7
+Cglmb3IgKGludCBpID0gMCA7IGkgPCBkYXRhLT5jb3VudCA7IGkrKyApIHsKCQlCcmVhc3RNYW1t
+b2dyYW1ST0lFeHRyYWN0aW9uX2NhbGxiYWNrX3N0cmVhbV90ICpzID0gJmRhdGEtPnN0cmVhbVtp
+XTsKCQlpZiAocy0+aXNfb3V0cHV0ICYmIChzLT5zaXplID4gMCkpIHsKCQkJbWVtY3B5KHMtPnVz
+ZXJfcHRyLCBzLT5hbGlnbmVkX3B0ciwgcy0+c2l6ZSk7CgkJfQoJCWZyZWUocy0+YWxpZ25lZF9w
+dHIpOwoJfQoJZnJlZShkYXRhKTsKfQoKc3RhdGljIG1heF9hY3Rpb25zX3QqIEJyZWFzdE1hbW1v
+Z3JhbVJPSUV4dHJhY3Rpb25fY29udmVydF9pbnRlcm5hbCgKCW1heF9maWxlX3QgKm1heGZpbGUs
+CglCcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9uX2FjdGlvbnNfdCAqaW50ZXJmYWNlX2FjdGlv
+bnMsCglpbnQgIGlzX2ludGVybmFsX2NhbGwsCgl2b2lkICgqKmNhbGxiYWNrX2Z1bmMpKHZvaWQq
+KSwKCXZvaWQgKipjYWxsYmFja19kYXRhKQp7CgltYXhfYWN0aW9uc190ICphY3Rpb25zID0gbWF4
+X2FjdGlvbnNfaW5pdChtYXhmaWxlLCBOVUxMKTsKCWlmKGFjdGlvbnMgPT0gTlVMTCkgcmV0dXJu
+IE5VTEw7CgojZGVmaW5lIENIRUNLX0VSUk9SUyBpZighbWF4X29rKGFjdGlvbnMtPmVycm9ycykp
+IHsgc2V0X2Vycm9yX2FuZF9mcmVlKG1heF9lcnJvcnNfdHJhY2UoYWN0aW9ucy0+ZXJyb3JzKSk7
+IHJldHVybiBOVUxMOyB9IAoKCUJyZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rpb25fY2FsbGJhY2tf
+ZGF0YV90ICpjYl9kYXRhID0gTlVMTDsKCWludCB1c2VfY2FsbGJhY2sgPSAoY2FsbGJhY2tfZnVu
+YyAhPSBOVUxMKSAmJiAoY2FsbGJhY2tfZGF0YSAhPSBOVUxMKTsKCWlmICh1c2VfY2FsbGJhY2sp
+IHsKCQljYl9kYXRhID0gbWFsbG9jKHNpemVvZihCcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9u
+X2NhbGxiYWNrX2RhdGFfdCkpOwoJCWlmIChjYl9kYXRhID09IE5VTEwpIHsKCQkJZnByaW50Zihz
+dGRlcnIsICJVbmFibGUgdG8gYWxsb2NhdGUgbWVtb3J5IGZvciBzdHJlYW0gY2FsbGJhY2sgZGF0
+YSBpbiBmdW5jdGlvbiBCcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9uX2NvbnZlcnRfaW50ZXJu
+YWxcbiIpOwoJCQlyZXR1cm4gTlVMTDsKCQl9CgkJY2JfZGF0YS0+bWF4X2NvdW50ID0gMjsKCQlj
+Yl9kYXRhLT5jb3VudCAgICAgPSAwOwoJCSpjYWxsYmFja19kYXRhICAgICA9IGNiX2RhdGE7CgkJ
+KmNhbGxiYWNrX2Z1bmMgICAgID0gJkJyZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rpb25fY2FsbGJh
+Y2tfaW50ZXJuYWw7Cgl9CgoJdWludDMyX3QgcGFyYW1fbGVuZ3RoID0gaW50ZXJmYWNlX2FjdGlv
+bnMtPnBhcmFtX2xlbmd0aDsKCQoJaW50MzJfdCBwYXJhbV9CcmVhc3RNYW1tb2dyYW1ST0lFeHRy
+YWN0aW9uS2VybmVsX2xvb3BMZW5ndGggPSBCcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9uX2dl
+dF9CcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9uS2VybmVsX2xvb3BMZW5ndGgoICApOwoJCglp
+bnQzMl90IHRtcF8xID0gKHBhcmFtX2xlbmd0aCAqIHBhcmFtX0JyZWFzdE1hbW1vZ3JhbVJPSUV4
+dHJhY3Rpb25LZXJuZWxfbG9vcExlbmd0aCk7CgkKCS8qIGNvZGUgZm9yIHNjYWxhciBCcmVhc3RN
+YW1tb2dyYW1ST0lFeHRyYWN0aW9uS2VybmVsLnJ1bl9jeWNsZV9jb3VudCAqLwoJdWludDY0X3Qg
+dGlja3NfQnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbktlcm5lbCA9IHRtcF8xOwoJbWF4X3Nl
+dF90aWNrcyhhY3Rpb25zLCAiQnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbktlcm5lbCIsIHRt
+cF8xKTsKCUNIRUNLX0VSUk9SUzsKCS8qIGVuZCBvZiBjb2RlIGZvciBzY2FsYXIgQnJlYXN0TWFt
+bW9ncmFtUk9JRXh0cmFjdGlvbktlcm5lbC5ydW5fY3ljbGVfY291bnQqLwoJCgl1aW50MzJfdCBw
+YXJhbV9ibGFjayA9IGludGVyZmFjZV9hY3Rpb25zLT5wYXJhbV9ibGFjazsKCQoJLyogY29kZSBm
+b3Igc2NhbGFyIEJyZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rpb25LZXJuZWwuYmxhY2sgKi8KCXVp
+bnQ2NF90IGluc2NhbGFyX0JyZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rpb25LZXJuZWxfYmxhY2sg
+PSBwYXJhbV9ibGFjazsKCW1heF9zZXRfdWludDY0dChhY3Rpb25zLCAiQnJlYXN0TWFtbW9ncmFt
+Uk9JRXh0cmFjdGlvbktlcm5lbCIsICJibGFjayIsIGluc2NhbGFyX0JyZWFzdE1hbW1vZ3JhbVJP
+SUV4dHJhY3Rpb25LZXJuZWxfYmxhY2spOwoJQ0hFQ0tfRVJST1JTOwoJLyogZW5kIG9mIGNvZGUg
+Zm9yIHNjYWxhciBCcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9uS2VybmVsLmJsYWNrKi8KCQoJ
+dWludDMyX3QgcGFyYW1faGVpZ2h0ID0gaW50ZXJmYWNlX2FjdGlvbnMtPnBhcmFtX2hlaWdodDsK
+CQoJLyogY29kZSBmb3Igc2NhbGFyIEJyZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rpb25LZXJuZWwu
+aGVpZ2h0ICovCgl1aW50NjRfdCBpbnNjYWxhcl9CcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9u
+S2VybmVsX2hlaWdodCA9IHBhcmFtX2hlaWdodDsKCW1heF9zZXRfdWludDY0dChhY3Rpb25zLCAi
+QnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbktlcm5lbCIsICJoZWlnaHQiLCBpbnNjYWxhcl9C
+cmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9uS2VybmVsX2hlaWdodCk7CglDSEVDS19FUlJPUlM7
+CgkvKiBlbmQgb2YgY29kZSBmb3Igc2NhbGFyIEJyZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rpb25L
+ZXJuZWwuaGVpZ2h0Ki8KCQoJdWludDMyX3QgcGFyYW1fdGhyZXNob2xkID0gaW50ZXJmYWNlX2Fj
+dGlvbnMtPnBhcmFtX3RocmVzaG9sZDsKCQoJLyogY29kZSBmb3Igc2NhbGFyIEJyZWFzdE1hbW1v
+Z3JhbVJPSUV4dHJhY3Rpb25LZXJuZWwudGhyZXNob2xkICovCgl1aW50NjRfdCBpbnNjYWxhcl9C
+cmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9uS2VybmVsX3RocmVzaG9sZCA9IHBhcmFtX3RocmVz
+aG9sZDsKCW1heF9zZXRfdWludDY0dChhY3Rpb25zLCAiQnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFj
+dGlvbktlcm5lbCIsICJ0aHJlc2hvbGQiLCBpbnNjYWxhcl9CcmVhc3RNYW1tb2dyYW1ST0lFeHRy
+YWN0aW9uS2VybmVsX3RocmVzaG9sZCk7CglDSEVDS19FUlJPUlM7CgkvKiBlbmQgb2YgY29kZSBm
+b3Igc2NhbGFyIEJyZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rpb25LZXJuZWwudGhyZXNob2xkKi8K
+CQoJdWludDMyX3QgcGFyYW1fd2lkdGggPSBpbnRlcmZhY2VfYWN0aW9ucy0+cGFyYW1fd2lkdGg7
+CgkKCS8qIGNvZGUgZm9yIHNjYWxhciBCcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9uS2VybmVs
+LndpZHRoICovCgl1aW50NjRfdCBpbnNjYWxhcl9CcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9u
+S2VybmVsX3dpZHRoID0gcGFyYW1fd2lkdGg7CgltYXhfc2V0X3VpbnQ2NHQoYWN0aW9ucywgIkJy
+ZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rpb25LZXJuZWwiLCAid2lkdGgiLCBpbnNjYWxhcl9CcmVh
+c3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9uS2VybmVsX3dpZHRoKTsKCUNIRUNLX0VSUk9SUzsKCS8q
+IGVuZCBvZiBjb2RlIGZvciBzY2FsYXIgQnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbktlcm5l
+bC53aWR0aCovCgkKCWludDY0X3QgdG1wXzAgPSAocGFyYW1fbGVuZ3RoICogNCk7CgkKCS8qIGNv
+ZGUgZm9yIHN0cmVhbSBpbWFnZV9waXhlbCAqLwoJc2l6ZV90IGluc3RyZWFtX3NpemVfaW1hZ2Vf
+cGl4ZWwgPSB0bXBfMDsKCWlmIChpbnN0cmVhbV9zaXplX2ltYWdlX3BpeGVsID4gMCkgewoJCWNv
+bnN0IHVpbnQzMl90ICpzdHJlYW1fcHRyID0gaW50ZXJmYWNlX2FjdGlvbnMtPmluc3RyZWFtX2lt
+YWdlX3BpeGVsOwoJCWlmICh1c2VfY2FsbGJhY2sgJiYgKDEgPT0gQnJlYXN0TWFtbW9ncmFtUk9J
+RXh0cmFjdGlvbl9jaGVja19hbGlnbmVkKGludGVyZmFjZV9hY3Rpb25zLT5pbnN0cmVhbV9pbWFn
+ZV9waXhlbCkpKSB7CgkJCXVpbnQzMl90ICphbGlnbmVkX2luc3RyZWFtX2ltYWdlX3BpeGVsID0g
+bWFsbG9jKGluc3RyZWFtX3NpemVfaW1hZ2VfcGl4ZWwpOwoJCQlpZiAoYWxpZ25lZF9pbnN0cmVh
+bV9pbWFnZV9waXhlbCA9PSBOVUxMKSB7CgkJCQltYXhfcmVwb3J0X2Vycm9yX3NsaWMoYWN0aW9u
+cy0+ZXJyb3JzLCBfX0ZJTEVfXywgX19MSU5FX18sIDUyNiwgIkZhaWxlZCB0byBhbGxvY2F0ZSBh
+bGlnbmVkIG1lbW9yeSBmb3Igc3RyZWFtICdpbWFnZV9waXhlbCciKTsKCQkJCUNIRUNLX0VSUk9S
+UzsKCQkJfQoJCQkoJmNiX2RhdGEtPnN0cmVhbVtjYl9kYXRhLT5jb3VudF0pLT51c2VyX3B0ciAg
+ICA9ICh1aW50OF90KikgaW50ZXJmYWNlX2FjdGlvbnMtPmluc3RyZWFtX2ltYWdlX3BpeGVsOwoJ
+CQkoJmNiX2RhdGEtPnN0cmVhbVtjYl9kYXRhLT5jb3VudF0pLT5hbGlnbmVkX3B0ciA9ICh1aW50
+OF90KikgYWxpZ25lZF9pbnN0cmVhbV9pbWFnZV9waXhlbDsKCQkJKCZjYl9kYXRhLT5zdHJlYW1b
+Y2JfZGF0YS0+Y291bnRdKS0+c2l6ZSAgICAgICAgPSBpbnN0cmVhbV9zaXplX2ltYWdlX3BpeGVs
+OwoJCQkoJmNiX2RhdGEtPnN0cmVhbVtjYl9kYXRhLT5jb3VudF0pLT5pc19vdXRwdXQgICA9IDA7
+CgkJCWNiX2RhdGEtPmNvdW50ICs9IDE7CgkJCW1lbWNweShhbGlnbmVkX2luc3RyZWFtX2ltYWdl
+X3BpeGVsLCBpbnRlcmZhY2VfYWN0aW9ucy0+aW5zdHJlYW1faW1hZ2VfcGl4ZWwsIGluc3RyZWFt
+X3NpemVfaW1hZ2VfcGl4ZWwpOwoJCQlzdHJlYW1fcHRyID0gYWxpZ25lZF9pbnN0cmVhbV9pbWFn
+ZV9waXhlbDsKCQl9CgkJbWF4X3F1ZXVlX2lucHV0KGFjdGlvbnMsICJpbWFnZV9waXhlbCIsIHN0
+cmVhbV9wdHIsIGluc3RyZWFtX3NpemVfaW1hZ2VfcGl4ZWwpOwoJCUNIRUNLX0VSUk9SUzsKCX0K
+CS8qIGVuZCBvZiBjb2RlIGZvciBzdHJlYW0gaW1hZ2VfcGl4ZWwgKi8KCQoJLyogY29kZSBmb3Ig
+c3RyZWFtIG91dHB1dCAqLwoJc2l6ZV90IG91dHN0cmVhbV9zaXplX291dHB1dCA9IHRtcF8wOwoJ
+aWYgKG91dHN0cmVhbV9zaXplX291dHB1dCA+IDApIHsKCQl1aW50MzJfdCAqc3RyZWFtX3B0ciA9
+IGludGVyZmFjZV9hY3Rpb25zLT5vdXRzdHJlYW1fb3V0cHV0OwoJCWlmICh1c2VfY2FsbGJhY2sg
+JiYgKDEgPT0gQnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbl9jaGVja19hbGlnbmVkKGludGVy
+ZmFjZV9hY3Rpb25zLT5vdXRzdHJlYW1fb3V0cHV0KSkpIHsKCQkJdWludDMyX3QgKmFsaWduZWRf
+b3V0c3RyZWFtX291dHB1dCA9IG1hbGxvYyhvdXRzdHJlYW1fc2l6ZV9vdXRwdXQpOwoJCQlpZiAo
+YWxpZ25lZF9vdXRzdHJlYW1fb3V0cHV0ID09IE5VTEwpIHsKCQkJCW1heF9yZXBvcnRfZXJyb3Jf
+c2xpYyhhY3Rpb25zLT5lcnJvcnMsIF9fRklMRV9fLCBfX0xJTkVfXywgNTI2LCAiRmFpbGVkIHRv
+IGFsbG9jYXRlIGFsaWduZWQgbWVtb3J5IGZvciBzdHJlYW0gJ291dHB1dCciKTsKCQkJCUNIRUNL
+X0VSUk9SUzsKCQkJfQoJCQkoJmNiX2RhdGEtPnN0cmVhbVtjYl9kYXRhLT5jb3VudF0pLT51c2Vy
+X3B0ciAgICA9ICh1aW50OF90KikgaW50ZXJmYWNlX2FjdGlvbnMtPm91dHN0cmVhbV9vdXRwdXQ7
+CgkJCSgmY2JfZGF0YS0+c3RyZWFtW2NiX2RhdGEtPmNvdW50XSktPmFsaWduZWRfcHRyID0gKHVp
+bnQ4X3QqKSBhbGlnbmVkX291dHN0cmVhbV9vdXRwdXQ7CgkJCSgmY2JfZGF0YS0+c3RyZWFtW2Ni
+X2RhdGEtPmNvdW50XSktPnNpemUgICAgICAgID0gb3V0c3RyZWFtX3NpemVfb3V0cHV0OwoJCQko
+JmNiX2RhdGEtPnN0cmVhbVtjYl9kYXRhLT5jb3VudF0pLT5pc19vdXRwdXQgICA9IDE7CgkJCWNi
+X2RhdGEtPmNvdW50ICs9IDE7CgkJCXN0cmVhbV9wdHIgPSBhbGlnbmVkX291dHN0cmVhbV9vdXRw
+dXQ7CgkJfQoJCW1heF9xdWV1ZV9vdXRwdXQoYWN0aW9ucywgIm91dHB1dCIsIHN0cmVhbV9wdHIs
+IG91dHN0cmVhbV9zaXplX291dHB1dCk7CgkJQ0hFQ0tfRVJST1JTOwoJfQoJLyogZW5kIG9mIGNv
+ZGUgZm9yIHN0cmVhbSBvdXRwdXQgKi8KCQoJaWYgKHVzZV9jYWxsYmFjayAmJiBjYl9kYXRhLT5j
+b3VudCA9PSAwKSB7CgkJKmNhbGxiYWNrX2RhdGEgPSBOVUxMOwoJCSpjYWxsYmFja19mdW5jID0g
+TlVMTDsKCQlmcmVlKGNiX2RhdGEpOwoJfQoJcmV0dXJuIGFjdGlvbnM7CiN1bmRlZiBDSEVDS19F
+UlJPUlMKfQoKdm9pZCBCcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9uKAoJdWludDMyX3QgcGFy
+YW1fYmxhY2ssCgl1aW50MzJfdCBwYXJhbV9oZWlnaHQsCgl1aW50MzJfdCBwYXJhbV9sZW5ndGgs
+Cgl1aW50MzJfdCBwYXJhbV90aHJlc2hvbGQsCgl1aW50MzJfdCBwYXJhbV93aWR0aCwKCWNvbnN0
+IHVpbnQzMl90ICppbnN0cmVhbV9pbWFnZV9waXhlbCwKCXVpbnQzMl90ICpvdXRzdHJlYW1fb3V0
+cHV0KQp7Cgkodm9pZCkgcHRocmVhZF9vbmNlKCZzbGljX2JzX2lzX2luaXRpYWxpc2VkLCBCcmVh
+c3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9uX3N0YXRpY19pbml0KTsKCUNIRUNLX05VTEwoc3RvcmVk
+X21heGZpbGUsICJNYXhmaWxlIHdhcyBub3QgbG9hZGVkIiwgKTsKCW1heF9ydW5fdCAqcnVuID0g
+QnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbl9ub25ibG9jayhwYXJhbV9ibGFjaywgcGFyYW1f
+aGVpZ2h0LCBwYXJhbV9sZW5ndGgsIHBhcmFtX3RocmVzaG9sZCwgcGFyYW1fd2lkdGgsIGluc3Ry
+ZWFtX2ltYWdlX3BpeGVsLCBvdXRzdHJlYW1fb3V0cHV0KTsKCUNIRUNLX05VTEwocnVuLCAiVW5h
+YmxlIHRvIHJ1biBhY3Rpb25zIiwgKTsKCW1heF93YWl0KHJ1bik7Cn0KCm1heF9ydW5fdCAqQnJl
+YXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbl9ub25ibG9jaygKCXVpbnQzMl90IHBhcmFtX2JsYWNr
+LAoJdWludDMyX3QgcGFyYW1faGVpZ2h0LAoJdWludDMyX3QgcGFyYW1fbGVuZ3RoLAoJdWludDMy
+X3QgcGFyYW1fdGhyZXNob2xkLAoJdWludDMyX3QgcGFyYW1fd2lkdGgsCgljb25zdCB1aW50MzJf
+dCAqaW5zdHJlYW1faW1hZ2VfcGl4ZWwsCgl1aW50MzJfdCAqb3V0c3RyZWFtX291dHB1dCkKewoJ
+QnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbl9hY3Rpb25zX3QgaW50ZXJmYWNlX2FjdGlvbnM7
+CglpbnRlcmZhY2VfYWN0aW9ucy5wYXJhbV9ibGFjayA9IHBhcmFtX2JsYWNrOwoJaW50ZXJmYWNl
+X2FjdGlvbnMucGFyYW1faGVpZ2h0ID0gcGFyYW1faGVpZ2h0OwoJaW50ZXJmYWNlX2FjdGlvbnMu
+cGFyYW1fbGVuZ3RoID0gcGFyYW1fbGVuZ3RoOwoJaW50ZXJmYWNlX2FjdGlvbnMucGFyYW1fdGhy
+ZXNob2xkID0gcGFyYW1fdGhyZXNob2xkOwoJaW50ZXJmYWNlX2FjdGlvbnMucGFyYW1fd2lkdGgg
+PSBwYXJhbV93aWR0aDsKCWludGVyZmFjZV9hY3Rpb25zLmluc3RyZWFtX2ltYWdlX3BpeGVsID0g
+aW5zdHJlYW1faW1hZ2VfcGl4ZWw7CglpbnRlcmZhY2VfYWN0aW9ucy5vdXRzdHJlYW1fb3V0cHV0
+ID0gb3V0c3RyZWFtX291dHB1dDsKCSh2b2lkKSBwdGhyZWFkX29uY2UoJnNsaWNfYnNfaXNfaW5p
+dGlhbGlzZWQsIEJyZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rpb25fc3RhdGljX2luaXQpOwoJQ0hF
+Q0tfTlVMTChzdG9yZWRfbWF4ZmlsZSwgIk1heGZpbGUgd2FzIG5vdCBsb2FkZWQiLCBOVUxMKTsK
+CXZvaWQgKCpjYl9mdW5jKSh2b2lkKikgPSBOVUxMOwoJdm9pZCAgKmNiX2RhdGEgICAgICAgICA9
+IE5VTEw7CgltYXhfYWN0aW9uc190ICphY3Rpb25zID0gQnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFj
+dGlvbl9jb252ZXJ0X2ludGVybmFsKHN0b3JlZF9tYXhmaWxlLCAmaW50ZXJmYWNlX2FjdGlvbnMs
+IDEsICZjYl9mdW5jLCAmY2JfZGF0YSk7CglDSEVDS19OVUxMKGFjdGlvbnMsICJVbmFibGUgdG8g
+YnVpbGQgYWN0aW9ucyIsIE5VTEwpOwoJbWF4X3ZhbGlkYXRlKGFjdGlvbnMpOwoJQ0hFQ0tfRVJS
+T1JTX1NUKGFjdGlvbnMsIE5VTEwpOwoJQ0hFQ0tfRVJST1JTX1NUKHN0b3JlZF9lbmdpbmUsIE5V
+TEwpOwoJbWF4X3J1bl90ICpydW47CglpZiAoY2JfZnVuYyA9PSBOVUxMKSB7CgkJcnVuID0gbWF4
+X3J1bl9ub25ibG9jayhzdG9yZWRfZW5naW5lLCBhY3Rpb25zKTsKCX0gZWxzZSB7CgkJcnVuID0g
+bWF4X3J1bl9ub25ibG9ja193aXRoX2NiKHN0b3JlZF9lbmdpbmUsIGFjdGlvbnMsIGNiX2Z1bmMs
+IGNiX2RhdGEpOwoJfQoJQ0hFQ0tfTlVMTChydW4sICJVbmFibGUgdG8gcnVuIGFjdGlvbnMiLCBO
+VUxMKTsKCUNIRUNLX0VSUk9SU19TVChhY3Rpb25zLCBOVUxMKTsKCW1heF9hY3Rpb25zX2ZyZWUo
+YWN0aW9ucyk7CglyZXR1cm4gcnVuOwp9Cgp2b2lkIEJyZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rp
+b25fcnVuKAoJbWF4X2VuZ2luZV90ICplbmdpbmUsCglCcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0
+aW9uX2FjdGlvbnNfdCAqaW50ZXJmYWNlX2FjdGlvbnMpCnsKCW1heF9ydW5fdCAqcnVuID0gQnJl
+YXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbl9ydW5fbm9uYmxvY2soZW5naW5lLCBpbnRlcmZhY2Vf
+YWN0aW9ucyk7CglDSEVDS19OVUxMKHJ1biwgIlVuYWJsZSB0byBydW4gYWN0aW9ucyIsICk7Cglt
+YXhfd2FpdChydW4pOwp9CgptYXhfcnVuX3QgKkJyZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rpb25f
+cnVuX25vbmJsb2NrKAoJbWF4X2VuZ2luZV90ICplbmdpbmUsCglCcmVhc3RNYW1tb2dyYW1ST0lF
+eHRyYWN0aW9uX2FjdGlvbnNfdCAqaW50ZXJmYWNlX2FjdGlvbnMpCnsKCW1heF9maWxlX3QgKm1h
+eGZpbGUgPSBtYXhfZW5naW5lX2dldF9tYXhfZmlsZShlbmdpbmUpOyAKCXZvaWQgKCpjYl9mdW5j
+KSh2b2lkKikgPSBOVUxMOwoJdm9pZCAgKmNiX2RhdGEgICAgICAgICA9IE5VTEw7CgltYXhfYWN0
+aW9uc190ICphY3Rpb25zID0gQnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbl9jb252ZXJ0X2lu
+dGVybmFsKG1heGZpbGUsIGludGVyZmFjZV9hY3Rpb25zLCAxLCAmY2JfZnVuYywgJmNiX2RhdGEp
+OwoJQ0hFQ0tfRVJST1JTX1NUKGFjdGlvbnMsIE5VTEwpOwoJbWF4X3J1bl90ICpydW47CglpZiAo
+Y2JfZnVuYyA9PSBOVUxMKSB7CgkJcnVuID0gbWF4X3J1bl9ub25ibG9jayhlbmdpbmUsIGFjdGlv
+bnMpOwoJfSBlbHNlIHsKCQlydW4gPSBtYXhfcnVuX25vbmJsb2NrX3dpdGhfY2IoZW5naW5lLCBh
+Y3Rpb25zLCBjYl9mdW5jLCBjYl9kYXRhKTsKCX0KCUNIRUNLX05VTEwocnVuLCAiVW5hYmxlIHRv
+IHJ1biBhY3Rpb25zIiwgTlVMTCk7CgltYXhfYWN0aW9uc19mcmVlKGFjdGlvbnMpOwoJcmV0dXJu
+IHJ1bjsKfQoKCi8qKgogKiBcYnJpZWYgR3JvdXAgcnVuIGFkdmFuY2VkIHN0YXRpYyBmdW5jdGlv
+biBmb3IgdGhlIGludGVyZmFjZSAnZGVmYXVsdCcuCiAqIAogKiBccGFyYW0gW2luXSBncm91cCBH
+cm91cCB0byB1c2UuCiAqIFxwYXJhbSBbaW4sb3V0XSBpbnRlcmZhY2VfYWN0aW9ucyBBY3Rpb25z
+IHRvIHJ1bi4KICoKICogUnVuIHRoZSBhY3Rpb25zIG9uIHRoZSBmaXJzdCBkZXZpY2UgYXZhaWxh
+YmxlIGluIHRoZSBncm91cC4KICovCnZvaWQgQnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbl9y
+dW5fZ3JvdXAobWF4X2dyb3VwX3QgKmdyb3VwLCBCcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9u
+X2FjdGlvbnNfdCAqaW50ZXJmYWNlX2FjdGlvbnMpCnsKCW1heF9ydW5fdCAqcnVuID0gQnJlYXN0
+TWFtbW9ncmFtUk9JRXh0cmFjdGlvbl9ydW5fZ3JvdXBfbm9uYmxvY2soZ3JvdXAsIGludGVyZmFj
+ZV9hY3Rpb25zKTsKCUNIRUNLX05VTEwocnVuLCAiVW5hYmxlIHRvIHJ1biBhY3Rpb25zIiwgKTsK
+CW1heF93YWl0KHJ1bik7Cn0KCgovKioKICogXGJyaWVmIEdyb3VwIHJ1biBhZHZhbmNlZCBzdGF0
+aWMgbm9uLWJsb2NraW5nIGZ1bmN0aW9uIGZvciB0aGUgaW50ZXJmYWNlICdkZWZhdWx0Jy4KICog
+CiAqCiAqIFNjaGVkdWxlIHRoZSBhY3Rpb25zIHRvIHJ1biBvbiB0aGUgZmlyc3QgZGV2aWNlIGF2
+YWlsYWJsZSBpbiB0aGUgZ3JvdXAgYW5kIHJldHVybiBpbW1lZGlhdGVseS4KICogVGhlIHN0YXR1
+cyBvZiB0aGUgcnVuIG11c3QgYmUgY2hlY2tlZCB3aXRoIDo6bWF4X3dhaXQuIAogKiBOb3RlIHRo
+YXQgdXNlIG9mIDo6bWF4X25vd2FpdCBpcyBwcm9oaWJpdGVkIHdpdGggbm9uLWJsb2NraW5nIHJ1
+bm5pbmcgb24gZ3JvdXBzOgogKiBzZWUgdGhlIDo6bWF4X3J1bl9ncm91cF9ub25ibG9jayBkb2N1
+bWVudGF0aW9uIGZvciBtb3JlIGV4cGxhbmF0aW9uLgogKgogKiBccGFyYW0gW2luXSBncm91cCBH
+cm91cCB0byB1c2UuCiAqIFxwYXJhbSBbaW5dIGludGVyZmFjZV9hY3Rpb25zIEFjdGlvbnMgdG8g
+cnVuLgogKiBccmV0dXJuIEEgaGFuZGxlIG9uIHRoZSBleGVjdXRpb24gc3RhdHVzIG9mIHRoZSBh
+Y3Rpb25zLCBvciBOVUxMIGluIGNhc2Ugb2YgZXJyb3IuCiAqLwptYXhfcnVuX3QgKkJyZWFzdE1h
+bW1vZ3JhbVJPSUV4dHJhY3Rpb25fcnVuX2dyb3VwX25vbmJsb2NrKG1heF9ncm91cF90ICpncm91
+cCwgQnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlvbl9hY3Rpb25zX3QgKmludGVyZmFjZV9hY3Rp
+b25zKQp7CgltYXhfZmlsZV90ICptYXhmaWxlID0gbWF4X2dyb3VwX2dldF9tYXhfZmlsZShncm91
+cCk7CgltYXhfYWN0aW9uc190ICphY3Rpb25zID0gQnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlv
+bl9jb252ZXJ0X2ludGVybmFsKG1heGZpbGUsIGludGVyZmFjZV9hY3Rpb25zLCAxLCBOVUxMLCBO
+VUxMKTsKCWlmKGFjdGlvbnMgPT0gTlVMTCkgcmV0dXJuIE5VTEw7CglpZighbWF4X29rKGFjdGlv
+bnMtPmVycm9ycykpIHJldHVybiBOVUxMOwoJbWF4X3ZhbGlkYXRlKGFjdGlvbnMpOwoJbWF4X3J1
+bl90ICpydW4gPSBtYXhfcnVuX2dyb3VwX25vbmJsb2NrKGdyb3VwLCBhY3Rpb25zKTsKCW1heF9h
+Y3Rpb25zX2ZyZWUoYWN0aW9ucyk7CglyZXR1cm4gcnVuOwp9CgoKLyoqCiAqIFxicmllZiBBcnJh
+eSBydW4gYWR2YW5jZWQgc3RhdGljIGZ1bmN0aW9uIGZvciB0aGUgaW50ZXJmYWNlICdkZWZhdWx0
+Jy4KICogCiAqIFxwYXJhbSBbaW5dIGVuZ2FycmF5IFRoZSBhcnJheSBvZiBkZXZpY2VzIHRvIHVz
+ZS4KICogXHBhcmFtIFtpbixvdXRdIGludGVyZmFjZV9hY3Rpb25zIFRoZSBhcnJheSBvZiBhY3Rp
+b25zIHRvIHJ1bi4KICoKICogUnVuIHRoZSBhcnJheSBvZiBhY3Rpb25zIG9uIHRoZSBhcnJheSBv
+ZiBlbmdpbmVzLiAgVGhlIGxlbmd0aCBvZiBpbnRlcmZhY2VfYWN0aW9ucwogKiBtdXN0IG1hdGNo
+IHRoZSBzaXplIG9mIGVuZ2FycmF5LgogKi8Kdm9pZCBCcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0
+aW9uX3J1bl9hcnJheShtYXhfZW5nYXJyYXlfdCAqZW5nYXJyYXksIEJyZWFzdE1hbW1vZ3JhbVJP
+SUV4dHJhY3Rpb25fYWN0aW9uc190ICppbnRlcmZhY2VfYWN0aW9uc1tdKQp7CgltYXhfcnVuX3Qg
+KnJ1biA9IEJyZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rpb25fcnVuX2FycmF5X25vbmJsb2NrKGVu
+Z2FycmF5LCBpbnRlcmZhY2VfYWN0aW9ucyk7CglDSEVDS19OVUxMKHJ1biwgIlVuYWJsZSB0byBy
+dW4gYWN0aW9ucyIsICk7CgltYXhfd2FpdChydW4pOwp9CgoKLyoqCiAqIFxicmllZiBBcnJheSBy
+dW4gYWR2YW5jZWQgc3RhdGljIG5vbi1ibG9ja2luZyBmdW5jdGlvbiBmb3IgdGhlIGludGVyZmFj
+ZSAnZGVmYXVsdCcuCiAqIAogKgogKiBTY2hlZHVsZSB0byBydW4gdGhlIGFycmF5IG9mIGFjdGlv
+bnMgb24gdGhlIGFycmF5IG9mIGVuZ2luZXMsIGFuZCByZXR1cm4gaW1tZWRpYXRlbHkuCiAqIFRo
+ZSBsZW5ndGggb2YgaW50ZXJmYWNlX2FjdGlvbnMgbXVzdCBtYXRjaCB0aGUgc2l6ZSBvZiBlbmdh
+cnJheS4KICogVGhlIHN0YXR1cyBvZiB0aGUgcnVuIGNhbiBiZSBjaGVja2VkIGVpdGhlciBieSA6
+Om1heF93YWl0IG9yIDo6bWF4X25vd2FpdDsKICogbm90ZSB0aGF0IG9uZSBvZiB0aGVzZSAqbXVz
+dCogYmUgY2FsbGVkLCBzbyB0aGF0IGFzc29jaWF0ZWQgbWVtb3J5IGNhbiBiZSByZWxlYXNlZC4K
+ICoKICogXHBhcmFtIFtpbl0gZW5nYXJyYXkgVGhlIGFycmF5IG9mIGRldmljZXMgdG8gdXNlLgog
+KiBccGFyYW0gW2luXSBpbnRlcmZhY2VfYWN0aW9ucyBUaGUgYXJyYXkgb2YgYWN0aW9ucyB0byBy
+dW4uCiAqIFxyZXR1cm4gQSBoYW5kbGUgb24gdGhlIGV4ZWN1dGlvbiBzdGF0dXMgb2YgdGhlIGFj
+dGlvbnMsIG9yIE5VTEwgaW4gY2FzZSBvZiBlcnJvci4KICovCm1heF9ydW5fdCAqQnJlYXN0TWFt
+bW9ncmFtUk9JRXh0cmFjdGlvbl9ydW5fYXJyYXlfbm9uYmxvY2sobWF4X2VuZ2FycmF5X3QgKmVu
+Z2FycmF5LCBCcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9uX2FjdGlvbnNfdCAqaW50ZXJmYWNl
+X2FjdGlvbnNbXSkKewoJbWF4X2ZpbGVfdCAqbWF4ZmlsZSA9IG1heF9lbmdhcnJheV9nZXRfbWF4
+X2ZpbGUoZW5nYXJyYXksIDApOwoJaW50IGk7CgltYXhfYWN0YXJyYXlfdCAqYWN0YXJyYXkgPSBt
+YXhfYWN0YXJyYXlfaW5pdChtYXhmaWxlLCBlbmdhcnJheS0+c2l6ZSk7CglpZiAoYWN0YXJyYXkg
+PT0gTlVMTCkgcmV0dXJuIE5VTEw7CgltYXhfYWN0aW9uc190ICoqYXJyX2FjdGlvbnMgPSBtYWxs
+b2MoZW5nYXJyYXktPnNpemUgKiBzaXplb2YobWF4X2FjdGlvbnNfdCopKTsKCWZvciAoIGkgPSAw
+IDsgaSA8IGFjdGFycmF5LT5zaXplOyBpKysgKSB7CgkJbWF4X2FjdGlvbnNfdCAqYWN0aW9ucyA9
+IEJyZWFzdE1hbW1vZ3JhbVJPSUV4dHJhY3Rpb25fY29udmVydF9pbnRlcm5hbChtYXhmaWxlLCBp
+bnRlcmZhY2VfYWN0aW9uc1tpXSwgMSwgTlVMTCwgTlVMTCk7CgkJaWYgKGFjdGlvbnMgPT0gTlVM
+TCkgcmV0dXJuIE5VTEw7CgkJYXJyX2FjdGlvbnNbaV0gPSBhY3Rpb25zOwoJCW1heF9zZXRfYWN0
+aW9uKGFjdGFycmF5LCBpLCBhY3Rpb25zKTsKCX0KCW1heF9ydW5fdCAqcnVuID0gbWF4X3J1bl9h
+cnJheV9ub25ibG9jayhlbmdhcnJheSwgYWN0YXJyYXkpOwoJZm9yICggaSA9IDAgOyBpIDwgYWN0
+YXJyYXktPnNpemUgOyBpKysgKSB7IG1heF9hY3Rpb25zX2ZyZWUoYXJyX2FjdGlvbnNbaV0pOyB9
+CgltYXhfYWN0YXJyYXlfZnJlZShhY3RhcnJheSk7CglmcmVlKGFycl9hY3Rpb25zKTsKCXJldHVy
+biBydW47Cn0KCgovKioKICogXGJyaWVmIENvbnZlcnRzIGEgc3RhdGljLWludGVyZmFjZSBhY3Rp
+b24gc3RydWN0IGludG8gYSBkeW5hbWljLWludGVyZmFjZSBtYXhfYWN0aW9uc190IHN0cnVjdC4K
+ICoKICogTm90ZSB0aGF0IHRoaXMgaXMgYW4gaW50ZXJuYWwgdXRpbGl0eSBmdW5jdGlvbiB1c2Vk
+IGJ5IG90aGVyIGZ1bmN0aW9ucyBpbiB0aGUgc3RhdGljIGludGVyZmFjZS4KICoKICogXHBhcmFt
+IFtpbl0gbWF4ZmlsZSBUaGUgbWF4ZmlsZSB0byB1c2UuCiAqIFxwYXJhbSBbaW5dIGludGVyZmFj
+ZV9hY3Rpb25zIFRoZSBpbnRlcmZhY2Utc3BlY2lmaWMgYWN0aW9ucyB0byBydW4uCiAqIFxyZXR1
+cm4gVGhlIGR5bmFtaWMtaW50ZXJmYWNlIGFjdGlvbnMgdG8gcnVuLCBvciBOVUxMIGluIGNhc2Ug
+b2YgZXJyb3IuCiAqLwptYXhfYWN0aW9uc190KiBCcmVhc3RNYW1tb2dyYW1ST0lFeHRyYWN0aW9u
+X2NvbnZlcnQobWF4X2ZpbGVfdCAqbWF4ZmlsZSwgQnJlYXN0TWFtbW9ncmFtUk9JRXh0cmFjdGlv
+bl9hY3Rpb25zX3QgKmludGVyZmFjZV9hY3Rpb25zKQp7CglyZXR1cm4gQnJlYXN0TWFtbW9ncmFt
+Uk9JRXh0cmFjdGlvbl9jb252ZXJ0X2ludGVybmFsKG1heGZpbGUsIGludGVyZmFjZV9hY3Rpb25z
+LCAwLCBOVUxMLCBOVUxMKTsKfQoKI3VuZGVmIENIRUNLX0VSUk9SU19TVAojdW5kZWYgQ0hFQ0tf
+TlVMTAoKCg==
+#endif /* SLIC_B64_DEFINITIONS */
+
+#ifdef SLIC_EXTRA_FILES
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHVz
+ZXJmaWxlcyBmb3JtYXQtdmVyc2lvbj0iMjAxMjAyMDAiLz4=
+#endif /* SLIC_EXTRA_FILES */
+
+#ifdef PHOTON_NODE_ADD_DATA
+#define PHOTON_NODE_ADD_DATA_PRESENT 1
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 133, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 120, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 98, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 2, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 132, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 71, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 72, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 73, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 74, "SquashFactor", 1.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 75, "SquashFactor", 1.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 116, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 15, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 10, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 17, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 18, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 99, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 11, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 16, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 131, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 46, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 47, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 130, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 4, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 5, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 6, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 7, "SquashFactor", 1.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 8, "SquashFactor", 1.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 9, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 104, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 118, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 13, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 48, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 49, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 94, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 129, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 51, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 101, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 52, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 115, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 128, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 39, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 40, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 41, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 42, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 114, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 127, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 30, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 117, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 19, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 111, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 12, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 56, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 95, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 57, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 58, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 59, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 106, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 60, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 61, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 108, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 62, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 63, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 109, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 64, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 96, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 110, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 126, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 66, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 97, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 69, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 20, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 21, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 125, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 32, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 33, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 34, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 112, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 35, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 124, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 23, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 123, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 25, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 26, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 119, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 27, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 28, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 36, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 37, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 43, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 44, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 53, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 54, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 76, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 81, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 122, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 78, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 79, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 80, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 82, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 121, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 84, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 85, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 87, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 88, "SquashFactor", 0.0)
+PHOTON_NODE_ADD_DATA(BreastMammogramROIExtractionKernel, 86, "SquashFactor", 0.0)
+#endif
+
+#ifdef MAXFILE_SIGNATURE
+#define MAXFILE_SIGNATURE_PRESENT 1
+MAXFILE_SIGNATURE("302d0215008eb7218b5be7e9a9b6acf6ab6b0044f6800c077702143b06f5aefc00593878291441f71295fd6a585447")
+#endif
+

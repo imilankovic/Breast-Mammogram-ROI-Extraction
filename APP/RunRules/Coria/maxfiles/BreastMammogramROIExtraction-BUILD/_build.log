@@ -1,0 +1,772 @@
+Thu 17:30: PROGRESS: MaxCompiler version: 2014.2
+Thu 17:30: PROGRESS: Build "BreastMammogramROIExtraction" start time: Thu Apr 23 17:30:31 BST 2015
+Thu 17:30: PROGRESS: Main build process running as user imilankovic on host nxws26.office.maxeler.com
+Thu 17:30: INFO    : Loading build properties from bundled MaxCompiler_build.conf...
+Thu 17:30: INFO    : Loading default build properties from /network-raid/MaxCompiler_build.conf
+Thu 17:30: INFO    : Loading user build properties from: /home/imilankovic/.MaxCompiler_build_user.conf
+Thu 17:30: INFO    : No user-specified external build property file has been specified.
+Thu 17:30: INFO    : (Set environment variable MAXCOMPILER_BUILD_CONF_FILE to assign one)
+Thu 17:30: INFO    : Loading additional parameters from MAXCOMPILER_BUILD_CONF environment variable
+Thu 17:30: PROGRESS: Build location: /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE
+Thu 17:30: PROGRESS: Detailed build log available in "_build.log"
+Thu 17:30: INFO    : Created build manager BreastMammogramROIExtraction (BreastMammogramROIExtraction_CORIA_DFE Thu Apr 23 17:30:31 BST 2015). (17:30:31 23/04/15)
+Thu 17:30: INFO    : Working in dir: /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE
+Thu 17:30: INFO    : Java class path (5 paths):
+Thu 17:30: INFO    : 	/home/imilankovic/workspace/BreastMammogramROIExtraction/RunRules/Coria/dist/bin
+Thu 17:30: INFO    : 	/network-raid/opt/maxcompiler-2014.2/lib/MaxCompiler.jar
+Thu 17:30: INFO    : 	/network-raid/opt/maxq2/maxq2-latest/maxq2.jar
+Thu 17:30: INFO    : 	/network-raid/opt/maxq/maxq-ctl.jar
+Thu 17:30: INFO    : 	/network-raid/opt/antlr-3.3/antlr-3.3-complete.jar
+Thu 17:30: INFO    : Java process started by 'main' method in class 'com.bioirc.breastmammogramroiextraction.BreastMammogramROIExtractionManager'.
+Thu 17:30: INFO    : Using /network-infrastructure/maxcompiler_core_cache/ for core-cache.
+Thu 17:30: INFO    : Using core-cache arbiter bluejet.office.maxeler.com:6189
+Thu 17:30: INFO    : Checking license files in directory: /network-raid/maxeler_licensing/licenses
+Thu 17:30: INFO    : All license signatures valid.
+Thu 17:30: INFO    : Backing-up source-files (old source files in build directory will be removed first)...
+Thu 17:30: INFO    : Source directories: src
+Thu 17:30: INFO    : Deleting directory: src
+Thu 17:30: INFO    : Copying source-files took 21.1471 ms
+Thu 17:30: PROGRESS: Instantiating manager
+Thu 17:30: INFO    : Deleting /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/BreastMammogramROIExtractionKernel.graphs
+Thu 17:30: PROGRESS: Instantiating kernel "BreastMammogramROIExtractionKernel"
+Thu 17:30: PROGRESS: Compiling manager (CPU I/O Only)
+Thu 17:30: INFO    : Manager Configuration:
+Thu 17:30: INFO    : 	ManagerConfiguration.allowNonMultipleTransitions = false                   [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.board = MAX4548A                                      [Init: null, init: MAX4548A]
+Thu 17:30: INFO    : 	ManagerConfiguration.build.buildEffort = MEDIUM                            [Init: MEDIUM]
+Thu 17:30: INFO    : 	ManagerConfiguration.build.enableChipScopeInserter = false                 [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.build.enableTimingAnalysis = true                     [Init: true]
+Thu 17:30: INFO    : 	ManagerConfiguration.build.level = FULL_BUILD                              [Init: FULL_BUILD]
+Thu 17:30: INFO    : 	ManagerConfiguration.build.mpprContinueAfterMeetingTiming = false          [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.build.mpprCtMax = 1                                   [Init: 1]
+Thu 17:30: INFO    : 	ManagerConfiguration.build.mpprCtMin = 1                                   [Init: 1]
+Thu 17:30: INFO    : 	ManagerConfiguration.build.mpprParallelism = 1                             [Init: 1]
+Thu 17:30: INFO    : 	ManagerConfiguration.build.mpprRetryMissesThrshld = 0                      [Init: 0]
+Thu 17:30: INFO    : 	ManagerConfiguration.build.optGoal = BALANCED                              [Init: BALANCED]
+Thu 17:30: INFO    : 	ManagerConfiguration.build.physSynthAsyncPipelining = AUTO                 [Init: AUTO]
+Thu 17:30: INFO    : 	ManagerConfiguration.build.physSynthCombLogic = AUTO                       [Init: AUTO]
+Thu 17:30: INFO    : 	ManagerConfiguration.build.physSynthCombLogicForArea = AUTO                [Init: AUTO]
+Thu 17:30: INFO    : 	ManagerConfiguration.build.physSynthEffort = AUTO                          [Init: AUTO]
+Thu 17:30: INFO    : 	ManagerConfiguration.build.physSynthRegDuplication = AUTO                  [Init: AUTO]
+Thu 17:30: INFO    : 	ManagerConfiguration.build.physSynthRetiming = AUTO                        [Init: AUTO]
+Thu 17:30: INFO    : 	ManagerConfiguration.build.physicalSynthesis = false                       [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.buildTarget = DFE                                     [Init: null, init: DFE]
+Thu 17:30: INFO    : 	ManagerConfiguration.debug.chipscopeCaptureDepth = 4096                    [Init: 4096]
+Thu 17:30: INFO    : 	ManagerConfiguration.debug.fifoUnderOverFlowRegs = false                   [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.debug.memCtlDebugRegs = true                          [Init: true]
+Thu 17:30: INFO    : 	ManagerConfiguration.debug.memCtlExtraDebugRegs = false                    [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.debug.memMarginingSupport = false                     [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.debug.memPhyDebugRegister = NONE                      [Init: NONE]
+Thu 17:30: INFO    : 	ManagerConfiguration.debug.memPllLockDebugRegs = true                      [Init: true]
+Thu 17:30: INFO    : 	ManagerConfiguration.debug.streamStatus = false                            [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.debug.streamStatusChecksums = false                   [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.addressGeneratorsInSlowClock = false             [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.arbitrationMode = ROUND_ROBIN                    [Init: ROUND_ROBIN]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.burstSize = 8                                    [Init: 8]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.cmdFifoInReg = false                             [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.cmdFifoLutRam = false                            [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.cmdFifoRegInRam = true                           [Init: true]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.cmdFifoSize = 31                                 [Init: 31]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.commandEchoModeEnabled = false                   [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.commandEchoModeFifoDepth = 512                   [Init: 512]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.commandEchoModeStreamAlmostEmptyLatency = 792    [Init: 792]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.commandEchoModeStreamAlmostEmptyLatency = 8      [Init: 8]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.commandEchoModeStreamStallLatency = 8            [Init: 8]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.dataFifoDepth = 512                              [Init: 512]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.dataFifoLutRam = false                           [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.dataFifoWidth = 792                              [Init: 792]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.eccMode = false                                  [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.fabricDataFifoReg = true                         [Init: true]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.fabricRdDataFifoReg = false                      [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.flagSupport = false                              [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.highPrioStream = false                           [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.max2CompatMode = false                           [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.max4m_GALAVA_MCP_UseRefClk = false               [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.max4m_MAIA_MCP_UseRefClk = false                 [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.max4qrateMode = false                            [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.memCmdIncSize = 8                                [Init: 8]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.memCmdStartAddrSize = 32                         [Init: 32]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.onCardMemFreq = 400.0                            [Init: 0.0, change: 400.0]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.parEccDebugStream = false                        [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.parityEccWidth = 0                               [Init: 0]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.parityMode = false                               [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.perdqsPhaseDetect = false                        [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.dram.performanceMode = true                           [Init: true]
+Thu 17:30: INFO    : 	ManagerConfiguration.enableMPCX = false                                    [Init: false, init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.maxring.maxringConnections = []                       [Init: []]
+Thu 17:30: INFO    : 	ManagerConfiguration.maxring.maxringNumLanes = {}                          [Init: {}]
+Thu 17:30: INFO    : 	ManagerConfiguration.multiCycleMappedMemoryBus = false                     [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.network.qsfpBotMode = QSFP_OFF                        [Init: QSFP_OFF]
+Thu 17:30: INFO    : 	ManagerConfiguration.network.qsfpMidMode = QSFP_OFF                        [Init: QSFP_OFF]
+Thu 17:30: INFO    : 	ManagerConfiguration.network.qsfpTopMode = QSFP_OFF                        [Init: QSFP_OFF]
+Thu 17:30: INFO    : 	ManagerConfiguration.pcie.numPCIeLanes = 8                                 [Init: 0, change: 8]
+Thu 17:30: INFO    : 	ManagerConfiguration.pcie.pcieFastClock = true                             [Init: false, change: true]
+Thu 17:30: INFO    : 	ManagerConfiguration.pcie.streamFromHostMaxNum = 0                         [Init: 0]
+Thu 17:30: INFO    : 	ManagerConfiguration.pcie.streamToHostMaxNum = 0                           [Init: 0]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.boardModel = MAX4548A                         [Init: null, change: MAX4548A]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.ddr3Enable = false                            [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.ddr3Frq = 400.0                               [Init: 400.0]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.ddr3Qmode = false                             [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.disableMultiplePersona = true                 [Init: true]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.dynamic_scaling = false                       [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.maxRingLocal = false                          [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.maxRingOptical = false                        [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.maxringDataRate = 2500.0                      [Init: 2500.0]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.maxringOpticalDataRate = 10000.0              [Init: 10000.0]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.mode = InitMode                               [Init: InitMode]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.networkPTP = OFF                              [Init: OFF]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.networkQSFP_BOT = QSFP_OFF                    [Init: QSFP_OFF]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.networkQSFP_MID = QSFP_OFF                    [Init: QSFP_OFF]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.networkQSFP_TOP = QSFP_OFF                    [Init: QSFP_OFF]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.panMaxRingA = false                           [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.panMaxRingB = false                           [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.personaInterfaceVersion = 1                   [Init: 1]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.qdr2Enable = false                            [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.qdr2Frq = 550.0                               [Init: 550.0]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.streamClks = 1                                [Init: 1]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.streamFrq = [100.0]                           [Init: [150.0], change: [100.0]]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.streamPs = [0]                                [Init: [0]]
+Thu 17:30: INFO    : 	ManagerConfiguration.persona.usePCIeGen1 = false                           [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.simulation.nativeFloatingPoint = false                [Init: false]
+Thu 17:30: INFO    : 	ManagerConfiguration.streamClockFrq = 100                                  [Init: 100]
+Thu 17:30: INFO    : 	ManagerConfiguration.useLegacyStreamFIFOs = false                          [Init: false]
+Thu 17:30: INFO    : 
+Thu 17:30: INFO    :  -- 
+Thu 17:30: INFO    : Deleting /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/Manager_BreastMammogramROIExtraction.graphs
+Thu 17:30: INFO    : Running manager compiler graph-pass: GenerateMXGInfo
+Thu 17:30: INFO    : Running manager compiler graph-pass: ScheduleStallLatency
+Thu 17:30: INFO    : Running manager compiler graph-pass: ClockWidthAssignment
+Thu 17:30: INFO    : Running manager compiler graph-pass: InsertDualAspectLogic
+Thu 17:30: INFO    : Running manager compiler graph-pass: ClockWidthAssignment
+Thu 17:30: INFO    : Running manager compiler graph-pass: InsertPullPushAdapter
+Thu 17:30: INFO    : Running manager compiler graph-pass: ClockWidthAssignment
+Thu 17:30: INFO    : Running manager compiler graph-pass: InsertStreamFifos
+Thu 17:30: INFO    : Running manager compiler graph-pass: ClockWidthAssignment
+Thu 17:30: INFO    : Running manager compiler graph-pass: InsertStreamStatus
+Thu 17:30: INFO    : Running manager compiler graph-pass: InsertChipscope
+Thu 17:30: INFO    : Inserted 0 chipscope manager nodes.
+Thu 17:30: INFO    : Running manager compiler graph-pass: ClockWidthAssignment
+Thu 17:30: INFO    : Running manager compiler graph-pass: ReportClockAssignments
+Thu 17:30: PROGRESS: 
+Thu 17:30: PROGRESS: Compiling kernel "BreastMammogramROIExtractionKernel"
+Thu 17:30: INFO    : Configuration:
+Thu 17:30: INFO    : 	KernelConfiguration.additionalInputPipelining = 64                                          [Init: 64]
+Thu 17:30: INFO    : 	KernelConfiguration.allowDSPCascading = true                                                [Init: true]
+Thu 17:30: INFO    : 	KernelConfiguration.allowInputsOutputsBeforeFlushNode = false                               [Init: false]
+Thu 17:30: INFO    : 	KernelConfiguration.allowZeroLatencyNodeHold = false                                        [Init: false]
+Thu 17:30: INFO    : 	KernelConfiguration.board = MAX4548A                                                        [Init: MAX2116B, change: MAX4548A]
+Thu 17:30: INFO    : 	KernelConfiguration.bramBitsThreshold = 2080                                                [Init: 2080]
+Thu 17:30: INFO    : 	KernelConfiguration.buildTarget = HARDWARE                                                  [Init: NONE, change: HARDWARE]
+Thu 17:30: INFO    : 	KernelConfiguration.cePipelining = 2                                                        [Init: 2]
+Thu 17:30: INFO    : 	KernelConfiguration.clockPhaseBalanceThreshold = 0.1                                        [Init: 0.1]
+Thu 17:30: INFO    : 	KernelConfiguration.clockPhasingRetries = 50                                                [Init: 50]
+Thu 17:30: INFO    : 	KernelConfiguration.dumpNeighboursString =                                                  [Init: ]
+Thu 17:30: INFO    : 	KernelConfiguration.enableCeReplication = true                                              [Init: true]
+Thu 17:30: INFO    : 	KernelConfiguration.enableClockPhasePartitioning = false                                    [Init: false]
+Thu 17:30: INFO    : 	KernelConfiguration.enableDebugIOControlRegs = true                                         [Init: true]
+Thu 17:30: INFO    : 	KernelConfiguration.enableDummyBuild = false                                                [Init: false]
+Thu 17:30: INFO    : 	KernelConfiguration.enableKernelProfiler = false                                            [Init: false]
+Thu 17:30: INFO    : 	KernelConfiguration.enablePipelinedComputeController = false                                [Init: false]
+Thu 17:30: INFO    : 	KernelConfiguration.enableShadowRegister = false                                            [Init: false]
+Thu 17:30: INFO    : 	KernelConfiguration.enableSmartKernelControl = false                                        [Init: false]
+Thu 17:30: INFO    : 	KernelConfiguration.fifoSrlRegisterStages = 1                                               [Init: 1]
+Thu 17:30: INFO    : 	KernelConfiguration.flushOnInputDataCongtiguous = false                                     [Init: false]
+Thu 17:30: INFO    : 	KernelConfiguration.hardwareDebugDepth = 512                                                [Init: 512]
+Thu 17:30: INFO    : 	KernelConfiguration.hwHierarchyMode = UNSET                                                 [Init: UNSET]
+Thu 17:30: INFO    : 	KernelConfiguration.latencyAnnotation = false                                               [Init: false]
+Thu 17:30: INFO    : 	KernelConfiguration.latencyAnnotationIOs =                                                  [Init: null]
+Thu 17:30: INFO    : 	KernelConfiguration.maxCoalescedFifoWidth = 2147483647                                      [Init: 2147483647]
+Thu 17:30: INFO    : 	KernelConfiguration.maxPreAdderFanOut = 1                                                   [Init: 1]
+Thu 17:30: INFO    : 	KernelConfiguration.netlistMode = false                                                     [Init: false]
+Thu 17:30: INFO    : 	KernelConfiguration.numPhotonStateMachines = 1                                              [Init: 1]
+Thu 17:30: INFO    : 	KernelConfiguration.optimizations.ceCounterRegisterDuplication = 1                          [Init: 1]
+Thu 17:30: INFO    : 	KernelConfiguration.optimizations.conditionalArithmetic = true                              [Init: true]
+Thu 17:30: INFO    : 	KernelConfiguration.optimizations.counterChainWrapPipelining = 0                            [Init: 0]
+Thu 17:30: INFO    : 	KernelConfiguration.optimizations.dspAddChain = OPTIMISE                                    [Init: null, Init after BuildTarget change: OPTIMISE]
+Thu 17:30: INFO    : 	KernelConfiguration.optimizations.enableActiveFanoutReduction = false                       [Init: false]
+Thu 17:30: INFO    : 	KernelConfiguration.optimizations.enableBUFGCE = false                                      [Init: false]
+Thu 17:30: INFO    : 	KernelConfiguration.optimizations.enableBetterInputRegistering = false                      [Init: false]
+Thu 17:30: INFO    : 	KernelConfiguration.optimizations.enableBetterRegistering = false                           [Init: false]
+Thu 17:30: INFO    : 	KernelConfiguration.optimizations.enableFIFOCoalescingAcrossPlacementConstraints = false    [Init: false]
+Thu 17:30: INFO    : 	KernelConfiguration.optimizations.enableFifoCoalescing = true                               [Init: true]
+Thu 17:30: INFO    : 	KernelConfiguration.optimizations.enableFullPrecisionBinaryOpConstants = false              [Init: false]
+Thu 17:30: INFO    : 	KernelConfiguration.optimizations.enableIntegratedRounding = false                          [Init: false]
+Thu 17:30: INFO    : 	KernelConfiguration.optimizations.enableMappedMemoryHostReadBack = true                     [Init: true]
+Thu 17:30: INFO    : 	KernelConfiguration.optimizations.enableMultiCycleReset = false                             [Init: false]
+Thu 17:30: INFO    : 	KernelConfiguration.optimizations.enablePowerTwoFloatMult = true                            [Init: true]
+Thu 17:30: INFO    : 	KernelConfiguration.optimizations.enableRedundantNodeDeletion = true                        [Init: true]
+Thu 17:30: INFO    : 	KernelConfiguration.optimizations.enableStateMachineRegisterMerging = true                  [Init: true]
+Thu 17:30: INFO    : 	KernelConfiguration.optimizations.inputFlushDistanceFactor = 0                              [Init: 0]
+Thu 17:30: INFO    : 	KernelConfiguration.optimizations.minimumStaticFIFOSplitDepth = 1                           [Init: 1]
+Thu 17:30: INFO    : 	KernelConfiguration.optimizations.optimizationTechnique = DEFAULT                           [Init: DEFAULT]
+Thu 17:30: INFO    : 	KernelConfiguration.optimizations.triAdd = true                                             [Init: true]
+Thu 17:30: INFO    : 	KernelConfiguration.partialReconfBlockName =                                                [Init: ]
+Thu 17:30: INFO    : 	KernelConfiguration.partialReconfMode = false                                               [Init: false]
+Thu 17:30: INFO    : 	KernelConfiguration.partialReconfTemplate = false                                           [Init: false]
+Thu 17:30: INFO    : 	KernelConfiguration.replicateNodeCeLog2NumPartitions = 0                                    [Init: 0]
+Thu 17:30: INFO    : 	KernelConfiguration.romBRAMBitsThreshold = 2080                                             [Init: 2080]
+Thu 17:30: INFO    : 	KernelConfiguration.simulation.ramAddressCollisionBehaviour = EXCEPTION                     [Init: EXCEPTION]
+Thu 17:30: INFO    : 	KernelConfiguration.simulation.ramOutOfBoundsAccessBehaviour = EXCEPTION                    [Init: EXCEPTION]
+Thu 17:30: INFO    : 	KernelConfiguration.simulation.simProgressMessageFrequency = 0                              [Init: 0]
+Thu 17:30: INFO    : 
+Thu 17:30: INFO    :  -- 
+Thu 17:30: INFO    : Writing current graph to: BreastMammogramROIExtraction-BreastMammogramROIExtractionKernel-original.pxg
+Thu 17:30: INFO    : Running kernel graph-pass 'GeneratePXG'.
+Thu 17:30: INFO    : Graph-pass 'GeneratePXG' took 497.984 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Thu 17:30: INFO    : Graph-pass 'MarkConstantPass' took 5.22523 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'ReachabilityPass'.
+Thu 17:30: INFO    : Graph-pass 'ReachabilityPass' took 13.5205 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'FindInputsLeadingToFlush'.
+Thu 17:30: INFO    : Graph-pass 'FindInputsLeadingToFlush' took 343.915 탎 (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'CheckForStatefulToFlushViolations'.
+Thu 17:30: INFO    : Graph-pass 'CheckForStatefulToFlushViolations' took 817.706 탎 (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'CheckForInputToFlushViolations'.
+Thu 17:30: INFO    : Graph-pass 'CheckForInputToFlushViolations' took 2.48417 ms (1 iterations)
+Thu 17:30: INFO    : Deleting directory: neighbours
+Thu 17:30: INFO    : Running Photon pre-schedule graph optimisations
+Thu 17:30: INFO    : Running kernel graph-pass 'AlignOrEradicatePrintfs'.
+Thu 17:30: INFO    : Graph-pass 'AlignOrEradicatePrintfs' took 517.972 탎 (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'FoldConstantsPass'.
+Thu 17:30: INFO    : Graph-pass 'FoldConstantsPass' took 2.36940 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'OptimiseNodesPass'.
+Thu 17:30: INFO    : Graph-pass 'OptimiseNodesPass' took 2.58497 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'DeleteRedundantNodes'.
+Thu 17:30: INFO    : Graph-pass 'DeleteRedundantNodes' took 1.00733 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'AlteraDSPExtractionGraphPass'.
+Thu 17:30: INFO    : Optimized 0 sub-graphs into DSP multiply/add chains 
+Thu 17:30: INFO    : Graph-pass 'AlteraDSPExtractionGraphPass' took 10.0959 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'TriAddExtractionPass'.
+Thu 17:30: INFO    : Graph-pass 'TriAddExtractionPass' took 3.88677 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'ConditionalAddExtractionPass'.
+Thu 17:30: INFO    : Optimized 0 sub-graphs into conditional adds/subs/triadds.
+Thu 17:30: INFO    : Graph-pass 'ConditionalAddExtractionPass' took 1.47006 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'PO2FPMultOptimiser'.
+Thu 17:30: INFO    : Graph-pass 'PO2FPMultOptimiser' took 666.933 탎 (1 iterations)
+Thu 17:30: INFO    : Logging Photon stats to: BreastMammogramROIExtractionKernel_photon_stats.csv
+Thu 17:30: INFO    : Deleting /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/BreastMammogramROIExtractionKernel_photon_stats.csv
+Thu 17:30: INFO    : Running kernel graph-pass 'StatsPass'.
+Thu 17:30: INFO    : Graph-pass 'StatsPass' took 6.36695 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'CollectNumericExceptions'.
+Thu 17:30: INFO    : Graph-pass 'CollectNumericExceptions' took 536.808 탎 (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'StreamOffsetDivExpand'.
+Thu 17:30: INFO    : Graph-pass 'StreamOffsetDivExpand' took 413.780 탎 (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'FindIllegalLoops'.
+Thu 17:30: INFO    : Graph-pass 'FindIllegalLoops' took 4.75689 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Thu 17:30: INFO    : Graph-pass 'MarkConstantPass' took 1.20430 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'ScheduleVariables'.
+Thu 17:30: INFO    : Graph-pass 'ScheduleVariables' took 7.05882 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'SubstituteEqPlaceholders'.
+Thu 17:30: INFO    : Graph-pass 'SubstituteEqPlaceholders' took 32.4819 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'ScheduleApplier'.
+Thu 17:30: INFO    : Graph-pass 'ScheduleApplier' took 6.76913 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Thu 17:30: INFO    : Graph-pass 'MarkConstantPass' took 783.727 탎 (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'ScheduleDumper'.
+Thu 17:30: INFO    : Graph-pass 'ScheduleDumper' took 7.19619 ms (1 iterations)
+Thu 17:30: INFO    : Running Photon post-schedule graph optimisations (pass 1)
+Thu 17:30: INFO    : Running kernel graph-pass 'TapFIFOsPass'.
+Thu 17:30: INFO    : Graph-pass 'TapFIFOsPass' took 3.22224 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'FoldFIFOsPass'.
+Thu 17:30: INFO    : Graph-pass 'FoldFIFOsPass' took 1.41642 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Thu 17:30: INFO    : Graph-pass 'MarkConstantPass' took 806.623 탎 (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'ValidateFIFOs'.
+Thu 17:30: INFO    : Graph-pass 'ValidateFIFOs' took 448.717 탎 (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Thu 17:30: INFO    : Graph-pass 'MarkConstantPass' took 792.783 탎 (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'ScheduleDumper'.
+Thu 17:30: INFO    : Graph-pass 'ScheduleDumper' took 6.86576 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Thu 17:30: INFO    : Graph-pass 'MarkConstantPass' took 813.090 탎 (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'ScheduleConstants'.
+Thu 17:30: INFO    : Running command: cbc "BreastMammogramROIExtractionKernel_schedule_C.mps.gz" -threads 4 -solve  -printi csv -solu "BreastMammogramROIExtractionKernel_schedule_C.csv" > "BreastMammogramROIExtractionKernel_schedule_C.stdout.log"
+Thu 17:30: INFO    : Checking for file hash changes...
+Thu 17:30: INFO    : No changes.
+Thu 17:30: INFO    : Optimum found: 6542
+Thu 17:30: INFO    : Graph-pass 'ScheduleConstants' took 220.197 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Thu 17:30: INFO    : Graph-pass 'MarkConstantPass' took 2.37143 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'ScheduleDumper'.
+Thu 17:30: INFO    : Graph-pass 'ScheduleDumper' took 17.4668 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'SubstituteEqPlaceholders'.
+Thu 17:30: INFO    : OffsetAutoLoop sizes:
+Thu 17:30: INFO    :   loopLength = 3
+Thu 17:30: INFO    : Graph-pass 'SubstituteEqPlaceholders' took 59.4022 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'RemoveDistMeasurementNodes'.
+Thu 17:30: INFO    : Graph-pass 'RemoveDistMeasurementNodes' took 53.9640 탎 (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'ScheduleApplier'.
+Thu 17:30: INFO    : Graph-pass 'ScheduleApplier' took 88.3558 ms (1 iterations)
+Thu 17:30: INFO    : Maximum stream latency for kernel 'BreastMammogramROIExtractionKernel': 3072
+Thu 17:30: INFO    : Using user logic for flush.
+Thu 17:30: INFO    : Running Photon post-schedule graph optimisations (pass 2)
+Thu 17:30: INFO    : Running kernel graph-pass 'TapFIFOsPass'.
+Thu 17:30: INFO    : Graph-pass 'TapFIFOsPass' took 57.7694 ms (2 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'FoldFIFOsPass'.
+Thu 17:30: INFO    : Graph-pass 'FoldFIFOsPass' took 3.35649 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Thu 17:30: INFO    : Graph-pass 'MarkConstantPass' took 1.13215 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'ScheduleAsserter'.
+Thu 17:30: INFO    : Graph-pass 'ScheduleAsserter' took 3.94423 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'ReplaceEvalStreamOffsetNodes'.
+Thu 17:30: INFO    : Graph-pass 'ReplaceEvalStreamOffsetNodes' took 28.8790 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'FIFOCoalesceRespectingPlacementPass'.
+Thu 17:30: INFO    : Found 2 FIFOs (with 1 set(s) of constraint) with depth '3067'.
+Thu 17:30: INFO    : Made coalesced FIFO (id=122) of width 2 and depth '3067' from the following FIFOs:
+Thu 17:30: INFO    :     id=101 width=1
+Thu 17:30: INFO    :     id=112 width=1
+Thu 17:30: INFO    : Graph-pass 'FIFOCoalesceRespectingPlacementPass' took 59.8180 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'FIFOReport'.
+Thu 17:30: INFO    : Graph-pass 'FIFOReport' took 8.88423 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'StatsPass'.
+Thu 17:30: INFO    : Graph-pass 'StatsPass' took 6.10928 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'RemoveUntypedConstants'.
+Thu 17:30: INFO    : Graph-pass 'RemoveUntypedConstants' took 38.3664 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'VariableSizeMappedRegInserter'.
+Thu 17:30: INFO    : Graph-pass 'VariableSizeMappedRegInserter' took 518.775 탎 (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Thu 17:30: INFO    : Graph-pass 'MarkConstantPass' took 764.359 탎 (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'MakeMaxFileNodeData'.
+Thu 17:30: INFO    : Graph-pass 'MakeMaxFileNodeData' took 11.3836 ms (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'MoveFanoutRegsForwards'.
+Thu 17:30: INFO    : Graph-pass 'MoveFanoutRegsForwards' took 521.095 탎 (1 iterations)
+Thu 17:30: INFO    : Optimization report for Kernel 'BreastMammogramROIExtractionKernel'.
+Thu 17:30: INFO    : Enabled optimizations:
+Thu 17:30: INFO    : 	DSP-MultAdd
+Thu 17:30: INFO    : 	Tri-Adder
+Thu 17:30: INFO    : 	Conditional (Tri)Adds/Subs/AddSubs
+Thu 17:30: INFO    : 	Power-of-2 Floating Point
+Thu 17:30: INFO    : 	Fifo Coalescing
+Thu 17:30: INFO    : Creating a preliminary MaxCompilerDesignData.dat. (@ CoreCompile BreastMammogramROIExtractionKernel)
+Thu 17:30: INFO    : Deleting /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/MaxCompilerDesignData.dat
+Thu 17:30: INFO    : Total compilation of 'BreastMammogramROIExtractionKernel' took 1.81120 s.
+Thu 17:30: INFO    : Running kernel graph-pass 'WeightBasedCEPartitioner'.
+Thu 17:30: INFO    : Partitioning design into 1 CE domain(s) to minimize global signal fanout.
+Thu 17:30: INFO    : Graph-pass 'WeightBasedCEPartitioner' took 244.763 탎 (1 iterations)
+Thu 17:30: INFO    : Using maximum counter CE delay chain length 12
+Thu 17:30: INFO    : CE Partition 0 Clock Phase 0 : Nodes=109 (use fill=9, use flush=3) Fill counters=2 (+22 delay regs) Flush counters=2 (+0 delay regs)
+Thu 17:30: INFO    : Running kernel graph-pass 'FindWriteableMappedMemories'.
+Thu 17:30: INFO    : Graph-pass 'FindWriteableMappedMemories' took 84.4340 탎 (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Thu 17:30: INFO    : Graph-pass 'MarkConstantPass' took 823.787 탎 (1 iterations)
+Thu 17:30: INFO    : Running kernel graph-pass 'MaxConstantLatency'.
+Thu 17:30: INFO    : Graph-pass 'MaxConstantLatency' took 2.25731 ms (1 iterations)
+Thu 17:30: INFO    : Maximum constant latency: 35
+Thu 17:30: INFO    : Running kernel graph-pass 'PhotonMaxDCTopEntity'.
+Thu 17:30: INFO    : Implementing static multi-stage delay of 1 (32 bits wide), cost 0 RAMB18-equivalents, and 32 SRL32s. Made from: 0 x 0 BRAMs, Straggler BRAM 0, SRL of length 1
+Thu 17:30: INFO    : Implementing static multi-stage delay of 17 (1 bits wide), cost 0 RAMB18-equivalents, and 1 SRL32s. Made from: 0 x 0 BRAMs, Straggler BRAM 0, SRL of length 17
+Thu 17:30: INFO    : Implementing static multi-stage delay of 11 (1 bits wide), cost 0 RAMB18-equivalents, and 1 SRL32s. Made from: 0 x 0 BRAMs, Straggler BRAM 0, SRL of length 11
+Thu 17:30: INFO    : Implementing static multi-stage delay of 3 (32 bits wide), cost 0 RAMB18-equivalents, and 32 SRL32s. Made from: 0 x 0 BRAMs, Straggler BRAM 0, SRL of length 3
+Thu 17:30: INFO    : Implementing static multi-stage delay of 3 (32 bits wide), cost 0 RAMB18-equivalents, and 32 SRL32s. Made from: 0 x 0 BRAMs, Straggler BRAM 0, SRL of length 3
+Thu 17:30: INFO    : Implementing static multi-stage delay of 3067 (2 bits wide), cost 1 RAMB18-equivalents, and 0 SRL32s. Made from: 0 x 4096 BRAMs, Straggler BRAM 3065, SRL of length 0
+Thu 17:30: INFO    : Implementing static multi-stage delay of 2 (1 bits wide), cost 0 RAMB18-equivalents, and 1 SRL32s. Made from: 0 x 0 BRAMs, Straggler BRAM 0, SRL of length 2
+Thu 17:30: INFO    : Implementing static multi-stage delay of 2 (1 bits wide), cost 0 RAMB18-equivalents, and 1 SRL32s. Made from: 0 x 0 BRAMs, Straggler BRAM 0, SRL of length 2
+Thu 17:30: INFO    : Implementing static multi-stage delay of 1 (32 bits wide), cost 0 RAMB18-equivalents, and 32 SRL32s. Made from: 0 x 0 BRAMs, Straggler BRAM 0, SRL of length 1
+Thu 17:30: INFO    : Implementing static multi-stage delay of 9 (1 bits wide), cost 0 RAMB18-equivalents, and 1 SRL32s. Made from: 0 x 0 BRAMs, Straggler BRAM 0, SRL of length 9
+Thu 17:30: INFO    : Implementing static multi-stage delay of 6 (1 bits wide), cost 0 RAMB18-equivalents, and 1 SRL32s. Made from: 0 x 0 BRAMs, Straggler BRAM 0, SRL of length 6
+Thu 17:30: INFO    : Implementing static multi-stage delay of 5 (1 bits wide), cost 0 RAMB18-equivalents, and 1 SRL32s. Made from: 0 x 0 BRAMs, Straggler BRAM 0, SRL of length 5
+Thu 17:30: INFO    : Implementing static multi-stage delay of 1 (1 bits wide), cost 0 RAMB18-equivalents, and 1 SRL32s. Made from: 0 x 0 BRAMs, Straggler BRAM 0, SRL of length 1
+Thu 17:30: INFO    : Implementing static multi-stage delay of 1 (32 bits wide), cost 0 RAMB18-equivalents, and 32 SRL32s. Made from: 0 x 0 BRAMs, Straggler BRAM 0, SRL of length 1
+Thu 17:30: INFO    : Implementing static multi-stage delay of 2 (32 bits wide), cost 0 RAMB18-equivalents, and 32 SRL32s. Made from: 0 x 0 BRAMs, Straggler BRAM 0, SRL of length 2
+Thu 17:30: INFO    : Graph-pass 'PhotonMaxDCTopEntity' took 2.21204 s (1 iterations)
+Thu 17:30: INFO    : Writing current graph to: BreastMammogramROIExtraction-BreastMammogramROIExtractionKernel-final-hardware.pxg
+Thu 17:30: INFO    : Running kernel graph-pass 'GeneratePXG'.
+Thu 17:30: INFO    : Graph-pass 'GeneratePXG' took 105.780 ms (1 iterations)
+Thu 17:30: INFO    : Running manager compiler graph-pass: GenerateMXGInfo
+Thu 17:30: INFO    : Running manager compiler graph-pass: GenerateSlicHostCode
+Thu 17:30: INFO    : Generating SLIC interface information
+Thu 17:30: INFO    : Generating SLIC code for interface 'default'
+Thu 17:30: INFO    : Skipping blacklisted scalar parameter 'BreastMammogramROIExtractionKernel.current_run_cycle_count'
+Thu 17:30: INFO    : Interface 'default' depends on parameter 'black'
+Thu 17:30: INFO    : Interface 'default' depends on parameter 'height'
+Thu 17:30: INFO    : Interface 'default' depends on parameter 'length'
+Thu 17:30: INFO    : Interface 'default' depends on parameter 'threshold'
+Thu 17:30: INFO    : Interface 'default' depends on parameter 'width'
+Thu 17:30: INFO    : Interface 'default' depends on parameter 'BreastMammogramROIExtractionKernel_loopLength'
+Thu 17:30: INFO    : Generating XML description for Maxfile
+Thu 17:30: INFO    : Generating XML description for mode 'default'
+Thu 17:30: INFO    : Skipping blacklisted scalar parameter 'BreastMammogramROIExtractionKernel.current_run_cycle_count'
+Thu 17:30: INFO    : Interface 'default' depends on parameter 'black'
+Thu 17:30: INFO    : Interface 'default' depends on parameter 'height'
+Thu 17:30: INFO    : Interface 'default' depends on parameter 'length'
+Thu 17:30: INFO    : Interface 'default' depends on parameter 'threshold'
+Thu 17:30: INFO    : Interface 'default' depends on parameter 'width'
+Thu 17:30: INFO    : Interface 'default' depends on parameter 'BreastMammogramROIExtractionKernel_loopLength'
+Thu 17:30: INFO    : Adding SLIC sections to the maxfile
+Thu 17:30: INFO    : Adding user files to the maxfile
+Thu 17:30: INFO    : Generating SLIC include file
+Thu 17:30: INFO    : Done generating SLIC interface information
+Thu 17:30: INFO    : Waiting for any external asynchronous jobs to complete (e.g. MegaWizard/CoreGen)...
+Thu 17:30: INFO    : All asynchronous jobs are now completed.
+Thu 17:30: INFO    : Waiting for any external asynchronous jobs to complete (e.g. MegaWizard/CoreGen)...
+Thu 17:30: INFO    : All asynchronous jobs are now completed.
+Thu 17:30: INFO    : Waiting for any external asynchronous jobs to complete (e.g. MegaWizard/CoreGen)...
+Thu 17:30: INFO    : All asynchronous jobs are now completed.
+Thu 17:30: INFO    : Control Streams: Connecting block MappedElementsSwitchPCIeEA with select value: 1
+Thu 17:30: INFO    : Deleting /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/quartus_version_test
+Thu 17:30: INFO    : Running command: source /network-raid/opt/quartus-13.1/quartus_path.sh; quartus_fit --version 2>&1 > quartus_version_test
+Thu 17:30: INFO    : Checking for file hash changes...
+Thu 17:30: INFO    : No changes.
+Thu 17:30: INFO    : Couldn't find file /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/quartus_version_test, giving it a second chance.
+Thu 17:30: INFO    : Output file does not exist: /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/quartus_version_test
+Thu 17:30: INFO    : Detected Quartus II version 13.1
+Thu 17:30: INFO    : Running 'source /network-raid/opt/quartus-13.1/quartus_path.sh; lmutil lmdiag -n quartus'
+Thu 17:30: INFO    : Successfully checked out license for Quartus (quartus)
+Thu 17:30: INFO    : Updating the preliminary MaxCompilerDesignData.dat. (@ Main build)
+Thu 17:30: INFO    : Deleting /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/MaxCompilerDesignData.dat
+Thu 17:30: PROGRESS: Generating input files (VHDL, netlists, MegaWizard/CoreGen)
+Thu 17:30: INFO    : Not deleting directory (does not exist): tmp
+Thu 17:30: INFO    : Running command: export LM_LICENSE_FILE="$LM_LICENSE_FILE:$MAXCOMPILERDIR/lib/MaxCompilerQuartusLicense.dat" ; source /network-raid/opt/quartus-13.1/quartus_path.sh; DISPLAY=$DUMMY_XSERVER qmegawiz --64bit --64bit -silent module=altclkctrl -f:MWAltClkCtrl_quartusv13_1_0_GCLK_numclk_1.txt MWAltClkCtrl_quartusv13_1_0_GCLK_numclk_1.vhd > qmegawiz.log
+Thu 17:30: INFO    : Checking for file hash changes...
+Thu 17:30: INFO    : No changes.
+Thu 17:30: INFO    : Not deleting directory (does not exist): tmp
+Thu 17:30: INFO    : Running command: export LM_LICENSE_FILE="$LM_LICENSE_FILE:$MAXCOMPILERDIR/lib/MaxCompilerQuartusLicense.dat" ; source /network-raid/opt/quartus-13.1/quartus_path.sh; DISPLAY=$DUMMY_XSERVER qmegawiz --64bit --64bit -silent module=altclkctrl -f:MWAltClkCtrl_quartusv13_1_0_AUTO_numclk_1_ena.txt MWAltClkCtrl_quartusv13_1_0_AUTO_numclk_1_ena.vhd > qmegawiz.log
+Thu 17:30: INFO    : Checking for file hash changes...
+Thu 17:30: INFO    : No changes.
+Thu 17:30: INFO    : Mapped register report:
+Thu 17:30: INFO    : 	0	SFA_FORWARD_EN	4bytes
+Thu 17:30: INFO    : 	4	dbg_stall_vector	1bytes
+Thu 17:30: INFO    : 	5	io_output_force_disabled	1bytes
+Thu 17:30: INFO    : 	6	width	4bytes
+Thu 17:30: INFO    : 	a	height	4bytes
+Thu 17:30: INFO    : 	e	io_image_pixel_force_disabled	1bytes
+Thu 17:30: INFO    : 	f	threshold	4bytes
+Thu 17:30: INFO    : 	13	black	4bytes
+Thu 17:30: INFO    : 	17	run_cycle_count	6bytes
+Thu 17:30: INFO    : 	1d	current_run_cycle_count	6bytes
+Thu 17:30: INFO    : 	23	dbg_ctld_empty	1bytes
+Thu 17:30: INFO    : 	24	dbg_ctld_almost_empty	1bytes
+Thu 17:30: INFO    : 	25	dbg_ctld_done	1bytes
+Thu 17:30: INFO    : 	26	dbg_ctld_read	1bytes
+Thu 17:30: INFO    : 	27	dbg_ctld_request	1bytes
+Thu 17:30: INFO    : 	28	dbg_flush_start	1bytes
+Thu 17:30: INFO    : 	29	dbg_full_level	2bytes
+Thu 17:30: INFO    : 	2b	dbg_flush_start_level	2bytes
+Thu 17:30: INFO    : 	2d	dbg_done_out	1bytes
+Thu 17:30: INFO    : 	2e	dbg_flushing	1bytes
+Thu 17:30: INFO    : 	2f	dbg_fill_level	2bytes
+Thu 17:30: INFO    : 	31	dbg_flush_level	2bytes
+Thu 17:30: INFO    : 	33	dbg_ctld_read_pipe_dbg	1bytes
+Thu 17:30: INFO    : 	34	dbg_out_valid	1bytes
+Thu 17:30: INFO    : 	35	dbg_out_stall	1bytes
+Thu 17:30: INFO    : 	36	clock_counters_base_clock_cclk	2bytes
+Thu 17:30: INFO    : 	38	clock_counters_STREAM	2bytes
+Thu 17:30: INFO    : 	3a	clock_counters_clk_pcie	2bytes
+Thu 17:30: INFO    : 	3c	seen_reset_reset_n	1bytes
+Thu 17:30: INFO    : 	3d	seen_reset_STREAM_rst	1bytes
+Thu 17:30: INFO    : 	3e	seen_reset_STREAM_rst_delay	1bytes
+Thu 17:30: INFO    : 	3f	seen_reset_PCIE_rst	1bytes
+Thu 17:30: INFO    : 	40	seen_reset_PCIE_rst_delay	1bytes
+Thu 17:30: INFO    : 	41	seen_toggle_crash_input	1bytes
+Thu 17:30: INFO    : Mapped register chain length = 66
+Thu 17:30: INFO    : Mapped register efficiency = 0.70 (369 / 528 bits)
+Thu 17:30: INFO    : Mapped memory report:
+Thu 17:30: INFO    : 	Memory 'MappedClockControl.STREAM_CLKPRIM' @ 4063232
+Thu 17:30: INFO    : 	Memory 'MappedDRP.CHECKSUM' @ 3932160
+Thu 17:30: INFO    : 	Memory 'Monitoring.PERFMONITOR' @ 3866624
+Thu 17:30: INFO    : MWBlockMem: Best M20K tiling configuration for memory with width 2, depth 4096 --> 1 (max_depth = 8192)
+Thu 17:30: INFO    : Waiting for any external asynchronous jobs to complete (e.g. MegaWizard/CoreGen)...
+Thu 17:30: INFO    : All asynchronous jobs are now completed.
+Thu 17:30: INFO    : Waiting for any external asynchronous jobs to complete (e.g. MegaWizard/CoreGen)...
+Thu 17:30: INFO    : All asynchronous jobs are now completed.
+Thu 17:30: PROGRESS: Running back-end  build (16 phases)
+Thu 17:30: PROGRESS: (1/16) - Prepare MaxFile Data (GenerateMaxFileDataFile)
+Thu 17:30: INFO    : Build pass 'GenerateMaxFileDataFile' took 11.8795 ms.
+Thu 17:30: PROGRESS: (2/16) - Prepare for Placement (QuartusMap)
+Thu 17:30: INFO    : Running command: export LM_LICENSE_FILE="$LM_LICENSE_FILE:$MAXCOMPILERDIR/lib/MaxCompilerQuartusLicense.dat" ; source /network-raid/opt/quartus-13.1/quartus_path.sh; quartus_sh --determine_smart_action "MAX4PeripheryTop" > smart.log || echo 'project "MAX4PeripheryTop" not found' > smart.log
+Thu 17:30: INFO    : quartus_sh curr smart_action = 'NULL' in scratch/altera_quartus/map/altera_quartus
+Thu 17:30: INFO    : Starting quartus_map. (17:30:52 23/04/15)
+Thu 17:30: INFO    : Running command: export LM_LICENSE_FILE="$LM_LICENSE_FILE:$MAXCOMPILERDIR/lib/MaxCompilerQuartusLicense.dat" ; source /network-raid/opt/quartus-13.1/quartus_path.sh; ulimit -v 29286400;quartus_map MAX4PeripheryTop --64bit --parallel=1
+Thu 17:30: INFO    : Submitting job to cluster...
+Thu 17:30: INFO    : Cluster job ID: 13377
+Thu 17:30: INFO    : Waiting for MaxQ job 13377 to complete...
+Thu 17:35: INFO    : quartus_map ended (17:35:42 23/04/15, time elapsed: 4 mins, 50 secs)
+Thu 17:35: INFO    : quartus_map peak virtual memory: 1616
+Thu 17:35: INFO    : Build pass 'QuartusMap' took 293.229 s.
+Thu 17:35: PROGRESS: (3/16) - Generate Incremental Netlist (QuartusCdb)
+Thu 17:35: INFO    : quartus_sh prev smart_action = 'NULL' in scratch/altera_quartus/map/altera_quartus
+Thu 17:35: INFO    : Starting quartus_cdb. (17:35:42 23/04/15)
+Thu 17:35: INFO    : Running command: export LM_LICENSE_FILE="$LM_LICENSE_FILE:$MAXCOMPILERDIR/lib/MaxCompilerQuartusLicense.dat" ; source /network-raid/opt/quartus-13.1/quartus_path.sh; ulimit -v 6758400;quartus_cdb MAX4PeripheryTop --64bit --write_settings_files=off --merge=on
+Thu 17:36: INFO    : Warning (292006): Can't contact license server "1717@sliserver26" -- this server will be ignored
+Thu 17:36: INFO    : Info: *******************************************************************
+Thu 17:36: INFO    : Info: Running Quartus II 64-Bit Partition Merge
+Thu 17:36: INFO    :     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+Thu 17:36: INFO    :     Info: Copyright (C) 1991-2013 Altera Corporation. All rights reserved.
+Thu 17:36: INFO    :     Info: Your use of Altera Corporation's design tools, logic functions 
+Thu 17:36: INFO    :     Info: and other software and tools, and its AMPP partner logic 
+Thu 17:36: INFO    :     Info: functions, and any output files from any of the foregoing 
+Thu 17:36: INFO    :     Info: (including device programming or simulation files), and any 
+Thu 17:36: INFO    :     Info: associated documentation or information are expressly subject 
+Thu 17:36: INFO    :     Info: to the terms and conditions of the Altera Program License 
+Thu 17:36: INFO    :     Info: Subscription Agreement, Altera MegaCore Function License 
+Thu 17:36: INFO    :     Info: Agreement, or other applicable license agreement, including, 
+Thu 17:36: INFO    :     Info: without limitation, that your use is for the sole purpose of 
+Thu 17:36: INFO    :     Info: programming logic devices manufactured by Altera and sold by 
+Thu 17:36: INFO    :     Info: Altera or its authorized distributors.  Please refer to the 
+Thu 17:36: INFO    :     Info: applicable agreement for further details.
+Thu 17:36: INFO    :     Info: Processing started: Thu Apr 23 17:35:54 2015
+Thu 17:36: INFO    : Info: Command: quartus_cdb MAX4PeripheryTop --write_settings_files=off --merge=on
+Thu 17:36: INFO    : Info: Using INI file /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/altera_quartus/map/altera_quartus/quartus.ini
+Thu 17:36: INFO    : Info (35007): Using synthesis netlist for partition "Top"
+Thu 17:36: INFO    : Info (35007): Using synthesis netlist for partition "MAX4FPGATop:MAX4FabricTop_i"
+Thu 17:36: INFO    : Info (35002): Resolved and merged 2 partition(s)
+Thu 17:36: INFO    : Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+Thu 17:36: INFO    :     Info (16011): Adding 218 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
+Thu 17:36: INFO    : Info (35048): Found 123 ports with constant drivers. For more information, refer to the Partition Merger report
+Thu 17:36: INFO    : Info (35047): Found 191 ports with no fan-out. For more information, refer to the Partition Merger report
+Thu 17:36: INFO    : Warning (35016): Found partition port(s) not driving logic, possibly wasting area
+Thu 17:36: INFO    :     Warning (35018): Partition port "MAX4FPGATop:MAX4FabricTop_i|rx_st_bar[1]", driven by node "StratixPCIeBase:PCIeBase_i|StratixVHardIPPCIe:StratixVHardIPPCIe_i|pcie_SV_hard_ip:pcie_SV_hard_ip_i|altpcie_sv_hip_ast_hwtcl:pcie_sv_hard_ip_inst|altpcie_hip_256_pipen1b:altpcie_hip_256_pipen1b|stratixv_hssi_gen3_pcie_hip", does not drive logic
+Thu 17:36: INFO    :     Warning (35018): Partition port "MAX4FPGATop:MAX4FabricTop_i|rx_st_bar[3]", driven by node "StratixPCIeBase:PCIeBase_i|StratixVHardIPPCIe:StratixVHardIPPCIe_i|pcie_SV_hard_ip:pcie_SV_hard_ip_i|altpcie_sv_hip_ast_hwtcl:pcie_sv_hard_ip_inst|altpcie_hip_256_pipen1b:altpcie_hip_256_pipen1b|stratixv_hssi_gen3_pcie_hip", does not drive logic
+Thu 17:36: INFO    :     Warning (35018): Partition port "MAX4FPGATop:MAX4FabricTop_i|rx_st_bar[5]", driven by node "StratixPCIeBase:PCIeBase_i|StratixVHardIPPCIe:StratixVHardIPPCIe_i|pcie_SV_hard_ip:pcie_SV_hard_ip_i|altpcie_sv_hip_ast_hwtcl:pcie_sv_hard_ip_inst|altpcie_hip_256_pipen1b:altpcie_hip_256_pipen1b|stratixv_hssi_gen3_pcie_hip", does not drive logic
+Thu 17:36: INFO    :     Warning (35018): Partition port "MAX4FPGATop:MAX4FabricTop_i|rx_st_bar[6]", driven by node "StratixPCIeBase:PCIeBase_i|StratixVHardIPPCIe:StratixVHardIPPCIe_i|pcie_SV_hard_ip:pcie_SV_hard_ip_i|altpcie_sv_hip_ast_hwtcl:pcie_sv_hard_ip_inst|altpcie_hip_256_pipen1b:altpcie_hip_256_pipen1b|stratixv_hssi_gen3_pcie_hip", does not drive logic
+Thu 17:36: INFO    :     Warning (35018): Partition port "MAX4FPGATop:MAX4FabricTop_i|rx_st_bar[7]", driven by node "StratixPCIeBase:PCIeBase_i|StratixVHardIPPCIe:StratixVHardIPPCIe_i|pcie_SV_hard_ip:pcie_SV_hard_ip_i|altpcie_sv_hip_ast_hwtcl:pcie_sv_hard_ip_inst|altpcie_hip_256_pipen1b:altpcie_hip_256_pipen1b|stratixv_hssi_gen3_pcie_hip", does not drive logic
+Thu 17:36: INFO    :     Warning (35018): Partition port "MAX4FPGATop:MAX4FabricTop_i|rx_st_empty[1]", driven by node "StratixPCIeBase:PCIeBase_i|StratixVHardIPPCIe:StratixVHardIPPCIe_i|pcie_SV_hard_ip:pcie_SV_hard_ip_i|altpcie_sv_hip_ast_hwtcl:pcie_sv_hard_ip_inst|altpcie_hip_256_pipen1b:altpcie_hip_256_pipen1b|stratixv_hssi_gen3_pcie_hip", does not drive logic
+Thu 17:36: INFO    :     Warning (35018): Partition port "MAX4FPGATop:MAX4FabricTop_i|tl_cfg_ctl[13]", driven by node "StratixPCIeBase:PCIeBase_i|StratixVHardIPPCIe:StratixVHardIPPCIe_i|pcie_SV_hard_ip:pcie_SV_hard_ip_i|altpcie_sv_hip_ast_hwtcl:pcie_sv_hard_ip_inst|altpcie_hip_256_pipen1b:altpcie_hip_256_pipen1b|stratixv_hssi_gen3_pcie_hip", does not drive logic
+Thu 17:36: INFO    :     Warning (35018): Partition port "MAX4FPGATop:MAX4FabricTop_i|tl_cfg_ctl[14]", driven by node "StratixPCIeBase:PCIeBase_i|StratixVHardIPPCIe:StratixVHardIPPCIe_i|pcie_SV_hard_ip:pcie_SV_hard_ip_i|altpcie_sv_hip_ast_hwtcl:pcie_sv_hard_ip_inst|altpcie_hip_256_pipen1b:altpcie_hip_256_pipen1b|stratixv_hssi_gen3_pcie_hip", does not drive logic
+Thu 17:36: INFO    :     Warning (35018): Partition port "MAX4FPGATop:MAX4FabricTop_i|tl_cfg_ctl[15]", driven by node "StratixPCIeBase:PCIeBase_i|StratixVHardIPPCIe:StratixVHardIPPCIe_i|pcie_SV_hard_ip:pcie_SV_hard_ip_i|altpcie_sv_hip_ast_hwtcl:pcie_sv_hard_ip_inst|altpcie_hip_256_pipen1b:altpcie_hip_256_pipen1b|stratixv_hssi_gen3_pcie_hip", does not drive logic
+Thu 17:36: INFO    :     Warning (35018): Partition port "MAX4FPGATop:MAX4FabricTop_i|tl_cfg_ctl[16]", driven by node "StratixPCIeBase:PCIeBase_i|StratixVHardIPPCIe:StratixVHardIPPCIe_i|pcie_SV_hard_ip:pcie_SV_hard_ip_i|altpcie_sv_hip_ast_hwtcl:pcie_sv_hard_ip_inst|altpcie_hip_256_pipen1b:altpcie_hip_256_pipen1b|stratixv_hssi_gen3_pcie_hip", does not drive logic
+Thu 17:36: INFO    :     Warning (35018): Partition port "MAX4FPGATop:MAX4FabricTop_i|tl_cfg_ctl[17]", driven by node "StratixPCIeBase:PCIeBase_i|StratixVHardIPPCIe:StratixVHardIPPCIe_i|pcie_SV_hard_ip:pcie_SV_hard_ip_i|altpcie_sv_hip_ast_hwtcl:pcie_sv_hard_ip_inst|altpcie_hip_256_pipen1b:altpcie_hip_256_pipen1b|stratixv_hssi_gen3_pcie_hip", does not drive logic
+Thu 17:36: INFO    :     Warning (35018): Partition port "MAX4FPGATop:MAX4FabricTop_i|tl_cfg_ctl[18]", driven by node "StratixPCIeBase:PCIeBase_i|StratixVHardIPPCIe:StratixVHardIPPCIe_i|pcie_SV_hard_ip:pcie_SV_hard_ip_i|altpcie_sv_hip_ast_hwtcl:pcie_sv_hard_ip_inst|altpcie_hip_256_pipen1b:altpcie_hip_256_pipen1b|stratixv_hssi_gen3_pcie_hip", does not drive logic
+Thu 17:36: INFO    :     Warning (35018): Partition port "MAX4FPGATop:MAX4FabricTop_i|tl_cfg_ctl[19]", driven by node "StratixPCIeBase:PCIeBase_i|StratixVHardIPPCIe:StratixVHardIPPCIe_i|pcie_SV_hard_ip:pcie_SV_hard_ip_i|altpcie_sv_hip_ast_hwtcl:pcie_sv_hard_ip_inst|altpcie_hip_256_pipen1b:altpcie_hip_256_pipen1b|stratixv_hssi_gen3_pcie_hip", does not drive logic
+Thu 17:36: INFO    :     Warning (35018): Partition port "MAX4FPGATop:MAX4FabricTop_i|tl_cfg_ctl[20]", driven by node "StratixPCIeBase:PCIeBase_i|StratixVHardIPPCIe:StratixVHardIPPCIe_i|pcie_SV_hard_ip:pcie_SV_hard_ip_i|altpcie_sv_hip_ast_hwtcl:pcie_sv_hard_ip_inst|altpcie_hip_256_pipen1b:altpcie_hip_256_pipen1b|stratixv_hssi_gen3_pcie_hip", does not drive logic
+Thu 17:36: INFO    :     Warning (35018): Partition port "MAX4FPGATop:MAX4FabricTop_i|tl_cfg_ctl[21]", driven by node "StratixPCIeBase:PCIeBase_i|StratixVHardIPPCIe:StratixVHardIPPCIe_i|pcie_SV_hard_ip:pcie_SV_hard_ip_i|altpcie_sv_hip_ast_hwtcl:pcie_sv_hard_ip_inst|altpcie_hip_256_pipen1b:altpcie_hip_256_pipen1b|stratixv_hssi_gen3_pcie_hip", does not drive logic
+Thu 17:36: INFO    :     Warning (35018): Partition port "MAX4FPGATop:MAX4FabricTop_i|tl_cfg_ctl[22]", driven by node "StratixPCIeBase:PCIeBase_i|StratixVHardIPPCIe:StratixVHardIPPCIe_i|pcie_SV_hard_ip:pcie_SV_hard_ip_i|altpcie_sv_hip_ast_hwtcl:pcie_sv_hard_ip_inst|altpcie_hip_256_pipen1b:altpcie_hip_256_pipen1b|stratixv_hssi_gen3_pcie_hip", does not drive logic
+Thu 17:36: INFO    :     Warning (35018): Partition port "MAX4FPGATop:MAX4FabricTop_i|tl_cfg_ctl[23]", driven by node "StratixPCIeBase:PCIeBase_i|StratixVHardIPPCIe:StratixVHardIPPCIe_i|pcie_SV_hard_ip:pcie_SV_hard_ip_i|altpcie_sv_hip_ast_hwtcl:pcie_sv_hard_ip_inst|altpcie_hip_256_pipen1b:altpcie_hip_256_pipen1b|stratixv_hssi_gen3_pcie_hip", does not drive logic
+Thu 17:36: INFO    :     Warning (35018): Partition port "MAX4FPGATop:MAX4FabricTop_i|tl_cfg_ctl[24]", driven by node "StratixPCIeBase:PCIeBase_i|StratixVHardIPPCIe:StratixVHardIPPCIe_i|pcie_SV_hard_ip:pcie_SV_hard_ip_i|altpcie_sv_hip_ast_hwtcl:pcie_sv_hard_ip_inst|altpcie_hip_256_pipen1b:altpcie_hip_256_pipen1b|stratixv_hssi_gen3_pcie_hip", does not drive logic
+Thu 17:36: INFO    :     Warning (35018): Partition port "MAX4FPGATop:MAX4FabricTop_i|tl_cfg_ctl[25]", driven by node "StratixPCIeBase:PCIeBase_i|StratixVHardIPPCIe:StratixVHardIPPCIe_i|pcie_SV_hard_ip:pcie_SV_hard_ip_i|altpcie_sv_hip_ast_hwtcl:pcie_sv_hard_ip_inst|altpcie_hip_256_pipen1b:altpcie_hip_256_pipen1b|stratixv_hssi_gen3_pcie_hip", does not drive logic
+Thu 17:36: INFO    :     Warning (35018): Partition port "MAX4FPGATop:MAX4FabricTop_i|tl_cfg_ctl[26]", driven by node "StratixPCIeBase:PCIeBase_i|StratixVHardIPPCIe:StratixVHardIPPCIe_i|pcie_SV_hard_ip:pcie_SV_hard_ip_i|altpcie_sv_hip_ast_hwtcl:pcie_sv_hard_ip_inst|altpcie_hip_256_pipen1b:altpcie_hip_256_pipen1b|stratixv_hssi_gen3_pcie_hip", does not drive logic
+Thu 17:36: INFO    :     Warning (35039): Only the first 20 ports are reported. For a full list of ports, refer to the Partition Warnings panel in the Partition Merge report
+Thu 17:36: INFO    : Warning (21074): Design contains 2 input pin(s) that do not drive logic
+Thu 17:36: INFO    :     Warning (15610): No output dependent on input pin "rdimm_l_ref_clk"
+Thu 17:36: INFO    :     Warning (15610): No output dependent on input pin "rdimm_ref_clk"
+Thu 17:36: INFO    : Info (21057): Implemented 24252 device resources after synthesis - the final resource count might be different
+Thu 17:36: INFO    :     Info (21058): Implemented 18 input pins
+Thu 17:36: INFO    :     Info (21059): Implemented 10 output pins
+Thu 17:36: INFO    :     Info (21060): Implemented 26 bidirectional pins
+Thu 17:36: INFO    :     Info (21061): Implemented 21594 logic cells
+Thu 17:36: INFO    :     Info (21064): Implemented 2422 RAM segments
+Thu 17:36: INFO    :     Info (21065): Implemented 2 PLLs
+Thu 17:36: INFO    :     Info (21062): Implemented 2 DSP elements
+Thu 17:36: INFO    : Info: Quartus II 64-Bit Partition Merge was successful. 0 errors, 26 warnings
+Thu 17:36: INFO    :     Info: Peak virtual memory: 1199 megabytes
+Thu 17:36: INFO    :     Info: Processing ended: Thu Apr 23 17:36:15 2015
+Thu 17:36: INFO    :     Info: Elapsed time: 00:00:21
+Thu 17:36: INFO    :     Info: Total CPU time (on all processors): 00:00:20
+Thu 17:36: INFO    : quartus_cdb ended (17:36:15 23/04/15, time elapsed: 32 secs)
+Thu 17:36: INFO    : quartus_cdb peak virtual memory: 1199
+Thu 17:36: INFO    : Build pass 'QuartusCdb' took 32.6834 s.
+Thu 17:36: PROGRESS: (4/16) - Generate Resource Report (AlteraResourceUsageBuildPass)
+Thu 17:36: INFO    : Build pass 'AlteraResourceUsageBuildPass' took 978.754 ms.
+Thu 17:36: PROGRESS: (5/16) - Generate Annotated Source Code (AlteraResourceAnnotationBuildPass)
+Thu 17:36: INFO    : Annotating source files (old source files in build directory will be removed first)...
+Thu 17:36: INFO    : Not deleting directory (does not exist): src_annotated_preliminary
+Thu 17:36: INFO    : annotated 2 source files
+Thu 17:36: INFO    : Annotating source files (old source files in build directory will be removed first)...
+Thu 17:36: INFO    : Not deleting directory (does not exist): src_annotated_preliminary_BreastMammogramROIExtractionKernel
+Thu 17:36: INFO    : annotated 2 source files
+Thu 17:36: INFO    : Build pass 'AlteraResourceAnnotationBuildPass' took 2.79882 s.
+Thu 17:36: PROGRESS: (6/16) - Analyse Resource Usage (AlteraResourceCounterPass)
+Thu 17:36: PROGRESS: 
+Thu 17:36: PROGRESS: About to start chip vendor Map/Place/Route toolflow. This will take some time.
+Thu 17:36: PROGRESS: For this compile, we estimate this process may take up to 30 minutes.
+Thu 17:36: PROGRESS: We recommend running in simulation to verify correctness before building hardware.
+Thu 17:36: PROGRESS: 
+Thu 17:36: PROGRESS: PRELIMINARY RESOURCE USAGE
+Thu 17:36: PROGRESS: Logic utilization:       9791 / 172600   (5.67%)
+Thu 17:36: PROGRESS: Multipliers (18x18):        4 / 3180     (0.13%)
+Thu 17:36: PROGRESS: Block memory (bits):   924337 / 41246720 (2.24%)
+Thu 17:36: PROGRESS: 
+Thu 17:36: INFO    : Build pass 'AlteraResourceCounterPass' took 14.4037 ms.
+Thu 17:36: PROGRESS: (7/16) - Place and Route DFE (AlteraMPPR)
+Thu 17:36: PROGRESS: Executing MPPR with 1 cost table and 1 thread.
+Thu 17:36: PROGRESS: MPPR: Starting 1 cost table
+Thu 17:36: INFO    : Created new sub build manager running in: /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/altera_quartus/ct1
+Thu 17:36: INFO    : For detailed output from this sub build manager see: /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/altera_quartus/ct1/_build.log
+Thu 17:46: PROGRESS: MPPR: Cost table 1 met timing with score 0 (best score 0)
+Thu 17:46: INFO    : Build pass 'AlteraMPPR' took 592.682 s.
+Thu 17:46: PROGRESS: (8/16) - Generate Configuration (QuartusAsm)
+Thu 17:46: INFO    : Running command: export LM_LICENSE_FILE="$LM_LICENSE_FILE:$MAXCOMPILERDIR/lib/MaxCompilerQuartusLicense.dat" ; source /network-raid/opt/quartus-13.1/quartus_path.sh; quartus_sh --determine_smart_action "MAX4PeripheryTop" > smart.log || echo 'project "MAX4PeripheryTop" not found' > smart.log
+Thu 17:46: INFO    : Creating timing report for cost table(s): 1 
+Thu 17:46: INFO    : Timing report successfully written.
+Thu 17:46: INFO    : quartus_sh curr smart_action = 'NULL' in scratch/altera_quartus/asm/altera_quartus
+Thu 17:46: INFO    : Running command: cp -rf "/home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/altera_quartus/ct1/altera_quartus/db" "/home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/altera_quartus/asm/altera_quartus"
+Thu 17:46: INFO    : Running command: cp -rf "/home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/altera_quartus/ct1/altera_quartus/incremental_db" "/home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/altera_quartus/asm/altera_quartus"
+Thu 17:46: INFO    : Running command: ln -sf "../../map/altera_quartus/MAX4PeripheryTop.qpf"
+Thu 17:46: INFO    : Running command: ln -sf "../../map/altera_quartus/MAX4PeripheryTop.qsf"
+Thu 17:46: INFO    : Running command: ln -sf "../../map/altera_quartus/quartus.ini"
+Thu 17:46: INFO    : Running command: ln -sf "../../map/altera_quartus/MAX4PeripheryTop.sdc"
+Thu 17:46: INFO    : Starting quartus_asm. (17:46:18 23/04/15)
+Thu 17:46: INFO    : Running command: export LM_LICENSE_FILE="$LM_LICENSE_FILE:$MAXCOMPILERDIR/lib/MaxCompilerQuartusLicense.dat" ; source /network-raid/opt/quartus-13.1/quartus_path.sh; ulimit -v 13516800;quartus_asm MAX4PeripheryTop --64bit --write_settings_files=off
+Thu 17:46: INFO    : Submitting job to cluster...
+Thu 17:46: INFO    : Cluster job ID: 13389
+Thu 17:46: INFO    : Waiting for MaxQ job 13389 to complete...
+Thu 17:47: INFO    : quartus_asm ended (17:47:37 23/04/15, time elapsed: 1 min, 19 secs)
+Thu 17:47: INFO    : quartus_asm peak virtual memory: 1516
+Thu 17:47: INFO    : Running command: cp -rf "/home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/altera_quartus/asm/altera_quartus/MAX4PeripheryTop.asm.rpt" "MAX4PeripheryTop.asm.stage1.rpt"
+Thu 17:47: INFO    : Deleting /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/altera_quartus/asm/altera_quartus/MAX4PeripheryTop.asm.rpt
+Thu 17:47: INFO    : Running command: cp -rf "/home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/altera_quartus/asm/altera_quartus/MAX4PeripheryTop.sof" "MAX4PeripheryTop.stage1.sof"
+Thu 17:47: INFO    : Deleting /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/altera_quartus/asm/altera_quartus/MAX4PeripheryTop.sof
+Thu 17:47: INFO    : Build pass 'QuartusAsm' took 86.1044 s.
+Thu 17:47: PROGRESS: (9/16) - Convert Programming File (QuartusCpf)
+Thu 17:47: INFO    : Starting quartus_cpf for periphery/core split rbf. (17:47:38 23/04/15)
+Thu 17:47: INFO    : Running command: export LM_LICENSE_FILE="$LM_LICENSE_FILE:$MAXCOMPILERDIR/lib/MaxCompilerQuartusLicense.dat" ; source /network-raid/opt/quartus-13.1/quartus_path.sh; ulimit -v 2306867;quartus_cpf --64bit -c "MAX4PeripheryTop.cof"
+Thu 17:47: INFO    : Submitting job to cluster...
+Thu 17:47: INFO    : Cluster job ID: 13393
+Thu 17:47: INFO    : Waiting for MaxQ job 13393 to complete...
+Thu 17:47: INFO    : quartus_cpf ended (17:47:58 23/04/15, time elapsed: 19 secs)
+Thu 17:47: INFO    : Running command: cp -rf "/home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/altera_quartus/asm/altera_quartus/MAX4PeripheryTop.core.rbf" "MAX4PeripheryTop.core.stage1.rbf"
+Thu 17:47: INFO    : Deleting /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/altera_quartus/asm/altera_quartus/MAX4PeripheryTop.core.rbf
+Thu 17:47: INFO    : Running command: cp -rf "/home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/altera_quartus/asm/altera_quartus/MAX4PeripheryTop.periph.rbf" "MAX4PeripheryTop.periph.stage1.rbf"
+Thu 17:47: INFO    : Deleting /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/altera_quartus/asm/altera_quartus/MAX4PeripheryTop.periph.rbf
+Thu 17:47: INFO    : Starting quartus_cpf for full rbf. (17:47:58 23/04/15)
+Thu 17:47: INFO    : Running command: export LM_LICENSE_FILE="$LM_LICENSE_FILE:$MAXCOMPILERDIR/lib/MaxCompilerQuartusLicense.dat" ; source /network-raid/opt/quartus-13.1/quartus_path.sh; ulimit -v 2306867;quartus_cpf --64bit -c "MAX4PeripheryTop_full.cof"
+Thu 17:47: INFO    : Submitting job to cluster...
+Thu 17:47: INFO    : Cluster job ID: 13394
+Thu 17:47: INFO    : Waiting for MaxQ job 13394 to complete...
+Thu 17:48: INFO    : quartus_cpf ended (17:48:18 23/04/15, time elapsed: 20 secs)
+Thu 17:48: INFO    : Running command: cp -rf "/home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/altera_quartus/asm/altera_quartus/MAX4PeripheryTop.rbf" "MAX4PeripheryTop.stage1.rbf"
+Thu 17:48: INFO    : Deleting /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/altera_quartus/asm/altera_quartus/MAX4PeripheryTop.rbf
+Thu 17:48: INFO    : Build pass 'QuartusCpf' took 40.4870 s.
+Thu 17:48: PROGRESS: (10/16) - Update Checksum (UpdateChecksumBuildPass)
+Thu 17:48: INFO    : Build pass 'UpdateChecksumBuildPass' took 214.718 ms.
+Thu 17:48: PROGRESS: (11/16) - Generate Incremental Netlist (QuartusCdb)
+Thu 17:48: INFO    : quartus_sh prev smart_action = 'NULL' in scratch/altera_quartus/asm/altera_quartus
+Thu 17:48: INFO    : Starting quartus_cdb. (17:48:18 23/04/15)
+Thu 17:48: INFO    : Running command: export LM_LICENSE_FILE="$LM_LICENSE_FILE:$MAXCOMPILERDIR/lib/MaxCompilerQuartusLicense.dat" ; source /network-raid/opt/quartus-13.1/quartus_path.sh; ulimit -v 6758400;quartus_cdb MAX4PeripheryTop --64bit --write_settings_files=off --update_mif
+Thu 17:48: INFO    : Warning (292006): Can't contact license server "1717@sliserver26" -- this server will be ignored
+Thu 17:48: INFO    : Info: *******************************************************************
+Thu 17:48: INFO    : Info: Running Quartus II 64-Bit MIF/HEX Update
+Thu 17:48: INFO    :     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+Thu 17:48: INFO    :     Info: Copyright (C) 1991-2013 Altera Corporation. All rights reserved.
+Thu 17:48: INFO    :     Info: Your use of Altera Corporation's design tools, logic functions 
+Thu 17:48: INFO    :     Info: and other software and tools, and its AMPP partner logic 
+Thu 17:48: INFO    :     Info: functions, and any output files from any of the foregoing 
+Thu 17:48: INFO    :     Info: (including device programming or simulation files), and any 
+Thu 17:48: INFO    :     Info: associated documentation or information are expressly subject 
+Thu 17:48: INFO    :     Info: to the terms and conditions of the Altera Program License 
+Thu 17:48: INFO    :     Info: Subscription Agreement, Altera MegaCore Function License 
+Thu 17:48: INFO    :     Info: Agreement, or other applicable license agreement, including, 
+Thu 17:48: INFO    :     Info: without limitation, that your use is for the sole purpose of 
+Thu 17:48: INFO    :     Info: programming logic devices manufactured by Altera and sold by 
+Thu 17:48: INFO    :     Info: Altera or its authorized distributors.  Please refer to the 
+Thu 17:48: INFO    :     Info: applicable agreement for further details.
+Thu 17:48: INFO    :     Info: Processing started: Thu Apr 23 17:48:26 2015
+Thu 17:48: INFO    : Info: Command: quartus_cdb MAX4PeripheryTop --write_settings_files=off --update_mif
+Thu 17:48: INFO    : Info: Using INI file /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/altera_quartus/asm/altera_quartus/quartus.ini
+Thu 17:48: INFO    : Warning (39023): Can't find Memory Initialization File alt_xcvr_reconfig_cpu_reconfig_cpu_rf_ram_a.mif -- skipped updates for this file
+Thu 17:48: INFO    : Warning (39023): Can't find Memory Initialization File alt_xcvr_reconfig_cpu_reconfig_cpu_rf_ram_b.mif -- skipped updates for this file
+Thu 17:48: INFO    : Warning (39023): Can't find Memory Initialization File alt_xcvr_reconfig_cpu_ram.hex -- skipped updates for this file
+Thu 17:48: INFO    : Info (39024): Processed the following Memory Initialization File(s)
+Thu 17:48: INFO    :     Info (39025): Processed Memory Initialization File /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/altera_quartus/asm/altera_quartus/32x512_ROM_SINGLE_PORT_ireg_checksum.mif
+Thu 17:48: INFO    :     Info (39025): Processed Memory Initialization File /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/altera_quartus/asm/altera_quartus/db/MAX4PeripheryTop.ram0_sv_xrbasic_l2p_rom_a2c9d7fe.hdl.mif
+Thu 17:48: INFO    : Info: Quartus II 64-Bit MIF/HEX Update was successful. 0 errors, 4 warnings
+Thu 17:48: INFO    :     Info: Peak virtual memory: 1485 megabytes
+Thu 17:48: INFO    :     Info: Processing ended: Thu Apr 23 17:48:38 2015
+Thu 17:48: INFO    :     Info: Elapsed time: 00:00:12
+Thu 17:48: INFO    :     Info: Total CPU time (on all processors): 00:00:11
+Thu 17:48: INFO    : quartus_cdb ended (17:48:38 23/04/15, time elapsed: 20 secs)
+Thu 17:48: INFO    : quartus_cdb peak virtual memory: 1485
+Thu 17:48: INFO    : Build pass 'QuartusCdb' took 20.0694 s.
+Thu 17:48: PROGRESS: (12/16) - Generate Configuration (QuartusAsm)
+Thu 17:48: INFO    : quartus_sh prev smart_action = 'NULL' in scratch/altera_quartus/asm/altera_quartus
+Thu 17:48: INFO    : Starting quartus_asm. (17:48:38 23/04/15)
+Thu 17:48: INFO    : Running command: export LM_LICENSE_FILE="$LM_LICENSE_FILE:$MAXCOMPILERDIR/lib/MaxCompilerQuartusLicense.dat" ; source /network-raid/opt/quartus-13.1/quartus_path.sh; ulimit -v 13516800;quartus_asm MAX4PeripheryTop --64bit --write_settings_files=off
+Thu 17:48: INFO    : Checking for file hash changes...
+Thu 17:48: INFO    : Hash changed for file: 'db'
+Thu 17:48: INFO    : Submitting job to cluster...
+Thu 17:48: INFO    : Cluster job ID: 13396
+Thu 17:48: INFO    : Waiting for MaxQ job 13396 to complete...
+Thu 17:49: INFO    : quartus_asm ended (17:49:59 23/04/15, time elapsed: 1 min, 20 secs)
+Thu 17:49: INFO    : quartus_asm peak virtual memory: 1555
+Thu 17:49: INFO    : Build pass 'QuartusAsm' took 80.5180 s.
+Thu 17:49: PROGRESS: (13/16) - Convert Programming File (QuartusCpf)
+Thu 17:49: INFO    : Starting quartus_cpf for periphery/core split rbf. (17:49:59 23/04/15)
+Thu 17:49: INFO    : Running command: export LM_LICENSE_FILE="$LM_LICENSE_FILE:$MAXCOMPILERDIR/lib/MaxCompilerQuartusLicense.dat" ; source /network-raid/opt/quartus-13.1/quartus_path.sh; ulimit -v 2306867;quartus_cpf --64bit -c "MAX4PeripheryTop.cof"
+Thu 17:49: INFO    : Checking for file hash changes...
+Thu 17:49: INFO    : No hash for file: 'MAX4PeripheryTop.sof'
+Thu 17:49: INFO    : Hash changed for file: 'MAX4PeripheryTop.cof'
+Thu 17:49: INFO    : Submitting job to cluster...
+Thu 17:50: INFO    : Cluster job ID: 13402
+Thu 17:50: INFO    : Waiting for MaxQ job 13402 to complete...
+Thu 17:50: INFO    : quartus_cpf ended (17:50:19 23/04/15, time elapsed: 20 secs)
+Thu 17:50: INFO    : Starting quartus_cpf for full rbf. (17:50:19 23/04/15)
+Thu 17:50: INFO    : Running command: export LM_LICENSE_FILE="$LM_LICENSE_FILE:$MAXCOMPILERDIR/lib/MaxCompilerQuartusLicense.dat" ; source /network-raid/opt/quartus-13.1/quartus_path.sh; ulimit -v 2306867;quartus_cpf --64bit -c "MAX4PeripheryTop_full.cof"
+Thu 17:50: INFO    : Checking for file hash changes...
+Thu 17:50: INFO    : No hash for file: 'MAX4PeripheryTop.sof'
+Thu 17:50: INFO    : Hash changed for file: 'MAX4PeripheryTop_full.cof'
+Thu 17:50: INFO    : Submitting job to cluster...
+Thu 17:50: INFO    : Cluster job ID: 13403
+Thu 17:50: INFO    : Waiting for MaxQ job 13403 to complete...
+Thu 17:50: INFO    : quartus_cpf ended (17:50:39 23/04/15, time elapsed: 20 secs)
+Thu 17:50: INFO    : Build pass 'QuartusCpf' took 40.1679 s.
+Thu 17:50: PROGRESS: (14/16) - Generate Resource Report (AlteraResourceUsageBuildPass)
+Thu 17:50: INFO    : Build pass 'AlteraResourceUsageBuildPass' took 986.841 ms.
+Thu 17:50: PROGRESS: (15/16) - Generate Annotated Source Code (AlteraResourceAnnotationBuildPass)
+Thu 17:50: INFO    : Annotating source files (old source files in build directory will be removed first)...
+Thu 17:50: INFO    : Not deleting directory (does not exist): src_annotated
+Thu 17:50: INFO    : annotated 2 source files
+Thu 17:50: INFO    : Annotating source files (old source files in build directory will be removed first)...
+Thu 17:50: INFO    : Not deleting directory (does not exist): src_annotated_BreastMammogramROIExtractionKernel
+Thu 17:50: INFO    : annotated 2 source files
+Thu 17:50: INFO    : Build pass 'AlteraResourceAnnotationBuildPass' took 1.80347 s.
+Thu 17:50: PROGRESS: (16/16) - Generate MaxFile (GenerateMaxFileAltera)
+Thu 17:50: INFO    : Running command: "/network-raid/opt/maxcompiler-2014.2/bin/maxfilestitch" -a -w -m 1 -b 20150423 "../MaxCompilerDesignData.dat" "asm/altera_quartus/MAX4PeripheryTop.periph.rbf" "asm/altera_quartus/MAX4PeripheryTop.core.rbf" "BreastMammogramROIExtraction.max" d867348b195f3918cdabecff2c2354e694273322aeb2a268bc583186592a9f4e 0 2>&1 | tee maxfilestitch.log ; exit ${PIPESTATUS[0]}
+Thu 17:50: INFO    : Input files:
+Thu 17:50: INFO    : 	DAT:     ../MaxCompilerDesignData.dat
+Thu 17:50: INFO    : 	Periph RBF:	asm/altera_quartus/MAX4PeripheryTop.periph.rbf
+Thu 17:50: INFO    : 	Core RBF:	asm/altera_quartus/MAX4PeripheryTop.core.rbf
+Thu 17:50: INFO    : Output files:
+Thu 17:50: INFO    : 	MAX:     BreastMammogramROIExtraction.max
+Thu 17:50: INFO    : Hash: d867348b195f3918cdabecff2c2354e694273322aeb2a268bc583186592a9f4e
+Thu 17:50: INFO    : Timing score: 0
+Thu 17:50: INFO    : Build pass 'GenerateMaxFileAltera' took 2.89358 s.
+Thu 17:50: INFO    : Final result files after build: 
+Thu 17:50: INFO    : Running command: ln -sf "../scratch/BreastMammogramROIExtraction-BreastMammogramROIExtractionKernel-original.pxg"
+Thu 17:50: INFO    : BreastMammogramROIExtraction-BreastMammogramROIExtractionKernel-original.pxg (BuildFilePXG)
+Thu 17:50: INFO    : Running command: ln -sf "../scratch/BreastMammogramROIExtractionKernel_Configuration.txt"
+Thu 17:50: INFO    : BreastMammogramROIExtractionKernel_Configuration.txt (BuildFile)
+Thu 17:50: INFO    : Running command: ln -sf "../scratch/BreastMammogramROIExtractionKernel_NodeDiary.txt"
+Thu 17:50: INFO    : BreastMammogramROIExtractionKernel_NodeDiary.txt (BuildFile)
+Thu 17:50: INFO    : Running command: ln -sf "../scratch/BreastMammogramROIExtraction-BreastMammogramROIExtractionKernel-final-hardware.pxg"
+Thu 17:50: INFO    : BreastMammogramROIExtraction-BreastMammogramROIExtractionKernel-final-hardware.pxg (BuildFilePXG)
+Thu 17:50: INFO    : Running command: ln -sf "../scratch/BreastMammogramROIExtraction.xml"
+Thu 17:50: INFO    : BreastMammogramROIExtraction.xml (BuildFile)
+Thu 17:50: INFO    : Running command: ln -sf "../scratch/BreastMammogramROIExtraction.h"
+Thu 17:50: INFO    : BreastMammogramROIExtraction.h (BuildFileSlicH)
+Thu 17:50: INFO    : Running command: ln -sf "../scratch/altera_quartus/BreastMammogramROIExtraction_map.mxru"
+Thu 17:50: INFO    : BreastMammogramROIExtraction_map.mxru (BuildFileMXRU)
+Thu 17:50: INFO    : Running command: ln -sf "../scratch/altera_quartus/ct1/altera_quartus/MAX4PeripheryTop.sta.rpt.tns"
+Thu 17:50: INFO    : MAX4PeripheryTop.sta.rpt.tns (BuildFileStaTns)
+Thu 17:50: INFO    : Running command: ln -sf "../scratch/altera_quartus/asm/altera_quartus/MAX4PeripheryTop.sof"
+Thu 17:50: INFO    : MAX4PeripheryTop.sof (BuildFileStage2SOF)
+Thu 17:50: INFO    : Running command: ln -sf "../scratch/altera_quartus/asm/altera_quartus/MAX4PeripheryTop.core.rbf"
+Thu 17:50: INFO    : MAX4PeripheryTop.core.rbf (BuildFileStage2CoreRBF)
+Thu 17:50: INFO    : Running command: ln -sf "../scratch/altera_quartus/asm/altera_quartus/MAX4PeripheryTop.periph.rbf"
+Thu 17:50: INFO    : MAX4PeripheryTop.periph.rbf (BuildFileStage2PeriphRBF)
+Thu 17:50: INFO    : Running command: ln -sf "../scratch/altera_quartus/asm/altera_quartus/MAX4PeripheryTop.rbf"
+Thu 17:50: INFO    : MAX4PeripheryTop.rbf (BuildFileStage2FullRBF)
+Thu 17:50: INFO    : Running command: ln -sf "../scratch/altera_quartus/BreastMammogramROIExtraction_fit.mxru"
+Thu 17:50: INFO    : BreastMammogramROIExtraction_fit.mxru (BuildFileMXRU)
+Thu 17:50: INFO    : Running command: ln -sf "../scratch/altera_quartus/BreastMammogramROIExtraction.max"
+Thu 17:50: INFO    : BreastMammogramROIExtraction.max (BuildFileMaxFile)
+Thu 17:50: INFO    : Result files will be copied to '/home/imilankovic/workspace/BreastMammogramROIExtraction/RunRules/Coria/maxfiles'
+Thu 17:50: INFO    : Result 'BreastMammogramROIExtraction-BreastMammogramROIExtractionKernel-original.pxg' is identical to '/home/imilankovic/workspace/BreastMammogramROIExtraction/RunRules/Coria/maxfiles/BreastMammogramROIExtraction-BreastMammogramROIExtractionKernel-original.pxg': not overwriting.
+Thu 17:50: INFO    : Result 'BreastMammogramROIExtraction-BreastMammogramROIExtractionKernel-final-hardware.pxg' is identical to '/home/imilankovic/workspace/BreastMammogramROIExtraction/RunRules/Coria/maxfiles/BreastMammogramROIExtraction-BreastMammogramROIExtractionKernel-final-hardware.pxg': not overwriting.
+Thu 17:50: INFO    : Result 'BreastMammogramROIExtraction.h' is identical to '/home/imilankovic/workspace/BreastMammogramROIExtraction/RunRules/Coria/maxfiles/BreastMammogramROIExtraction.h': not overwriting.
+Thu 17:50: INFO    : Copying result 'BreastMammogramROIExtraction.max' to '/home/imilankovic/workspace/BreastMammogramROIExtraction/RunRules/Coria/maxfiles/BreastMammogramROIExtraction.max'
+Thu 17:50: INFO    : Running command: cp -rf "/home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/scratch/altera_quartus/BreastMammogramROIExtraction.max" "/home/imilankovic/workspace/BreastMammogramROIExtraction/RunRules/Coria/maxfiles/BreastMammogramROIExtraction.max"
+Thu 17:50: PROGRESS: 
+Thu 17:50: PROGRESS: FINAL RESOURCE USAGE
+Thu 17:50: PROGRESS: Logic utilization:     9401 / 172600 (5.45%)
+Thu 17:50: PROGRESS:   Primary FFs:        15776 / 345200 (4.57%)
+Thu 17:50: PROGRESS:   Secondary FFs:        947 / 345200 (0.27%)
+Thu 17:50: PROGRESS: Multipliers (18x18):      4 / 3180   (0.13%)
+Thu 17:50: PROGRESS:   DSP blocks:             2 / 1590   (0.13%)
+Thu 17:50: PROGRESS: Block memory (M20K):     74 / 2014   (3.67%)
+Thu 17:50: PROGRESS: 
+Thu 17:50: PROGRESS: MaxFile: /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/results/BreastMammogramROIExtraction.max (MD5Sum: 16d9a9646c57469b2cbbe34165c555e8)
+Thu 17:50: INFO    : Waiting for any outstanding jobs to finish... 
+Thu 17:50: INFO    : Timing Analyser shutting down.
+Thu 17:50: INFO    : Timing Report: /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_CORIA_DFE/timingreport/index.html
+Thu 17:50: PROGRESS: Build completed: Thu Apr 23 17:50:46 BST 2015 (took 20 mins, 15 secs)

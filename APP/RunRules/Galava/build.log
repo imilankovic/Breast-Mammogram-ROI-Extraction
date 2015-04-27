@@ -1,0 +1,31 @@
+Thu 17:32: ########################################## 
+Thu 17:32: Compiling.
+Thu 17:32: ########################################## 
+
+Thu 17:32: MaxCompiler version: 2014.2.
+Thu 17:32: Build Galava run rule for BreastMammogramROIExtraction start time: Thu Apr 23 17:32:10 BST 2015.
+Thu 17:32: Project location: /home/imilankovic/workspace/BreastMammogramROIExtraction.
+Thu 17:32: Detailed build log: /home/imilankovic/workspace/BreastMammogramROIExtraction/RunRules/Galava/build.log.
+
+Thu 17:32: Compiling Engine Code.
+Thu 17:32: Building BreastMammogramROIExtraction.max file. 
+Thu 17:32: Setting environment variable:
+Thu 17:32: MAXCOMPILER_BUILD_DIR : /network-scratch/imilankovic/maxdc_builds/
+Thu 17:32: MAX_BUILDPARAMS : DFEModel='GALAVA' target='DFE' maxFileName='BreastMammogramROIExtraction'  
+Thu 17:32: Building output:
+Thu 17:32: MaxCompiler version: 2014.2
+Thu 17:32: Build "BreastMammogramROIExtraction" start time: Thu Apr 23 17:32:15 BST 2015
+Thu 17:32: Main build process running as user imilankovic on host nxws26.office.maxeler.com
+Thu 17:32: Build location: /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_GALAVA_DFE
+Thu 17:32: Detailed build log available in "_build.log"
+Thu 17:32: Instantiating manager
+Thu 17:32: Instantiating kernel "BreastMammogramROIExtractionKernel"
+Thu 17:32: Compiling manager (CPU I/O Only)
+Thu 17:32: 
+Thu 17:32: Compiling kernel "BreastMammogramROIExtractionKernel"
+Thu 17:32: Generating input files (VHDL, netlists, MegaWizard/CoreGen)
+Thu 17:32: Engine build terminated by user.
+Thu 17:32: Engine build terminated by user
+Thu 17:32: Build failed: Thu Apr 23 17:32:33 BST 2015
+
+

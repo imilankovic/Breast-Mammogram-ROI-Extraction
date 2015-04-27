@@ -1,0 +1,17 @@
+# --- User's custom definitions
+USE_SLIC:=1
+# ---
+
+MAXCOMPILER_QUOTE   := $(shell printf %q "$(MAXCOMPILERDIR)")
+
+RUNRULE_ARGS        := 
+RUNRULE_RUNENV      := MAXELEROSDIR="$(MAXCOMPILERDIR)/lib/maxeleros-sim" LD_LIBRARY_PATH="$(MAXCOMPILERDIR)/lib/maxeleros-sim/lib:$$LD_LIBRARY_PATH" SLIC_CONF="use_simulation=BreastMammogra;"  
+RUNRULE_MAXFILES    := BreastMammogramROIExtraction.max  
+RUNRULE_MAXFILES_H  := BreastMammogramROIExtraction.h 
+RUNRULE_CFLAGS      := 
+RUNRULE_LDFLAGS     := 
+
+TARGET_EXEC         := BreastMammogramROIExtractionSim
+TARGET_LIBRARY      := 
+
+

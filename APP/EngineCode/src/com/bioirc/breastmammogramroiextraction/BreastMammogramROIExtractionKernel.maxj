@@ -1,0 +1,55 @@
+package com.bioirc.breastmammogramroiextraction;
+
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+
+public class BreastMammogramROIExtractionKernel extends Kernel {
+	public BreastMammogramROIExtractionKernel(KernelParameters parameters) {
+		super(parameters);
+
+		OffsetExpr loopLength = stream.makeOffsetAutoLoop("loopLength");
+		DFEVar loopLengthVal = loopLength.getDFEVar(this, dfeUInt(32));
+
+		DFEVar loopCounter = control.count.simpleCounter(32, loopLengthVal);
+
+		DFEVar image_pixel = io.input("image_pixel", dfeUInt(32), loopCounter.eq(loopLengthVal-1));
+
+		DFEVar width = io.scalarInput("width", dfeUInt(32));
+		DFEVar height = io.scalarInput("height", dfeUInt(32));
+		DFEVar black = io.scalarInput("black", dfeUInt(32));
+		DFEVar threshold = io.scalarInput("threshold", dfeUInt(32));
+
+		DFEVar above_pixel = dfeUInt(32).newInstance(this);
+
+		DFEVar prev_pixel = stream.offset(image_pixel, -loopLength);
+
+		CounterChain chain = control.count.makeCounterChain();
+		DFEVar i = chain.addCounter(height, 1);
+		DFEVar j = chain.addCounter(width * loopLengthVal, 1);
+
+		DFEVar tempWhite = dfeUInt(32).newInstance(this);
+
+		DFEVar firstWhite = ((j < loopLengthVal)) ? 0 : tempWhite;
+
+		DFEVar result;
+
+		result = image_pixel;
+
+		result = ((i.eq(0)) & (firstWhite > 1)) ? 0 : result;
+
+		result = ((i > 0) & (firstWhite > 1) & (above_pixel < black)) ? 0 : result;
+
+		result = ((i <= height/10) & (image_pixel >= threshold)) ? 0 : result;
+
+		result = ((i > height/10) & (image_pixel >= threshold) & (above_pixel.eq(0))) ? 0 : result;
+
+		above_pixel <== stream.offset(result, -1024*loopLength);
+
+		tempWhite <== ((image_pixel >= black) & (prev_pixel < black) & (j >= loopLengthVal)) | ((j < loopLengthVal) & (image_pixel >= black)) ? stream.offset(firstWhite+1, -loopLength) : stream.offset(firstWhite, -loopLength);
+
+		io.output("output", result, dfeUInt(32), loopCounter.eq(loopLengthVal -1));
+	}
+}

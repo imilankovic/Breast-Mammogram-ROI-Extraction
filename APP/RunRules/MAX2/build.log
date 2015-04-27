@@ -1,0 +1,70 @@
+Thu 17:44: ########################################## 
+Thu 17:44: Compiling.
+Thu 17:44: ########################################## 
+
+Thu 17:44: MaxCompiler version: 2014.2.
+Thu 17:44: Build MAX2 run rule for BreastMammogramROIExtraction start time: Thu Apr 23 17:44:15 BST 2015.
+Thu 17:44: Project location: /home/imilankovic/workspace/BreastMammogramROIExtraction.
+Thu 17:44: Detailed build log: /home/imilankovic/workspace/BreastMammogramROIExtraction/RunRules/MAX2/build.log.
+
+Thu 17:44: Compiling Engine Code.
+Thu 17:44: Building BreastMammogramROIExtraction.max file. 
+Thu 17:44: Setting environment variable:
+Thu 17:44: MAXCOMPILER_BUILD_DIR : /network-scratch/imilankovic/maxdc_builds/
+Thu 17:44: MAX_BUILDPARAMS : DFEModel='MAX2B' target='DFE' maxFileName='BreastMammogramROIExtraction'  
+Thu 17:44: Building output:
+Thu 17:44: MaxCompiler version: 2014.2
+Thu 17:44: Build "BreastMammogramROIExtraction" start time: Thu Apr 23 17:44:20 BST 2015
+Thu 17:44: Main build process running as user imilankovic on host nxws26.office.maxeler.com
+Thu 17:44: Build location: /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_MAX2B_DFE
+Thu 17:44: Detailed build log available in "_build.log"
+Thu 17:44: Instantiating manager
+Thu 17:44: Instantiating kernel "BreastMammogramROIExtractionKernel"
+Thu 17:44: Compiling manager (CPU I/O Only)
+Thu 17:44: 
+Thu 17:44: Compiling kernel "BreastMammogramROIExtractionKernel"
+Thu 17:44: Generating input files (VHDL, netlists, MegaWizard/CoreGen)
+Thu 17:46: Running back-end  build (12 phases)
+Thu 17:46: (1/12) - Prepare MaxFile Data (GenerateMaxFileDataFile)
+Thu 17:46: (2/12) - Synthesize DFE Modules (XST)
+Thu 17:49: (3/12) - Link DFE Modules (NGCBuild)
+Thu 17:49: (4/12) - Prepare for Resource Analysis (EDIF2MxruBuildPass)
+Thu 17:49: (5/12) - Generate Preliminary Annotated Source Code (PreliminaryResourceAnnotationBuildPass)
+Thu 17:49: (6/12) - Report Resource Usage (XilinxPreliminaryResourceSummary)
+Thu 17:49: 
+Thu 17:49: PRELIMINARY RESOURCE USAGE
+Thu 17:49: Logic utilization:      19895 / 207360 (9.59%)
+Thu 17:49:   LUTs:                 13154 / 207360 (6.34%)
+Thu 17:49:   Primary FFs:          16873 / 207360 (8.14%)
+Thu 17:49: Multipliers (25x18):        4 / 192    (2.08%)
+Thu 17:49:   DSP blocks:               4 / 192    (2.08%)
+Thu 17:49: Block memory (BRAM18):     51 / 648    (7.87%)
+Thu 17:49: 
+Thu 17:49: About to start chip vendor Map/Place/Route toolflow. This will take some time.
+Thu 17:49: For this compile, we estimate this process may take up to 1 hour.
+Thu 17:49: We recommend running in simulation to verify correctness before building a DFE configuration.
+Thu 17:49: 
+Thu 17:49: (7/12) - Prepare for Placement (NGDBuild)
+Thu 17:50: (8/12) - Place and Route DFE (XilinxMPPR)
+Thu 17:50: Executing MPPR with 1 cost table and 1 thread.
+Thu 17:50: MPPR: Starting 1 cost table
+Thu 18:05: ERROR: MPPR: Failed run: Error running external tool :-
+Thu 18:05: ERROR: Problem            : [Cost table 1] external process failed: Command failed with exit code: 1. Log file: /network-infrastructure/maxq/maxq_imilankovic_2015_apr_23_18.04.11_log_stderr_stdout_13413.log
+Thu 18:05: ERROR: Program log        : /network-infrastructure/maxq/maxq_imilankovic_2015_apr_23_18.04.11_log_stderr_stdout_13413.log
+Thu 18:05: ERROR: Command run        :  xilic trce -v 500 max_compiler_top-par.ncd max_compiler_top.pcf -o max_compiler_top-par.twr -xml max_compiler_top-par.twx  && CLASSPATH="/home/imilankovic/workspace/BreastMammogramROIExtraction/EngineCode/bin":"/network-raid/opt/maxcompiler-2014.2/lib/MaxCompiler.jar":"/network-raid/opt/maxq/maxq-ctl.jar": java com.maxeler.timinganalyser.MaxTimingAnalyser "/home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_MAX2B_DFE" "/home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_MAX2B_DFE/scratch/xilinx_pnr/ct1"  && ln -sfn "/home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_MAX2B_DFE/scratch/xilinx_pnr/ct1/timingreport" "/home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_MAX2B_DFE/timingreport_preliminary"
+Thu 18:05: ERROR: Directory run in   : /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_MAX2B_DFE/scratch/xilinx_pnr/ct1/./xilinx_pnr
+Thu 18:05: ERROR: Exit code          : 1
+Thu 18:05: ERROR: Detailed build log : /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_MAX2B_DFE/scratch/xilinx_pnr/ct1/_build.log
+Thu 18:05: ERROR: Error running external tool :-
+Thu 18:05: ERROR: Problem            : Error in MPPR: [Cost table 1] external process failed: Command failed with exit code: 1. Log file: /network-infrastructure/maxq/maxq_imilankovic_2015_apr_23_18.04.11_log_stderr_stdout_13413.log
+Thu 18:05: ERROR: Program log        : /network-infrastructure/maxq/maxq_imilankovic_2015_apr_23_18.04.11_log_stderr_stdout_13413.log
+Thu 18:05: ERROR: Command run        :  xilic trce -v 500 max_compiler_top-par.ncd max_compiler_top.pcf -o max_compiler_top-par.twr -xml max_compiler_top-par.twx  && CLASSPATH="/home/imilankovic/workspace/BreastMammogramROIExtraction/EngineCode/bin":"/network-raid/opt/maxcompiler-2014.2/lib/MaxCompiler.jar":"/network-raid/opt/maxq/maxq-ctl.jar": java com.maxeler.timinganalyser.MaxTimingAnalyser "/home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_MAX2B_DFE" "/home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_MAX2B_DFE/scratch/xilinx_pnr/ct1"  && ln -sfn "/home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_MAX2B_DFE/scratch/xilinx_pnr/ct1/timingreport" "/home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_MAX2B_DFE/timingreport_preliminary"
+Thu 18:05: ERROR: Directory run in   : /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_MAX2B_DFE/scratch/xilinx_pnr/ct1/./xilinx_pnr
+Thu 18:05: ERROR: Exit code          : 1
+Thu 18:05: ERROR: Detailed build log : /home/imilankovic/builds/23-04-15/BreastMammogramROIExtraction_MAX2B_DFE/scratch/xilinx_pnr/ct1/_build.log
+Thu 18:05: Building: BreastMammogramROIExtraction.max file finished.
+Thu 18:05: Build process failed while trying to create BreastMammogramROIExtraction.max file
+Thu 18:05: null
+Thu 18:05: Build failed: Thu Apr 23 18:05:04 BST 2015
+
+

@@ -1,0 +1,85 @@
+
+Total resource usage
+-----------------------------------------------------------------
+    LUTs     FFs   BRAMs    DSPs                            
+  524800 1049600    2567    1963  total available resources for FPGA
+   10702   14983      91       2  total resources used      
+   2.04%   1.43%   3.54%   0.10%  % of available
+    3715    4836      34       2  used by kernels           
+   0.71%   0.46%   1.32%   0.10%  % of available
+    6156    8755      52       0  used by manager           
+   1.17%   0.83%   2.03%   0.00%  % of available
+    4577    5913      42       2  stray resources           
+   0.87%   0.56%   1.64%   0.10%  % of available
+
+High level manager breakdown aggregated by type
+-----------------------------------------------------------------
+    LUTs     FFs   BRAMs    DSPs  Type                      Occurrences
+      39      37       1       0  ChecksumMappedDRP         1
+      39      36       0       0  DualAspectMux             1
+       3      99       0       0  DualAspectReg             1
+     223     282       6       0  Fifo                      3
+    3715    4836      34       2  Kernel                    1
+     820     958       1       0  MAX4PCIeSlaveInterface    1
+     531      77       0       0  MappedElementSwitch       1
+     421     958       5       0  MappedMemoriesController  1
+     131     112       0       0  MappedRegistersControlle  1
+    3570    5756      38       0  PCIeStreaming             1
+     209     197       0       0  PerfMonitor               1
+      16      22       0       0  ResetControl              2
+      60     145       0       0  SanityBlock               1
+      92      75       1       0  SignalForwardingAdapter   1
+       2       1       0       0  StreamPullPushAdapter     1
+       0       0       0       0  Memory Controller         --
+       0       0       0       0  Other InterFPGA           --
+    1090    1245       7       0  Other MappedElements      --
+    5035    7825      42       0  Other PCIe                --
+
+Kernel breakdown
+-----------------------------------------------------------------
+    LUTs     FFs   BRAMs    DSPs  category
+    3715    4836      34       2  total for all kernels
+   0.71%   0.46%   1.32%   0.10%  % of total available
+
+Totals for each kernel
+    LUTs     FFs   BRAMs    DSPs  Kernel name
+    3715    4836      34       2  BreastMammogramROIExtractionKernel (total)
+   0.71%   0.46%   1.32%   0.10%  % of total available
+    3515    3962      32       2  BreastMammogramROIExtractionKernel (user)
+   0.67%   0.38%   1.25%   0.10%  % of total available
+      23     276       2       0  BreastMammogramROIExtractionKernel (scheduling)
+   0.00%   0.03%   0.08%   0.00%  % of total available
+     177     598       0       0  BreastMammogramROIExtractionKernel (other Kernel resources)
+   0.03%   0.06%   0.00%   0.00%  % of total available
+
+
+Manager breakdown
+-----------------------------------------------------------------
+    LUTs     FFs   BRAMs    DSPs  Type                      Instance
+    3715    4836      34       2  Kernel                    BreastMammogramROIExtractionKernel
+     108     134       1       0  Fifo                      Stream_10
+      77     116       1       0  Fifo                      Stream_12
+       2       1       0       0  StreamPullPushAdapter     Stream_14
+      39      36       0       0  DualAspectMux             Stream_1
+       3      99       0       0  DualAspectReg             Stream_6
+      38      32       4       0  Fifo                      Stream_8
+     820     958       1       0  MAX4PCIeSlaveInterface    MAX4PCIeSlaveInterface_i
+       8      11       0       0  ResetControl              control_streams_rst_ctl
+     531      77       0       0  MappedElementSwitch       MappedElementSwitch_i
+     421     958       5       0  MappedMemoriesController  MappedMemoriesController_i
+     131     112       0       0  MappedRegistersControlle  MappedRegistersController_i
+     209     197       0       0  PerfMonitor               perfm
+      60     145       0       0  SanityBlock               SanityBlock_i
+      92      75       1       0  SignalForwardingAdapter   SignalForwardingAdapter_i
+      39      37       1       0  ChecksumMappedDRP         checksum_mem_drp
+    3570    5756      38       0  PCIeStreaming             dynpcie
+       8      11       0       0  ResetControl              reset_controller
+
+Source files annotation report
+-----------------------------------------------------------------
+
+% of total used for each file (note: multiple files may share the same resources)
+    LUTs     FFs   BRAMs    DSPs  filename
+  30.74%  24.10%  35.16% 100.00%  com/bioirc/breastmammogramroiextraction/BreastMammogramROIExtractionKernel.maxj
+  33.06%  28.29%  37.36% 100.00%  com/bioirc/breastmammogramroiextraction/BreastMammogramROIExtractionManager.maxj
+  33.06%  28.29%  37.36% 100.00%  [ missing source files ]

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<maxCompilerManager version="2">
+<enginePart internalEngineSubproject="BreastMammogramROIExtraction_EngineCode" isSrcBin="false" isUseDefaultSelected="false" outputLocation="/BreastMammogramROIExtraction_EngineCode/bin" projectName="BreastMammogramROIExtraction"/>
+<cpuPart internalCpuSubproject="BreastMammogramROIExtraction_CPUCode"/>
+<watchedFiles/>
+</maxCompilerManager>
