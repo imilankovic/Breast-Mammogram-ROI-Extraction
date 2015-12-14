@@ -31,7 +31,7 @@
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.834499475" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug">
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.exe.debug.option.optimization.level.112477555" name="Optimization Level" superClass="gnu.c.compiler.exe.debug.option.optimization.level" valueType="enumerated"/>
 								<option id="gnu.c.compiler.exe.debug.option.debugging.level.1436682361" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
-								<option id="gnu.c.compiler.option.include.paths.763681043" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<option id="gnu.c.compiler.option.include.paths.763681043" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/network-raid/opt/intel/composer_xe_2011_sp1.7.256/composer_xe_2011_sp1.7.256/mkl/include"/>
 									<listOptionValue builtIn="false" value="/network-raid/opt/intel/composer_xe_2011_sp1.7.256/composer_xe_2011_sp1.7.256/tbb/include"/>
 									<listOptionValue builtIn="false" value="/network-raid/opt/maxcompiler-2014.2/include/slic"/>
@@ -47,12 +47,7 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.2071816292" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug"/>
 							<tool id="cdt.managedbuild.tool.gnu.assembler.exe.debug.743517740" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.exe.debug">
-								<option id="gnu.both.asm.option.include.paths.1998164765" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/network-raid/opt/maxcompiler-2014.2/include/slic"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/BreastMammogramROIExtraction_RunRules/Simulation/include}&quot;"/>
-									<listOptionValue builtIn="false" value="/network-raid/opt/intel/composer_xe_2011_sp1.7.256/composer_xe_2011_sp1.7.256/mkl/include"/>
-									<listOptionValue builtIn="false" value="/network-raid/opt/intel/composer_xe_2011_sp1.7.256/composer_xe_2011_sp1.7.256/tbb/include"/>
-								</option>
+								<option id="gnu.both.asm.option.include.paths.1998164765" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths"/>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1100606899" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>

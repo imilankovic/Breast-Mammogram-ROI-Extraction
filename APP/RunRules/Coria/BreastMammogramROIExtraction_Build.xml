@@ -27,7 +27,6 @@
         <maxjcompiler srcdir="src" destdir="../RunRules/Coria/dist/bin" debug="true" debuglevel="lines,vars,source" source="1.6" target="1.6" failonerror="true">
             <classpath>
                 <pathelement path="${maxcompilerdirpath}"/>
-                <pathelement path="/network-raid/opt/maxq/maxq-ctl.jar"/>
                 <pathelement path="${EnvClassPath}"/>
             </classpath>
         </maxjcompiler>
