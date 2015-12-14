@@ -30,7 +30,6 @@
                 <pathelement path="${env.ANT_MAXELER_INTERNAL_MAXIDE_JARS}"/>
                 <pathelement path="../RunRules/MAX2/dist/bin"/>
                 <pathelement path="${maxcompilerdirpath}"/>
-                <pathelement path="/network-raid/opt/maxq/maxq-ctl.jar"/>
                 <pathelement path="${EnvClassPath}"/>
             </classpath>
         </java>

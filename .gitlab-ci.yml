@@ -1,0 +1,43 @@
+#
+# Breas-Mammogram-ROI-Extraction
+#
+# Required variables:
+#  - MAXCOMPILER_SIM_IMAGE: image with MaxCompiler and MaxCompiler Simulator
+#  - MAXCOMPILER_DFE_IMAGE: image with MaxCompiler and Quartus II
+#
+
+stages:
+- make-sim
+- make-dfe
+
+make-sim-Breas-Mammogram-ROI-Extraction:
+  image: $MAXCOMPILER_SIM_IMAGE
+  script:
+  - make -C APP/CPUCode RUNRULE='Simulation'
+  stage: make-sim
+  tags:
+  - maxcompiler-sim
+
+make-Coria-Breas-Mammogram-ROI-Extraction:
+  image: $MAXCOMPILER_DFE_IMAGE
+  script:
+  - make -C APP/CPUCode RUNRULE='Coria'
+  stage: make-dfe
+  tags:
+  - maxcompiler-dfe
+
+make-Galava-Breas-Mammogram-ROI-Extraction:
+  image: $MAXCOMPILER_DFE_IMAGE
+  script:
+  - make -C APP/CPUCode RUNRULE='Galava'
+  stage: make-dfe
+  tags:
+  - maxcompiler-dfe
+
+make-Maia-Breas-Mammogram-ROI-Extraction:
+  image: $MAXCOMPILER_DFE_IMAGE
+  script:
+  - make -C APP/CPUCode RUNRULE='Maia'
+  stage: make-dfe
+  tags:
+  - maxcompiler-dfe
