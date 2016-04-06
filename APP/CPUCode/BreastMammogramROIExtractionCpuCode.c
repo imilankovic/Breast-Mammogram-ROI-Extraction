@@ -9,6 +9,8 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <time.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 
 #include <MaxSLiCInterface.h>
 #include "Maxfiles.h"
@@ -42,6 +44,12 @@ void loadImage(char *filename, uint **dest, uint *width, uint *height, uint p3)
 
 void writeImage(char *filename, uint *data, uint width, uint height, uint p3)
 {
+	struct stat st = {0};
+    // create output folder if not exists
+	if (stat("output", &st) == -1) {
+	    mkdir("output", 0700);
+	}
+
 	FILE *file = fopen(filename, "w");
 	uint i;
 
