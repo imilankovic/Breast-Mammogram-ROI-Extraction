@@ -9,6 +9,8 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <time.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 
 #include <MaxSLiCInterface.h>
 #include "Maxfiles.h"
@@ -42,6 +44,12 @@ void loadImage(char *filename, uint **dest, uint *width, uint *height, uint p3)
 
 void writeImage(char *filename, uint *data, uint width, uint height, uint p3)
 {
+	struct stat st = {0};
+    // create output folder if not exists
+	if (stat("output", &st) == -1) {
+	    mkdir("output", 0700);
+	}
+
 	FILE *file = fopen(filename, "w");
 	uint i;
 
@@ -56,14 +64,27 @@ void writeImage(char *filename, uint *data, uint width, uint height, uint p3)
 	fclose(file);
 }
 
+int check(uint **out_data, uint **expected_data, int width, int height){
+    int status = 0;
+    int i;
+    for (i = 0; i < width * height; i++) {
+		if((*expected_data)[i] != (*out_data)[i])
+			status++;
+	}
+
+    return status;
+}
+
 int main()
 {
 
 	uint *in_stream1;
 	uint *out_stream1;
+	uint *expected_stream1;
 	uint width1, height1;
 	uint data_size;
 	uint black = 10, threshold = 170;
+	uint status = 0;
 
 	struct timeval start, end;
 	long mtime, seconds, useconds;
@@ -80,23 +101,9 @@ int main()
 
 	printf("Streaming data to FPGA.\n");
 
-
-	BreastMammogramROIExtraction(black, height1, width1 * height1,threshold, width1, in_stream1, out_stream1);
-
 	gettimeofday(&start, NULL);
 
-	//for (int i = 0; i < 1000; i++)
-		BreastMammogramROIExtraction(black, height1, width1 * height1,threshold, width1, in_stream1, out_stream1);
-
-//for (int i = 0; i < 1000; i++)
-//		max_run(device,
-//				max_input("image_pixel1", in_stream1, data_size),
-//
-//				max_output("output1", out_stream1, data_size),
-//
-//				max_runfor("RoiKernel1", width1 * height1 * loop_length),
-//
-//				max_end());
+	BreastMammogramROIExtraction(black, height1, width1 * height1,threshold, width1, in_stream1, out_stream1);
 
 	gettimeofday(&end, NULL);
 
@@ -110,6 +117,17 @@ int main()
 	printf("Outputting data read from FPGA.\n");
 
 	writeImage("output/output1.pgm", out_stream1, width1, height1, 0);
+
+	printf("Checking results...\n");
+
+	loadImage("expected/expected1.pgm", &expected_stream1, &width1, &height1, 0);
+
+	status = check(&out_stream1, &expected_stream1, width1, height1);
+
+	if(status == 0)
+		printf("Test passed successfully!\n");
+	else
+		printf("Test failed %d times!\n", status);
 
 	printf("Shutting down\n");
 
